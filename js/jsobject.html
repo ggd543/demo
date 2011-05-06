@@ -1,0 +1,41 @@
+<script>
+	function f(){                       // 构造函数  
+		this.a =1;  
+		this.b = function(){  
+			return this.a + this.a;  
+		};  		
+	} 
+	var f1 = new f();
+	var a = f1.a;  
+	document.write(a);   // 1
+	document.write("<br>");
+	document.write(typeof f1);  //object
+	document.write("<br>");
+	document.write(f1.b());  //2
+	document.write("<br>-------------<br>");
+	function User(uid){
+		this.id = uid
+		this.name = "name"		
+	}
+	
+	function g(){	
+	}
+	
+	var gg = new g();   
+	document.write(gg+"<br>");  //[object Object]
+	
+	document.write("------------------<br>");
+	Object.prototype.test = function(){ // 扩展Object构造器的方法f()  
+		document.write((typeof this)+"<br>");                     // 显示当前对象的数据类型  
+		document.write((this instanceof Object)+'<br>');     // 显示当前对象是否为对象的实例  
+		document.write((this instanceof Number)+'<br>');
+		document.write((this.constructor == Number)+'<br>');  // 显示当前对象的构造器是否为Number  
+		document.write((this instanceof String)+'<br>');  
+		document.write((this.constructor == String)+'<br>');  // 显示当前对象的构造器是否为String  
+	}
+	
+	var a = 1;                              // 数值变量  
+	document.write((typeof a)+"<br>");                        // 返回number数值类型  
+	a.test();                               // 调用检测方法 , object，true, true, false
+	
+</script>

@@ -1,0 +1,71 @@
+def f() :Any = {
+try{
+3/0
+//3
+//return 3
+//}catch{
+//case e => 
+//println(e);
+//throw e
+//return e
+//"bye-bye"
+}finally{
+//return "divided by zero"
+//throw new Exception("fuxk");
+//"abc"
+}
+}
+
+     try           catch            finally                            结果
+    return 3       --         return "divided by zero"           return "divided by zero"
+    return 3       --         throw new Exception("fuxk")        throw new Exception("fuxk")
+	return 3       --             "abc"                          return 3 
+	return 3       --               --                            return 3
+	
+	3              --             "abc"                           3
+	3              --              --                             3
+	3              --         return "divided by zero"           return "divided by zero"
+	3              --         throw new Exception("fuxk")        throw new Exception("fuxk
+	
+	3/0            throw e               --                        throw e
+	3/0            throw e           "abc"                         throw e
+	3/0            throw e      return "divided by zero"           return "divided by zero"
+	3/0            throw e       throw new Exception("fuxk")      throw new Exception("fuxk")
+	
+	3/0            return e            --                         return e
+	3/0            return e            "abc"                      return e
+	3/0            return e      return "divided by zero"         return e
+	3/0            return e      throw new Exception("fuxk");     return e
+	
+	3/0            "bye-bye"            --                     "bye-bye"
+	3/0            "bye-bye"            "abc"                   "bye-bye"
+	3/0            "bye-bye"      return "divided by zero"       return "divided by zero"
+	3/0            "bye-bye"      throw new Exception("fuxk")    return new Exception("fuxk")
+	
+	3/0            --                  --                        ()
+	3/0            --                  "abc"                       ()
+	3/0            --              return "divided by zero"      return "divided by zero"
+	3/0            --              throw new Exception("fuxk")   throw new Exception("fuxk")
+		
+	3/0            不捕获              --                        直接抛出3/0异常
+	3/0            不捕获           "abc"                        直接抛出3/0异常
+	3/0            不捕获          return "divided by zero"      return "divided by zero"
+	3/0            不捕获          throw new Exception("fuxk")   throw new Exception("fuxk")
+	
+结论finally块中的return或throw会改变程序的控制流，除非该异常被捕捉后显式return另一个值
+
+
+def g(){
+try{
+3/0
+}catch{
+case e => 
+   throw e
+}finally{
+try{
+throw new Exception("fuxk")
+}catch{
+case e => throw new RuntimeException(e)
+}
+}
+}

@@ -1,0 +1,31 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ehcache.xsd"
+         updateCheck="false">
+
+    <!--<diskStore path="java.io.tmpdir"/>-->
+    <diskStore path="./cache"/>
+
+    <defaultCache
+            maxElementsInMemory="2000"
+            eternal="false"
+            timeToIdleSeconds="30"
+            timeToLiveSeconds="30"
+            overflowToDisk="true"
+            maxElementsOnDisk="1000000000"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="2"
+            memoryStoreEvictionPolicy="LRU"
+            />
+
+     <cache name="models.Student"
+            maxElementsInMemory="10"
+            eternal="false"
+            timeToIdleSeconds="30"
+            timeToLiveSeconds="30"
+            overflowToDisk="true"
+            maxElementsOnDisk="1000000000"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="1"
+            memoryStoreEvictionPolicy="LRU"
+            />
+    
+</ehcache>

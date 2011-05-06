@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+             version="1.0">
+
+    <persistence-unit name="dbunit" transaction-type="RESOURCE_LOCAL">
+        <provider>org.datanucleus.jpa.PersistenceProviderImpl</provider>
+        <mapping-file>poso/orm.xml</mapping-file>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <!--<property name="javax.jdo.option.ConnectionURL" value="jdbc:mysql://renren:3306/klgdb"/>-->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dbunit"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="1234"/>
+
+            <property name="datanucleus.autoCreateSchema" value="false"/>
+            <property name="datanucleus.validateTables" value="false"/>
+            <property name="datanucleus.validateConstraints" value="false"/>
+
+            <property name="datanucleus.connectionPoolingType" value="C3P0"/>
+            <!--<property name="datanucleus.connectionPool.maxIdle" value="4"/>-->
+            <!--<property name="datanucleus.connectionPool.minIdle" value="2"/>-->
+            <!---->
+            <!--<property name="datanucleus.connectionPool.minPoolSize" value="5"/>-->
+            <!--<property name="datanucleus.connectionPool.initialPoolSizes" value="5"/>-->
+            <!--<property name="datanucleus.connectionPool.maxPoolSize" value="5"/>-->
+            <!--<property name="datanucleus.connectionPool.maxConnections" value="8"/>-->
+        </properties>
+    </persistence-unit>
+
+    <persistence-unit name="dbunittest" transaction-type="RESOURCE_LOCAL">
+        <provider>org.datanucleus.jpa.PersistenceProviderImpl</provider>
+        <mapping-file>poso/orm.xml</mapping-file>
+        <properties>
+             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <!--<property name="javax.jdo.option.ConnectionURL" value="jdbc:mysql://renren:3306/klgdb"/>-->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dbunittest"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="1234"/>
+
+            <property name="datanucleus.autoCreateSchema" value="false"/>
+            <property name="datanucleus.validateTables" value="false"/>
+            <property name="datanucleus.validateConstraints" value="false"/>
+
+            <!-- use c3p0 connection pooling plugin -->
+            <property name="datanucleus.connectionPoolingType" value="C3P0"/>
+        </properties>
+    </persistence-unit>
+</persistence>

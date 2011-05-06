@@ -1,0 +1,58 @@
+<script>
+	var f = new g(3);
+	function g(){
+		document.write("function g()<br>");
+	}
+	document.write((typeof f)+"<br>");  //object
+	document.write((typeof f.constructor)+"<br>");  //function
+	document.write((f.constructor == Function)+"<br>");  //false
+	document.write(f.constructor()+'<br>');  //undefined
+	document.write("--------------------------<br>");
+	
+	var f = function gg(){
+		document.write("function g()<br>");
+	}
+	document.write((f.constructor == Function)+"<br>");  //true
+	//document.write((f.constructor == gg)+"<br>");  //报错, gg is not defined
+	var value = undefined;
+	document.write(typeof value);  // 输出字符串"undefined"
+	document.write("<br>");
+	//document.write(value.constructor+"<br>");  // 报错: Uncaught TypeError: Cannot read property 'constructor' of undefined
+	document.write((undefined == false)+"<br>");   //false
+	document.write((undefined == true)+"<br>");   //false
+	document.write(!undefined+"<br>");   //true
+	document.write((null == false)+"<br>");   //false
+	document.write((null == true)+"<br>");   //false
+	document.write(!null+"<br>");   //true
+	document.write(value && value.constructor);  //返回undefined	
+	document.write("<br>");
+	document.write(undefined && true);    //返回undefined
+	document.write("<br>");
+	
+	//alert(10.constructor);   //报错	
+	document.write((10).constructor+"<br>");  //function Number() { [native code] }
+	document.write((10).constructor == Number+'<br>');   //true
+	document.write("a".constructor+"<br>");  	//function String() { [native code] }
+	
+		
+	document.write("-----------------------------------------------------------<br>");
+	function pow(x, n){
+		return Math.pow(x,n);
+	}
+	document.write((typeof pow)+"<br>");	 //function
+	document.write((typeof pow.constructor)+"<br>");   //function
+	document.write(pow+"<br>");  //function pow(x, n){ return Math.pow(x,n); }
+	document.write(pow.constructor+"<br>");  //function Function() { [native code] }
+	document.write(pow(3,4)+"<br>");   // 81	
+	document.write(pow.constructor+"<br>");   //function Function() { [native code] }
+	document.write(pow.constructor()+"<br>");   //function anonymous() { }
+	document.write(pow.constructor()(3,4)+"<br>");  //undefined
+	// document.write(pow.constructor(3,4));    // 报错
+	pow.constructor = pow
+	document.write(pow.constructor(3,4)+"<br>");   // 81
+	var tmp = new pow;
+	document.write((typeof tmp)+"<br>")  //object
+	document.write((typeof tmp.constructor)+"<br>")  //function
+	document.write(tmp.constructor+"<br>");  // function pow(x, n){ return Math.pow(x,n); }
+	document.write(tmp.constructor(3,4)+"<br>");  //81
+</script> 

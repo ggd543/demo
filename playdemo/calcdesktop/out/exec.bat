@@ -1,0 +1,1 @@
+java -cp scala-library-2.8.0.jar;calcDesktop-1.0.jar;jamon-2.7.jar;commons-math-2.1.jar com.aiguozhe.CalcCorrelation

@@ -1,0 +1,26 @@
+<script>
+	var a = function(){ return 1}
+	document.write((typeof a)+"<br>");  //function
+	var b = function(){
+		this.x = 1;
+		this.y = 2;
+	}
+	document.write((typeof b)+"<br>");  //function
+	function f1(){
+		this.x = 1;
+		this.y = 2;
+		return 1+1;
+	}
+	var c = f1;
+	document.write((typeof c)+"<br>");  //function
+	var d = new f1();
+	document.write((typeof d)+"<br>");  //object	
+	document.write(d.x+" "+d.y+"<br>");   //1 2
+	d.x= 30;
+	d.y=40;	
+	document.write(d.x+" "+d.y+"<br>");   //30 , 40
+	var e = new f1(3,4);	
+	document.write(e.x+" "+e.y+"<br>");   //1 2
+	var f = new Function("x","y","return x+y");
+	document.write(f(1,2));  // 3
+</script>

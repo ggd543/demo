@@ -1,0 +1,28 @@
+<script>
+	var s = "abc";                  // 字符串，值类型数据  
+	var o = new String(s);      // 字符串对象，被装箱后的字符串  
+	function f(v){                  // 运算函数  
+		v.toString = function(){    // 修改参数的方法toString()  
+			return 123;  
+		};
+		document.write(s); //输出字符串"abc"
+		document.write("<br>");
+		document.write(v); //输出字符串"abc"
+		document.write("<br>");
+		alert(s);    //输出字符串"abc"
+		alert(v);
+	}   
+	f(s);                        // 传入值  
+	//document.write(s); 			//输出字符串"abc"
+	//document.write("<br>");
+	//document.write(typeof s);   //输出String
+	//document.write("<br>");
+	//alert(s);              // 返回字符串"abc"，说明运算没有对原数据造成影响  
+	f(o);                   // 传入引用  
+	//document.write(o); 		//输出数值123	
+	//document.write("<br>");
+	//document.write(typeof o);   //输出object
+	//document.write("<br>");
+	//alert(o);               // 返回数值123，说明运算已经影响到原数据的内部结构 
+	
+</script>

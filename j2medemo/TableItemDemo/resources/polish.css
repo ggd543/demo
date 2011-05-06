@@ -1,0 +1,88 @@
+colors{
+	fontColor: gray;
+	focusedColor: #f6dff6;
+    /*redColor: red;*/
+}
+
+fonts{
+	defaultFont{
+		color: fontColor;
+		size: medium;
+		face: system;
+	}
+}
+
+backgrounds{
+    selectedBg{
+        color: #f6dff6;
+    }
+}
+
+.tableForm{
+	font: defaultFont;
+	layout: top | horizontal-expand;
+    border: none;
+    padding: 0;
+    margin: 0;
+	background-color: white;
+    /*table-selected-background: selectedBg;*/
+}
+
+.tableItem{
+    layout: top | horizontal-expand;
+	font: defaultFont;
+    padding: 0;
+    margin: 0;
+    /*border : none;*/
+    table-line-color: white;
+    background-color: white;
+    table-selected-background: selectedBg;
+}
+
+.message extends tableItem{     
+    layout : horizontal-center | vertical-center;
+    font{
+        color: #ff0000;
+
+    }
+
+}
+
+.message:hover{
+    background-color: #f6dff6;
+}
+
+/* ---------------------------------------------------------------------------- */
+title{
+	layout: horizontal-center | horizontal-expand;
+	background-color: #726e6e;
+    font-color: white;
+}
+
+menu{
+    inherit: false;
+    margin-left: 2;
+    menubar-color:  #726e6e;
+    font-color: white;
+    view-type: slide-up;
+	font: defaultFont;
+    border-width: 1;
+    border-color: black;
+    background-type: round-rect;
+    min-width: 45%;
+}
+
+menuItem{
+    inherit: false;
+    margin-top: 2;
+    padding: 2;
+    padding-left: 5;
+    background-color: white;
+    font: defaultFont;
+    layout: left;
+}
+
+menuItem:hover{
+    background-color: #f6dff6;
+    layout: expand;
+}

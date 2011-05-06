@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <servlet>
+        <servlet-name>Log4jDemo</servlet-name>
+        <servlet-class>servlet.Log4jServlet</servlet-class>
+    </servlet>
+    <!--<servlet>-->
+        <!--<servlet-name>Log4jInitServlet</servlet-name>-->
+        <!--<servlet-class>servlet.Log4jInitServlet</servlet-class>-->
+        <!--<load-on-startup>1</load-on-startup>-->
+    <!--</servlet>-->
+    <servlet-mapping>
+        <servlet-name>Log4jDemo</servlet-name>
+        <url-pattern>/log4jdemo</url-pattern>
+    </servlet-mapping>
+</web-app>

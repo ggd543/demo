@@ -1,0 +1,3 @@
+Hello=---Hi---
+Msg=---Hello, {0}---
+Multi-Msg=---{0}, {1}---

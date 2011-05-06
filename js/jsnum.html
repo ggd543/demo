@@ -1,0 +1,98 @@
+<script>
+	document.write(23);
+	document.write("<br>");
+	document.write(23.0);
+	document.write("<br>");
+	document.write(2/0);  //输出Infinity
+	document.write("<br>");
+	document.write(-2/0);  //输出-Infinity
+	document.write("<br>");
+	document.write(0.0/0.0);  //输出NaN
+	document.write("<br>");
+	document.write(0/0);  //输出NaN
+	document.write("<br>");
+	document.write(typeof (0.0/0.0));  //输出number
+	document.write("<br>");   
+	document.write(typeof NaN);  //输出number
+	document.write("<br>");   
+	document.write(typeof (2/0));  //输出number
+	document.write("<br>");
+	document.write(typeof Infinity);  //输出number
+	document.write("<br>");
+	document.write(typeof -Infinity);  //输出number
+	document.write("<br>");
+	document.write(1.2/10/10/10);           // 返回0.0012000000000000001
+	document.write("<br>");
+	document.write(1.2/10/10/10);           // 返回0.0012000000000000001
+	document.write("<br>");
+	document.write("<br>");
+	var a = 32;  
+	document.writeln(a.toString(2));        // 返回字符串100000   
+	document.write("<br>");
+	document.writeln(a.toString(4));        // 返回字符串200   
+	document.write("<br>");
+	document.writeln(a.toString(16));       // 返回字符串20   
+	document.write("<br>");
+	document.writeln(a.toString(30));       // 返回字符串12  
+	document.write("<br>");
+	document.writeln(a.toString(32));       // 返回字符串10 
+	document.write("<br>");	
+	document.write("<br>");
+	document.write(NaN == NaN);  //返回false
+	document.write("<br>");
+	document.write(NaN == Infinity);  //返回false
+	document.write("<br>");
+	document.write(Infinity == Infinity);  //返回true
+	document.write("<br>");
+	// document.write(Infinity > ３);  //语法错误
+	//document.write(-Infinity < -5);  //语法错误
+	document.write("<br>");	
+	document.write("<br>");	
+	document.write(NaN *2);  //返回NaN
+	document.write("<br>");
+	document.write(NaN / 2);  //返回NaN
+	document.write("<br>");
+	document.write(NaN / 0);  //返回NaN
+	document.write("<br>");
+	document.write(NaN - 2);  //返回NaN
+	document.write("<br>");
+	document.write(NaN + 2);  //返回NaN
+	document.write("<br>");
+	document.write(NaN + (2+3));  //返回NaN
+	document.write("<br>");
+	document.write(NaN + Infinity);  //返回NaN
+	document.write("<br>");
+	document.write( Infinity +(-Infinity));  //返回NaN
+	document.write("<br>");
+	document.write( Infinity * 2);  //返回Infinity
+	document.write("<br>");
+	document.write( Infinity + 2);  //返回Infinity
+	document.write("<br>");
+	document.write(Infinity / 2);  //返回Infinity
+	document.write("<br>");
+	document.write(-Infinity + 2);  //返回-Infinity	
+	document.write("<br>");
+	document.write(-Infinity/Infinity);  //返回NaN
+	document.write("<br>");
+	document.write(0/Infinity);  //返回0
+	
+	document.write("<br>");
+	document.writeln(isFinite(0));          // 返回 true  
+	document.write("<br>");
+	document.writeln(isNaN(0));         // 返回 false  
+	document.write("<br>");
+	document.writeln(isFinite(0/0));        // 返回 false  
+	document.write("<br>");
+	document.writeln(isNaN(0/0));           // 返回 true  
+	document.write("<br>");
+	document.writeln(isFinite("a"));        // 返回 false  
+	document.write("<br>");
+	document.writeln(isNaN("a"));           // 返回 true 
+	document.write("<br>");
+	document.write("<br>");
+	document.writeln(Number("123"));   
+	document.write(typeof Number("123"));   
+	document.write("<br>");
+	document.writeln("123".toString(10));   	
+	document.write(typeof "123".toString(10));   
+</script>

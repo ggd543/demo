@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"  ?>
+<project name="antdemo" default="jar">
+	<echo>$${basedir}=${basedir}</echo>
+	
+	<description>This is a ant demo with Java</description>
+	<echo>Hello ant!</echo>
+	<target name="echo">
+		<description>Just echo something </description>
+		<echo>It's a fine day, isn't it?</echo>
+		<!-- <property name="temp.dir" value="."/> -->
+		<property name="temp.dir" value=".."/>
+		<echo>${temp.dir}</echo>
+	</target>
+	<echo>Good Bye, ant!</echo>	
+
+	<property environment="env"/>
+	<property name="report.dir" value="${basedir}/report"/>
+	<property name="resources.dir" value="${basedir}/src/resources"/>
+	<property name="src.java.dir" value="${basedir}/src/main/java"/>
+	<property name="test.java.dir" value="${basedir}/src/test/java"/>	
+	<property name="src.scala.dir" value="${basedir}/src/main/scala"/>	
+	<property name="test.scala.dir" value="${basedir}/src/test/scala"/>	
+	
+	<property name="classes.dir" value="${basedir}/classes"/>
+	<property name="test-classes.dir" value="${basedir}/test-classes"/>
+	<property name="dist.dir" value="${basedir}/dist"/>	
+	
+	<property name="lib.dir" value="${basedir}/lib"/>
+	<property name="main-class" value="oata.AntHelloWorld"/>	
+	
+	<path id="classpath">
+		<fileset dir="${lib.dir}" includes="**/*.jar"/>
+	</path>
+	
+	<target name="clean">
+		<delete dir="${classes.dir}"/>
+		<delete dir="${dist.dir}"/>
+		<delete dir="${test-classes.dir}"/>
+		<delete dir="${report.dir}"/>
+	</target>
+	
+	<target name="compile" depends="clean">
+		<mkdir dir="${classes.dir}"/>
+		<javac srcdir="${src.java.dir}" fork="test" destdir="${classes.dir}">
+			<classpath>
+				<path refid="classpath"/>
+			</classpath>
+		</javac>
+		<copy todir="${classes.dir}">
+			<fileset dir="${resources.dir}"/>
+			<fileset dir="${src.java.dir}" excludes="**/*.java"/>
+		</copy>
+	</target>
+	
+	<target name="test-compile" depends="compile">
+		<mkdir dir="${test-classes.dir}"/>
+		<javac srcdir="${test.java.dir}" fork="yes" destdir="${test-classes.dir}">
+			<classpath>				
+				<path location="${classes.dir}"/>
+				<path refid="classpath"/>
+			</classpath>
+		</javac>
+		<copy todir="${test-classes.dir}">
+			<fileset dir="${test.java.dir}" excludes="**/*.java"/>
+		</copy>
+	</target>
+	
+	<target name="test" depends="compile, test-compile">
+		<mkdir dir="${report.dir}"/>
+		<junit printsummary="yes" >
+			<classpath>
+				<path refid="classpath"/>
+				<path location="${classes.dir}"/>
+				<path location="${test-classes.dir}"/>
+			</classpath>
+			<formatter type="brief" usefile="false"/>
+			<formatter type="plain" />
+			<formatter type="xml" />
+			<batchtest haltonerror="yes" haltonfailure="yes" todir="${report.dir}">
+				<fileset dir="${test.java.dir}">
+					<include name="**/*.java"/>
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+	
+	<target name="test-report" depends="test">
+	</target>
+	
+	<target name="jar" depends="compile,test">
+		<mkdir dir="${dist.dir}"/>
+		<jar destfile="${dist.dir}/${ant.project.name}.jar" basedir="${classes.dir}">
+			<manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+            </manifest>
+		</jar>
+	</target>
+	
+	<target name="run" depends="jar, echo">
+		<java fork="true" classname="${main-class}">
+			<classpath>
+				<path refid="classpath"/>
+				<path location="${dist.dir}/${ant.project.name}.jar"/>
+			</classpath>
+		</java>
+	</target>
+	
+</project>

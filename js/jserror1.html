@@ -1,0 +1,7 @@
+<script>
+	document.write('<script type="text/javascript" src="test.js"><\/script>');  
+	document.write('<script type="text/javascript"> ');  
+	document.write('alert(n);   '); // IE提示找不到变量n  
+	document.write('<\/script>  ');  
+	alert(n+1);                     // 所有浏览器都会提示找不到变量n  
+</script>

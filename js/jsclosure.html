@@ -1,0 +1,17 @@
+<script type="text/javascript">
+	var a = 2;
+	function f(){
+		var b= a;
+		function f1(n){					
+			b = b -n;
+			document.write(b+"<br>");					
+		}
+		return f1;
+	}
+	var g = f();
+	g(0);  // 2
+	a =300;			
+	g(2);   // 0
+	var h = f();
+	h(100);  // 200
+</script>

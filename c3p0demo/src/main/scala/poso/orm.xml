@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
+                 version="1.0">
+    <package>poso</package>
+
+    <entity class="UserEntity" name="UserEntity">
+        <table name="tuser"/>
+        <attributes>
+            <id name="userId">
+                <column name="userId"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="PortfolioStatsEntity" name="PortfolioStatsEntity">
+        <table name="TPortfolioStats"/>
+        <attributes>
+            <id name="portfolioStatsId">
+                <column name="portfolioStatsId"/>
+                <generated-value strategy="TABLE"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="DateEntity" name="DateEntity">
+        <table name="DateRecord"/>
+        <attributes>
+            <id name="id">
+                <column name="id"/>
+                <generated-value/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="poso.AbstractProduct" name="Product">
+        <table name="tabstractproduct"/>
+        <inheritance strategy="JOINED"/> 
+        <attributes>
+            <id name="productId">
+                <column name="productId"/>
+                <!--<generated-value strategy="TABLE"/>-->
+                <!--<generated-value/>-->
+                <generated-value strategy="IDENTITY" />
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="Book" name="Book">
+        <table name="tbook"/>
+    </entity>
+</entity-mappings>

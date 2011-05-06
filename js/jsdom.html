@@ -1,0 +1,28 @@
+<html>
+	<head>
+		The cookies associated with this document is: 
+		<script type="text/javascript">		        
+
+			var exp = new Date();			
+			exp.setTime(exp.getTime()-1);	
+			document.cookie ="key1=1";
+			document.cookie ="key2=2";
+			document.cookie ="key3="+escape("I love ajax");						
+			document.write(document.cookie);
+
+			document.write("<br>");
+			
+			var offset = 0;
+            var endstr = document.cookie.indexOf(";", offset);
+            if (endstr == -1)
+                endstr = document.cookie.length;
+		    var msg = unescape(document.cookie.substring(offset, endstr));
+			document.write(msg);
+		</script>
+	</head>
+	<body>
+	
+		
+
+</body>
+</html>

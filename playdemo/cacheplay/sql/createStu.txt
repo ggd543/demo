@@ -1,0 +1,10 @@
+CREATE PROCEDUE(IN n INTEGER)
+BEGIN
+   DECLARE  v INT;
+   /*  delete from tstudent; */
+   SET v = 0;
+   WHILE v <  n DO
+       INSERT INTO tstudent(username, birthday) VALUES(CONCAT('user_', v) ,'2010-09-05');
+       SET v = v+1;
+   END WHILE;
+END

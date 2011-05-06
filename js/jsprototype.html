@@ -1,0 +1,12 @@
+<script>
+	var n1 = new Number(1);
+	var n2 = new Number(2)
+	Number.prototype.add = function(n) {return this+n}
+	alert(n1.add(n2));  //3
+	var bool1 =new Boolean(true)
+	Boolean.prototype.rev = function(){return(!this);}
+	alert(bool1.rev());  //false
+	var array = [1,2]
+	array.push("333")
+	document.write(array);  // 1,2,333
+</script>

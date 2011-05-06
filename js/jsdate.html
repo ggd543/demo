@@ -1,0 +1,25 @@
+<script>
+function S4() {
+return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+}
+function guid() {
+return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+}
+
+
+	var d = new Date();
+	document.write(d.toGMTString()+"<br>");
+	document.write("UTC_FullYear: "+d.getUTCFullYear()+"<br>");
+	document.write("UTC_Month: "+(d.getUTCMonth()+1)+"<br>");
+	document.write("UTC_Date: "+d.getUTCDate()+"<br>");
+	document.write("UTC_Hour: "+d.getUTCHours()+"<br>");
+	document.write("UTC_Minute: "+d.getUTCMinutes()+"<br>");
+	document.write("UTC_Second: "+d.getUTCSeconds()+"<br>");
+	document.write("UTC_long_time: "+d.getTime()+"<br>");
+
+	document.write("guid: "+guid()+"<br>");
+	document.write("Math.random()+new Date().getTime(): "+(Math.random().toString()+new Date().getTime())+"<br>");
+	
+	document.write("TimeZone's offset: "+d.getTimezoneOffset());
+</script>
+

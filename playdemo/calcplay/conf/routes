@@ -1,0 +1,51 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       Application.index
+
+GET /jar  Application.jar
+GET /file Application.file
+GET /json  Application.json
+
+GET /suspend/{seconds}   Application.suspend
+
+GET /calc/correlation   CalcController.calcCorrelation
+GET /calc/1  CalcController.longCalc1
+GET /calc/2  CalcController.longCalc2
+GET /calc/long  CalcController.longCalcJob
+
+GET /mockio/1  IOController.mockIO1
+
+GET /mockcom/1 CommunicationController.mockCommunicate
+
+GET /dojob1   Job1Controller.doJob
+GET /dojob2   Job2Controller.doJob
+GET /dojob3   Job3Controller.doJob
+GET /dojob4   Job4Controller.doJob
+GET /dojob5   Job5Controller.doJob
+GET /dojob6   Job6Controller.doJob
+GET /dojob7   Job7Controller.doJob
+GET /dojob8   Job8Controller.doJob
+GET /dojob9   Job9Controller.doJob
+GET /dojob10  Job10Controller.doJob
+
+GET /lock  DeadLockController.lock
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+GET /assets/{<([^,],?)*[^,]>tickers}/overview/? asset.AssetController.getAssetsOverview
+GET /assets/{<([^,],?)*[^,]>tickers}/dailydata/? asset.AssetController.getAssetsDailyData
+GET /assets/{<([^,],?)*[^,]>tickers}/stats/? asset.AssetController.getAssetsStats
+GET /assets/{<([^,],?)*[^,]>tickers}/correl/? asset.AssetController.getAssetsCorrel
+GET /assets/{<([^,],?)*[^,]>ticker}/analysis/similarity asset.AssetController.getRelatedAssets
+GET /assets/{<([^,],?)*[^,]>tickers}/? asset.AssetController.getAssets
+
+POST /pg/rest/login?   J2MEController.login
+
+GET /date/{date}/?  DateController.echoDate
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}

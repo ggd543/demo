@@ -1,0 +1,46 @@
+<script>
+	document.write(null == undefined);      // 输出true
+	document.write("<br>");	
+	document.write(null === undefined);      // 输出false  
+	document.write("<br>");	
+	document.write("<br>");	
+	document.write(null == undefined);      // 输出true
+	document.write("<br>");	
+	document.write(null == null);      // 输出true
+	document.write("<br>");	
+	document.write(undefined == undefined);      // 输出true
+	document.write("<br>");
+	document.write("<br>");	
+	document.write(typeof null);                 // 输出object
+	document.write("<br>");
+	document.write(typeof undefined);            // 输出undefined
+	document.write("<br>");
+	document.write(a=2);
+	document.write("<br>");
+	document.write("<br>");
+	document.write("2" === 2);   // 输出false
+	document.write("<br>");
+	document.write("2" == 2);   // 输出true
+	document.write("<br>");	
+	document.write(typeof typeof c);	//输出string
+	document.write("<br>");	
+	document.write(typeof c == undefined);	  //输出false
+	document.write("<br>");	
+	document.write(undefined == "undefined");  //输出false	
+	document.write("<br>");
+	document.write((typeof d == "undefined") && (d = 1))  //输出1
+	document.write("<br>");
+	document.write(d);   //输出1
+	document.write("<br>");
+	document.write((d=1) == true);  //输出true
+	document.write("<br>----------------------------<br>");
+	var aa;
+	document.write(typeof aa);                // 输出"undefined"
+	document.write("<br>");
+	document.write(typeof bb);   	// 输出"undefined"
+	//alert(bb == "");   //引发错误
+	document.write("<br>----------------------------<br>");	
+	alert(f());                         // 返回"undefined" 
+	function f(){  
+	}  
+</script>

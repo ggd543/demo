@@ -1,0 +1,21 @@
+<script>
+	function _throw(){
+		try{
+			throw new Error("fuxk")
+		}catch(e){
+			document.write(e);
+			document.write("<br>");
+			//throw e
+			return "e"
+		}finally{		
+			//return "divided by zero";
+			throw new Error("divided by zero")
+		}	
+	}			
+	try{
+		document.write(_throw());	
+	}catch(e){
+		document.write("hello world "+e);
+	}		
+</script>
+	

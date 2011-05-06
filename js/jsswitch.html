@@ -1,0 +1,24 @@
+<script>
+	var sex_random = Math.floor(Math.random() *3);
+	var sex =null;
+
+	switch(sex_random){
+	case 0 : 
+		sex = 'f'   //female
+		break;
+	case 1: 
+		sex = 'm'  //male
+		break;
+	case 2: 
+		break;
+	default:
+		//break;
+	}
+
+	document.write("sex_random="+sex_random+" sex="+sex);
+	document.write("<br>");
+	var size_random = Math.floor(Math.random() * 9)
+	var color_random = Math.floor(Math.random() * 8)
+	var material_random = Math.floor(Math.random() *11)
+	document.write("size_random: "+size_random+" color_random: "+color_random+" material_random: "+material_random);
+</script>

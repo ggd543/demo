@@ -1,0 +1,1637 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<trades_sold_get_response>
+    <trades list="true">
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>blin911</buyer_nick>
+            <buyer_obtain_point_fee>0</buyer_obtain_point_fee>
+            <buyer_rate>false</buyer_rate>
+            <cod_fee>0.00</cod_fee>
+            <cod_status>NEW_CREATED</cod_status>
+            <consign_time>2010-11-29 00:29:57</consign_time>
+            <created>2010-11-26 16:33:20</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>71cd40b0697c2ecdeaf4c5b6393b17c8</iid>
+            <modified>2010-11-29 00:26:54</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>71cd40b0697c2ecdeaf4c5b6393b17c8</iid>
+                    <num>1</num>
+                    <payment>1000.00</payment>
+                    <pic_path>http://img07.tbsandbox.com/bao/uploaded/i7/T1ipdXXiJhKtZQgcI0_034529.jpg</pic_path>
+                    <price>1000.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_BUYER_CONFIRM_GOODS</status>
+                    <title>zcdbb</title>
+                    <total_fee>1000.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-26 16:36:20</pay_time>
+            <payment>1000.00</payment>
+            <pic_path>http://img07.tbsandbox.com/bao/uploaded/i7/T1ipdXXiJhKtZQgcI0_034529.jpg</pic_path>
+            <point_fee>0</point_fee>
+            <post_fee>0.00</post_fee>
+            <price>1000.00</price>
+            <real_point_fee>0</real_point_fee>
+            <received_payment>0.00</received_payment>
+            <receiver_address>华星路99号</receiver_address>
+            <receiver_city>杭州市</receiver_city>
+            <receiver_district>西湖区</receiver_district>
+            <receiver_mobile>15015105120</receiver_mobile>
+            <receiver_name>淘买家</receiver_name>
+            <receiver_state>浙江省</receiver_state>
+            <receiver_zip>320012</receiver_zip>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <shipping_type>free</shipping_type>
+            <sid>112263026551</sid>
+            <status>WAIT_BUYER_CONFIRM_GOODS</status>
+            <tid>112263026551</tid>
+            <title>saonektest</title>
+            <total_fee>1000.00</total_fee>
+            <type>auction</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>blin911</buyer_nick>
+            <buyer_obtain_point_fee>0</buyer_obtain_point_fee>
+            <buyer_rate>false</buyer_rate>
+            <cod_fee>0.00</cod_fee>
+            <cod_status>NEW_CREATED</cod_status>
+            <consign_time>2010-11-29 00:31:42</consign_time>
+            <created>2010-11-26 15:51:46</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>71cd40b0697c2ecdeaf4c5b6393b17c8</iid>
+            <modified>2010-11-29 00:28:39</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>71cd40b0697c2ecdeaf4c5b6393b17c8</iid>
+                    <num>1</num>
+                    <payment>1000.00</payment>
+                    <pic_path>http://img07.tbsandbox.com/bao/uploaded/i7/T1ipdXXiJhKtZQgcI0_034529.jpg</pic_path>
+                    <price>1000.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_BUYER_CONFIRM_GOODS</status>
+                    <title>zcdbb</title>
+                    <total_fee>1000.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-26 16:03:18</pay_time>
+            <payment>1000.00</payment>
+            <pic_path>http://img07.tbsandbox.com/bao/uploaded/i7/T1ipdXXiJhKtZQgcI0_034529.jpg</pic_path>
+            <point_fee>0</point_fee>
+            <post_fee>0.00</post_fee>
+            <price>1000.00</price>
+            <real_point_fee>0</real_point_fee>
+            <received_payment>0.00</received_payment>
+            <receiver_address>华星路99号</receiver_address>
+            <receiver_city>杭州市</receiver_city>
+            <receiver_district>西湖区</receiver_district>
+            <receiver_mobile>15015105120</receiver_mobile>
+            <receiver_name>淘买家</receiver_name>
+            <receiver_state>浙江省</receiver_state>
+            <receiver_zip>320012</receiver_zip>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <shipping_type>free</shipping_type>
+            <sid>112263016551</sid>
+            <status>WAIT_BUYER_CONFIRM_GOODS</status>
+            <tid>112263016551</tid>
+            <title>saonektest</title>
+            <total_fee>1000.00</total_fee>
+            <type>auction</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>blin911</buyer_nick>
+            <buyer_obtain_point_fee>0</buyer_obtain_point_fee>
+            <buyer_rate>false</buyer_rate>
+            <cod_fee>0.00</cod_fee>
+            <cod_status>NEW_CREATED</cod_status>
+            <consign_time>2010-11-29 00:35:18</consign_time>
+            <created>2010-11-26 15:50:30</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>71cd40b0697c2ecdeaf4c5b6393b17c8</iid>
+            <modified>2010-11-29 00:32:15</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>71cd40b0697c2ecdeaf4c5b6393b17c8</iid>
+                    <num>1</num>
+                    <payment>1000.00</payment>
+                    <pic_path>http://img07.tbsandbox.com/bao/uploaded/i7/T1ipdXXiJhKtZQgcI0_034529.jpg</pic_path>
+                    <price>1000.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_BUYER_CONFIRM_GOODS</status>
+                    <title>zcdbb</title>
+                    <total_fee>1000.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-26 15:53:30</pay_time>
+            <payment>1000.00</payment>
+            <pic_path>http://img07.tbsandbox.com/bao/uploaded/i7/T1ipdXXiJhKtZQgcI0_034529.jpg</pic_path>
+            <point_fee>0</point_fee>
+            <post_fee>0.00</post_fee>
+            <price>1000.00</price>
+            <real_point_fee>0</real_point_fee>
+            <received_payment>0.00</received_payment>
+            <receiver_address>华星路99号</receiver_address>
+            <receiver_city>杭州市</receiver_city>
+            <receiver_district>西湖区</receiver_district>
+            <receiver_mobile>15015105120</receiver_mobile>
+            <receiver_name>淘买家</receiver_name>
+            <receiver_state>浙江省</receiver_state>
+            <receiver_zip>320012</receiver_zip>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <shipping_type>free</shipping_type>
+            <sid>112263006551</sid>
+            <status>WAIT_BUYER_CONFIRM_GOODS</status>
+            <tid>112263006551</tid>
+            <title>saonektest</title>
+            <total_fee>1000.00</total_fee>
+            <type>auction</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>blin911</buyer_nick>
+            <buyer_obtain_point_fee>0</buyer_obtain_point_fee>
+            <buyer_rate>false</buyer_rate>
+            <cod_fee>0.00</cod_fee>
+            <cod_status>NEW_CREATED</cod_status>
+            <created>2010-11-26 15:45:05</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>71cd40b0697c2ecdeaf4c5b6393b17c8</iid>
+            <modified>2010-11-26 15:45:11</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>71cd40b0697c2ecdeaf4c5b6393b17c8</iid>
+                    <num>1</num>
+                    <payment>1000.00</payment>
+                    <pic_path>http://img07.tbsandbox.com/bao/uploaded/i7/T1ipdXXiJhKtZQgcI0_034529.jpg</pic_path>
+                    <price>1000.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_SELLER_SEND_GOODS</status>
+                    <title>zcdbb</title>
+                    <total_fee>1000.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-26 15:48:09</pay_time>
+            <payment>1000.00</payment>
+            <pic_path>http://img07.tbsandbox.com/bao/uploaded/i7/T1ipdXXiJhKtZQgcI0_034529.jpg</pic_path>
+            <point_fee>0</point_fee>
+            <post_fee>0.00</post_fee>
+            <price>1000.00</price>
+            <real_point_fee>0</real_point_fee>
+            <received_payment>0.00</received_payment>
+            <receiver_address>华星路99号</receiver_address>
+            <receiver_city>杭州市</receiver_city>
+            <receiver_district>西湖区</receiver_district>
+            <receiver_mobile>15015105120</receiver_mobile>
+            <receiver_name>淘买家</receiver_name>
+            <receiver_state>浙江省</receiver_state>
+            <receiver_zip>320012</receiver_zip>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <shipping_type>free</shipping_type>
+            <sid>112262996551</sid>
+            <status>WAIT_SELLER_SEND_GOODS</status>
+            <tid>112262996551</tid>
+            <title>saonektest</title>
+            <total_fee>1000.00</total_fee>
+            <type>auction</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>txzxyz123456</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-24 09:35:43</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>5d49a5db3fbbde79bbe88e1141dc984a</iid>
+            <modified>2010-11-24 10:48:08</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>5d49a5db3fbbde79bbe88e1141dc984a</iid>
+                    <num>1</num>
+                    <outer_iid>802-000017</outer_iid>
+                    <price>0.10</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_BUYER_CONFIRM_GOODS</status>
+                    <title>物料组合包802-000017</title>
+                    <total_fee>0.10</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-24 09:38:41</pay_time>
+            <price>0.10</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112274554151</sid>
+            <status>WAIT_BUYER_CONFIRM_GOODS</status>
+            <tid>112274554151</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>blin911</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-20 11:10:09</created>
+            <discount_fee>0.00</discount_fee>
+            <modified>2010-11-24 10:53:04</modified>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>df14963bbabd8df49ba1cbba8ab3b3dd</iid>
+                    <num>2</num>
+                    <outer_iid>WSJ482343</outer_iid>
+                    <payment>690.00</payment>
+                    <pic_path>http://img03.tbsandbox.com/bao/uploaded/i3/T1jFdXXf7h5dWZ3VU._111202.jpg</pic_path>
+                    <price>345.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>TRADE_CLOSED_BY_TAOBAO</status>
+                    <title>瑞士军刀 锋利无比</title>
+                    <total_fee>690.00</total_fee>
+                </order>
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>85abe9294507095496f9a9ec75f8768e</iid>
+                    <num>1</num>
+                    <payment>420.00</payment>
+                    <pic_path>http://img02.tbsandbox.com/bao/uploaded/i2/T1jFdXXdQh5dYNMUw9_104759.jpg</pic_path>
+                    <price>420.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_BUYER_CONFIRM_GOODS</status>
+                    <title>Mr.P灯具 热卖火辣</title>
+                    <total_fee>420.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-20 15:33:13</pay_time>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112273276551</sid>
+            <status>WAIT_BUYER_CONFIRM_GOODS</status>
+            <tid>112273276551</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>blin911</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 23:27:21</created>
+            <discount_fee>0.00</discount_fee>
+            <end_time>2010-11-19 23:30:31</end_time>
+            <iid>85abe9294507095496f9a9ec75f8768e</iid>
+            <modified>2010-11-19 23:27:48</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>85abe9294507095496f9a9ec75f8768e</iid>
+                    <num>1</num>
+                    <pic_path>http://img02.tbsandbox.com/bao/uploaded/i2/T1jFdXXdQh5dYNMUw9_104759.jpg</pic_path>
+                    <price>420.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>TRADE_FINISHED</status>
+                    <title>Mr.P灯具 热卖火辣</title>
+                    <total_fee>420.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-19 23:30:08</pay_time>
+            <pic_path>http://img02.tbsandbox.com/bao/uploaded/i2/T1jFdXXdQh5dYNMUw9_104759.jpg</pic_path>
+            <price>420.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112273246551</sid>
+            <status>TRADE_FINISHED</status>
+            <tid>112273246551</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>blin911</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 23:20:53</created>
+            <discount_fee>0.00</discount_fee>
+            <end_time>2010-11-19 23:24:07</end_time>
+            <iid>85abe9294507095496f9a9ec75f8768e</iid>
+            <modified>2010-11-19 23:21:24</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>85abe9294507095496f9a9ec75f8768e</iid>
+                    <num>1</num>
+                    <pic_path>http://img02.tbsandbox.com/bao/uploaded/i2/T1jFdXXdQh5dYNMUw9_104759.jpg</pic_path>
+                    <price>420.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>TRADE_FINISHED</status>
+                    <title>Mr.P灯具 热卖火辣</title>
+                    <total_fee>420.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-19 23:23:41</pay_time>
+            <pic_path>http://img02.tbsandbox.com/bao/uploaded/i2/T1jFdXXdQh5dYNMUw9_104759.jpg</pic_path>
+            <price>420.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112273236551</sid>
+            <status>TRADE_FINISHED</status>
+            <tid>112273236551</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>blin911</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 23:18:28</created>
+            <discount_fee>0.00</discount_fee>
+            <end_time>2010-11-19 23:21:33</end_time>
+            <iid>85abe9294507095496f9a9ec75f8768e</iid>
+            <modified>2010-11-19 23:18:50</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>85abe9294507095496f9a9ec75f8768e</iid>
+                    <num>1</num>
+                    <pic_path>http://img02.tbsandbox.com/bao/uploaded/i2/T1jFdXXdQh5dYNMUw9_104759.jpg</pic_path>
+                    <price>420.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>TRADE_FINISHED</status>
+                    <title>Mr.P灯具 热卖火辣</title>
+                    <total_fee>420.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-19 23:21:14</pay_time>
+            <pic_path>http://img02.tbsandbox.com/bao/uploaded/i2/T1jFdXXdQh5dYNMUw9_104759.jpg</pic_path>
+            <price>420.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112273226551</sid>
+            <status>TRADE_FINISHED</status>
+            <tid>112273226551</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>blin911</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 23:13:54</created>
+            <discount_fee>0.00</discount_fee>
+            <end_time>2010-11-19 23:17:05</end_time>
+            <iid>85abe9294507095496f9a9ec75f8768e</iid>
+            <modified>2010-11-19 23:14:22</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>85abe9294507095496f9a9ec75f8768e</iid>
+                    <num>1</num>
+                    <pic_path>http://img02.tbsandbox.com/bao/uploaded/i2/T1jFdXXdQh5dYNMUw9_104759.jpg</pic_path>
+                    <price>420.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>TRADE_FINISHED</status>
+                    <title>Mr.P灯具 热卖火辣</title>
+                    <total_fee>420.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-19 23:16:40</pay_time>
+            <pic_path>http://img02.tbsandbox.com/bao/uploaded/i2/T1jFdXXdQh5dYNMUw9_104759.jpg</pic_path>
+            <price>420.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112273216551</sid>
+            <status>TRADE_FINISHED</status>
+            <tid>112273216551</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>blin911</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 23:08:45</created>
+            <discount_fee>0.00</discount_fee>
+            <end_time>2010-11-19 23:13:21</end_time>
+            <iid>85abe9294507095496f9a9ec75f8768e</iid>
+            <modified>2010-11-19 23:10:38</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>85abe9294507095496f9a9ec75f8768e</iid>
+                    <num>1</num>
+                    <pic_path>http://img02.tbsandbox.com/bao/uploaded/i2/T1jFdXXdQh5dYNMUw9_104759.jpg</pic_path>
+                    <price>420.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>TRADE_FINISHED</status>
+                    <title>Mr.P灯具 热卖火辣</title>
+                    <total_fee>420.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-19 23:11:32</pay_time>
+            <pic_path>http://img02.tbsandbox.com/bao/uploaded/i2/T1jFdXXdQh5dYNMUw9_104759.jpg</pic_path>
+            <price>420.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112273206551</sid>
+            <status>TRADE_FINISHED</status>
+            <tid>112273206551</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>blin911</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 22:52:30</created>
+            <discount_fee>0.00</discount_fee>
+            <end_time>2010-11-19 22:56:15</end_time>
+            <iid>85abe9294507095496f9a9ec75f8768e</iid>
+            <modified>2010-11-19 22:53:32</modified>
+            <num>3</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>85abe9294507095496f9a9ec75f8768e</iid>
+                    <num>3</num>
+                    <pic_path>http://img02.tbsandbox.com/bao/uploaded/i2/T1jFdXXdQh5dYNMUw9_104759.jpg</pic_path>
+                    <price>420.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>TRADE_FINISHED</status>
+                    <title>Mr.P灯具 热卖火辣</title>
+                    <total_fee>1260.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-19 22:55:15</pay_time>
+            <pic_path>http://img02.tbsandbox.com/bao/uploaded/i2/T1jFdXXdQh5dYNMUw9_104759.jpg</pic_path>
+            <price>420.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112273196551</sid>
+            <status>TRADE_FINISHED</status>
+            <tid>112273196551</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>blin911</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 22:45:30</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>85abe9294507095496f9a9ec75f8768e</iid>
+            <modified>2010-11-19 22:48:54</modified>
+            <num>2</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>85abe9294507095496f9a9ec75f8768e</iid>
+                    <num>2</num>
+                    <pic_path>http://img02.tbsandbox.com/bao/uploaded/i2/T1jFdXXdQh5dYNMUw9_104759.jpg</pic_path>
+                    <price>420.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_BUYER_CONFIRM_GOODS</status>
+                    <title>Mr.P灯具 热卖火辣</title>
+                    <total_fee>840.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-19 22:48:17</pay_time>
+            <pic_path>http://img02.tbsandbox.com/bao/uploaded/i2/T1jFdXXdQh5dYNMUw9_104759.jpg</pic_path>
+            <price>420.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112273186551</sid>
+            <status>WAIT_BUYER_CONFIRM_GOODS</status>
+            <tid>112273186551</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>blin911</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 22:44:12</created>
+            <discount_fee>0.00</discount_fee>
+            <end_time>2010-11-19 22:53:47</end_time>
+            <iid>85abe9294507095496f9a9ec75f8768e</iid>
+            <modified>2010-11-19 22:51:04</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>85abe9294507095496f9a9ec75f8768e</iid>
+                    <num>1</num>
+                    <pic_path>http://img05.tbsandbox.com/bao/uploaded/i5/T1jFdXXdEh5dYyY979_104604.jpg</pic_path>
+                    <price>320.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>TRADE_FINISHED</status>
+                    <title>Mr.P灯具 热卖火辣</title>
+                    <total_fee>320.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-19 22:53:13</pay_time>
+            <pic_path>http://img05.tbsandbox.com/bao/uploaded/i5/T1jFdXXdEh5dYyY979_104604.jpg</pic_path>
+            <price>320.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112273176551</sid>
+            <status>TRADE_FINISHED</status>
+            <tid>112273176551</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>blin911</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 22:38:30</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>e9c082607e24eab06abf1e68c6b6746b</iid>
+            <modified>2010-11-19 22:38:30</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>e9c082607e24eab06abf1e68c6b6746b</iid>
+                    <num>1</num>
+                    <pic_path>http://img05.tbsandbox.com/bao/uploaded/i5/T1jFdXXdsh5dWcfj.9_103920.jpg</pic_path>
+                    <price>40000.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_BUYER_PAY</status>
+                    <title>车是是</title>
+                    <total_fee>40000.00</total_fee>
+                </order>
+            </orders>
+            <pic_path>http://img05.tbsandbox.com/bao/uploaded/i5/T1jFdXXdsh5dWcfj.9_103920.jpg</pic_path>
+            <price>40000.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112273166551</sid>
+            <status>WAIT_BUYER_PAY</status>
+            <tid>112273166551</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>txz1234</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 17:09:26</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>d71c8637833a76decb9c34a9711eb40c</iid>
+            <modified>2010-11-19 18:27:44</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>d71c8637833a76decb9c34a9711eb40c</iid>
+                    <num>1</num>
+                    <outer_iid>801-000001</outer_iid>
+                    <pic_path>http://img05.tbsandbox.com/bao/uploaded/i5/T1iVdXXXruUtYP2GTb_092827.jpg</pic_path>
+                    <price>112.56</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_BUYER_CONFIRM_GOODS</status>
+                    <title>淘宝虚拟包邮卡,卡面金额15元-801-000001</title>
+                    <total_fee>112.56</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-19 17:12:14</pay_time>
+            <pic_path>http://img05.tbsandbox.com/bao/uploaded/i5/T1iVdXXXruUtYP2GTb_092827.jpg</pic_path>
+            <price>112.56</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112273085951</sid>
+            <status>WAIT_BUYER_CONFIRM_GOODS</status>
+            <tid>112273085951</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>blin911</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 17:00:23</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>77c1560f68e92bd98c67581f49c8470e</iid>
+            <modified>2010-11-20 15:30:53</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>77c1560f68e92bd98c67581f49c8470e</iid>
+                    <num>1</num>
+                    <outer_iid>800-000070</outer_iid>
+                    <pic_path>http://img03.tbsandbox.com/bao/uploaded/i3/T1iVdXXhPwUtZmFHU5_055119.jpg</pic_path>
+                    <price>178.00</price>
+                    <refund_status>WAIT_SELLER_AGREE</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_BUYER_CONFIRM_GOODS</status>
+                    <title>组全包测试-800-000070</title>
+                    <total_fee>178.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-19 17:03:20</pay_time>
+            <pic_path>http://img03.tbsandbox.com/bao/uploaded/i3/T1iVdXXhPwUtZmFHU5_055119.jpg</pic_path>
+            <price>178.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112273076551</sid>
+            <status>WAIT_BUYER_CONFIRM_GOODS</status>
+            <tid>112273076551</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>shicailiu007</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 11:42:20</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>a386eb19473ef755cdb540da7fc960c1</iid>
+            <modified>2010-11-19 15:23:21</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>a386eb19473ef755cdb540da7fc960c1</iid>
+                    <num>1</num>
+                    <outer_iid>01011751</outer_iid>
+                    <price>350.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_BUYER_CONFIRM_GOODS</status>
+                    <title>直排可调旱冰鞋1</title>
+                    <total_fee>350.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-19 11:45:07</pay_time>
+            <price>350.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272941851</sid>
+            <status>WAIT_BUYER_CONFIRM_GOODS</status>
+            <tid>112272941851</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>txzxyz123456</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 11:06:33</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>ae26bf03249962a6fb1f184243a4c386</iid>
+            <modified>2010-11-19 15:37:55</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>ae26bf03249962a6fb1f184243a4c386</iid>
+                    <num>1</num>
+                    <pic_path>http://img07.tbsandbox.com/bao/uploaded/i7/T1iFdXXnjpTtVgU0ZY_025824.jpg</pic_path>
+                    <price>59.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_BUYER_CONFIRM_GOODS</status>
+                    <title>淘宝关联凯凯开</title>
+                    <total_fee>59.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-19 11:09:21</pay_time>
+            <pic_path>http://img07.tbsandbox.com/bao/uploaded/i7/T1iFdXXnjpTtVgU0ZY_025824.jpg</pic_path>
+            <price>59.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272934151</sid>
+            <status>WAIT_BUYER_CONFIRM_GOODS</status>
+            <tid>112272934151</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>pc414460365</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 11:03:17</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>3dfe0dffe048ec31a462548a28a79b61</iid>
+            <modified>2010-11-19 15:37:55</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>3dfe0dffe048ec31a462548a28a79b61</iid>
+                    <num>1</num>
+                    <outer_iid>M4345</outer_iid>
+                    <pic_path>http://img04.tbsandbox.com/bao/uploaded/i4/T1jXdXXXfHYJVIXaPc_125744.jpg</pic_path>
+                    <price>158.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <sku_id>4009876433</sku_id>
+                    <sku_properties_name>颜色:大红</sku_properties_name>
+                    <status>WAIT_BUYER_CONFIRM_GOODS</status>
+                    <title>感恩相送 Nike 100% 巴克利 篮球运动鞋 2345</title>
+                    <total_fee>158.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-19 11:06:06</pay_time>
+            <pic_path>http://img04.tbsandbox.com/bao/uploaded/i4/T1jXdXXXfHYJVIXaPc_125744.jpg</pic_path>
+            <price>158.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272925051</sid>
+            <status>WAIT_BUYER_CONFIRM_GOODS</status>
+            <tid>112272925051</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>pc414460365</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 11:01:30</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>d71c8637833a76decb9c34a9711eb40c</iid>
+            <modified>2010-11-19 15:43:41</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>d71c8637833a76decb9c34a9711eb40c</iid>
+                    <num>1</num>
+                    <outer_iid>801-000001</outer_iid>
+                    <pic_path>http://img05.tbsandbox.com/bao/uploaded/i5/T1iVdXXXruUtYP2GTb_092827.jpg</pic_path>
+                    <price>112.56</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_BUYER_CONFIRM_GOODS</status>
+                    <title>淘宝虚拟包邮卡,卡面金额15元-801-000001</title>
+                    <total_fee>112.56</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-19 11:04:17</pay_time>
+            <pic_path>http://img05.tbsandbox.com/bao/uploaded/i5/T1iVdXXXruUtYP2GTb_092827.jpg</pic_path>
+            <price>112.56</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272915051</sid>
+            <status>WAIT_BUYER_CONFIRM_GOODS</status>
+            <tid>112272915051</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>txz1234</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 10:56:48</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>77c1560f68e92bd98c67581f49c8470e</iid>
+            <modified>2010-11-19 15:48:13</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>77c1560f68e92bd98c67581f49c8470e</iid>
+                    <num>1</num>
+                    <outer_iid>800-000070</outer_iid>
+                    <pic_path>http://img03.tbsandbox.com/bao/uploaded/i3/T1iVdXXhPwUtZmFHU5_055119.jpg</pic_path>
+                    <price>178.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_BUYER_CONFIRM_GOODS</status>
+                    <title>组全包测试-800-000070</title>
+                    <total_fee>178.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-19 10:59:36</pay_time>
+            <pic_path>http://img03.tbsandbox.com/bao/uploaded/i3/T1iVdXXhPwUtZmFHU5_055119.jpg</pic_path>
+            <price>178.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272905951</sid>
+            <status>WAIT_BUYER_CONFIRM_GOODS</status>
+            <tid>112272905951</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>txz1234</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 10:55:48</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>044014f4568db024fd364f729aefe97c</iid>
+            <modified>2010-11-19 16:07:48</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>044014f4568db024fd364f729aefe97c</iid>
+                    <num>1</num>
+                    <outer_iid>811-000130</outer_iid>
+                    <price>10.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_BUYER_CONFIRM_GOODS</status>
+                    <title>TEST800-000130</title>
+                    <total_fee>10.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-19 10:58:35</pay_time>
+            <price>10.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272895951</sid>
+            <status>WAIT_BUYER_CONFIRM_GOODS</status>
+            <tid>112272895951</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>txz1234</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 10:49:48</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>044014f4568db024fd364f729aefe97c</iid>
+            <modified>2010-11-19 16:09:07</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>044014f4568db024fd364f729aefe97c</iid>
+                    <num>1</num>
+                    <outer_iid>811-000130</outer_iid>
+                    <price>10.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_BUYER_CONFIRM_GOODS</status>
+                    <title>TEST800-000130</title>
+                    <total_fee>10.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-19 10:52:36</pay_time>
+            <price>10.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272885951</sid>
+            <status>WAIT_BUYER_CONFIRM_GOODS</status>
+            <tid>112272885951</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>txzxyz123456</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 10:43:41</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>d1d076d8c81668c124dca50a85481f86</iid>
+            <modified>2010-11-19 23:09:35</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>d1d076d8c81668c124dca50a85481f86</iid>
+                    <num>1</num>
+                    <outer_iid>800-111111</outer_iid>
+                    <price>0.90</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_BUYER_CONFIRM_GOODS</status>
+                    <title>TEST 800-111111</title>
+                    <total_fee>0.90</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-19 10:46:37</pay_time>
+            <price>0.90</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272874151</sid>
+            <status>WAIT_BUYER_CONFIRM_GOODS</status>
+            <tid>112272874151</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>txzxyz123456</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 10:41:27</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>b909d7243100fa003e28d01309ee4952</iid>
+            <modified>2010-11-19 11:13:28</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>b909d7243100fa003e28d01309ee4952</iid>
+                    <num>1</num>
+                    <outer_iid>800-111111</outer_iid>
+                    <price>0.01</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>TRADE_NO_CREATE_PAY</status>
+                    <title>物料编号800-111111</title>
+                    <total_fee>0.01</total_fee>
+                </order>
+            </orders>
+            <price>0.01</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272864151</sid>
+            <status>TRADE_NO_CREATE_PAY</status>
+            <tid>112272864151</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>txzxyz123456</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 10:41:20</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>b909d7243100fa003e28d01309ee4952</iid>
+            <modified>2010-11-19 11:14:52</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>b909d7243100fa003e28d01309ee4952</iid>
+                    <num>1</num>
+                    <outer_iid>800-111111</outer_iid>
+                    <price>0.01</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>TRADE_NO_CREATE_PAY</status>
+                    <title>物料编号800-111111</title>
+                    <total_fee>0.01</total_fee>
+                </order>
+            </orders>
+            <price>0.01</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272854151</sid>
+            <status>TRADE_NO_CREATE_PAY</status>
+            <tid>112272854151</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>txzxyz123456</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 10:41:12</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>b909d7243100fa003e28d01309ee4952</iid>
+            <modified>2010-11-19 11:15:10</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>b909d7243100fa003e28d01309ee4952</iid>
+                    <num>1</num>
+                    <outer_iid>800-111111</outer_iid>
+                    <price>0.01</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>TRADE_NO_CREATE_PAY</status>
+                    <title>物料编号800-111111</title>
+                    <total_fee>0.01</total_fee>
+                </order>
+            </orders>
+            <price>0.01</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272844151</sid>
+            <status>TRADE_NO_CREATE_PAY</status>
+            <tid>112272844151</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>txzxyz123456</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 10:03:23</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>044014f4568db024fd364f729aefe97c</iid>
+            <modified>2010-11-19 11:14:26</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>044014f4568db024fd364f729aefe97c</iid>
+                    <num>1</num>
+                    <outer_iid>811-000130</outer_iid>
+                    <price>10.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_SELLER_SEND_GOODS</status>
+                    <title>TEST800-000130</title>
+                    <total_fee>10.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-19 10:06:12</pay_time>
+            <price>10.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272834151</sid>
+            <status>WAIT_SELLER_SEND_GOODS</status>
+            <tid>112272834151</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>txz1234</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 09:46:29</created>
+            <discount_fee>0.00</discount_fee>
+            <modified>2010-11-19 18:27:43</modified>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>77c1560f68e92bd98c67581f49c8470e</iid>
+                    <num>1</num>
+                    <outer_iid>800-000070</outer_iid>
+                    <payment>178.00</payment>
+                    <pic_path>http://img03.tbsandbox.com/bao/uploaded/i3/T1iVdXXhPwUtZmFHU5_055119.jpg</pic_path>
+                    <price>178.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_BUYER_CONFIRM_GOODS</status>
+                    <title>组全包测试-800-000070</title>
+                    <total_fee>178.00</total_fee>
+                </order>
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>d71c8637833a76decb9c34a9711eb40c</iid>
+                    <num>1</num>
+                    <outer_iid>801-000001</outer_iid>
+                    <payment>112.56</payment>
+                    <pic_path>http://img05.tbsandbox.com/bao/uploaded/i5/T1iVdXXXruUtYP2GTb_092827.jpg</pic_path>
+                    <price>112.56</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_BUYER_CONFIRM_GOODS</status>
+                    <title>淘宝虚拟包邮卡,卡面金额15元-801-000001</title>
+                    <total_fee>112.56</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-19 09:50:13</pay_time>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272805951</sid>
+            <status>WAIT_BUYER_CONFIRM_GOODS</status>
+            <tid>112272805951</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>txzxyz123456</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-19 09:41:07</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>a386eb19473ef755cdb540da7fc960c1</iid>
+            <modified>2010-11-19 09:42:52</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>a386eb19473ef755cdb540da7fc960c1</iid>
+                    <num>1</num>
+                    <outer_iid>01011751</outer_iid>
+                    <price>350.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_SELLER_SEND_GOODS</status>
+                    <title>直排可调旱冰鞋1</title>
+                    <total_fee>350.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-19 09:44:04</pay_time>
+            <price>350.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272794151</sid>
+            <status>WAIT_SELLER_SEND_GOODS</status>
+            <tid>112272794151</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>txzxyz123456</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-18 20:04:14</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>d8634704fc296d7bb2512cd3124b43e9</iid>
+            <modified>2010-11-19 09:25:04</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>d8634704fc296d7bb2512cd3124b43e9</iid>
+                    <num>1</num>
+                    <outer_iid>802-000014</outer_iid>
+                    <price>10.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_BUYER_CONFIRM_GOODS</status>
+                    <title>TEST802-000014</title>
+                    <total_fee>10.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-18 20:07:17</pay_time>
+            <price>10.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272684151</sid>
+            <status>WAIT_BUYER_CONFIRM_GOODS</status>
+            <tid>112272684151</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>txzxyz123456</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-18 19:47:40</created>
+            <discount_fee>0.00</discount_fee>
+            <modified>2010-11-18 19:48:41</modified>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>025ad3c75ec02ee66fbf3eedae2d26a8</iid>
+                    <num>1</num>
+                    <payment>1.00</payment>
+                    <pic_path>http://img03.tbsandbox.com/bao/uploaded/i3/T1iVdXXoW4UtZnzcg5_055154.jpg</pic_path>
+                    <price>1.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_SELLER_SEND_GOODS</status>
+                    <title>嘟嘟</title>
+                    <total_fee>1.00</total_fee>
+                </order>
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>d71c8637833a76decb9c34a9711eb40c</iid>
+                    <num>1</num>
+                    <outer_iid>801-000001</outer_iid>
+                    <payment>112.56</payment>
+                    <pic_path>http://img05.tbsandbox.com/bao/uploaded/i5/T1iVdXXXruUtYP2GTb_092827.jpg</pic_path>
+                    <price>112.56</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_SELLER_SEND_GOODS</status>
+                    <title>淘宝虚拟包邮卡,卡面金额15元-801-000001</title>
+                    <total_fee>112.56</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-18 19:50:28</pay_time>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272654151</sid>
+            <status>WAIT_SELLER_SEND_GOODS</status>
+            <tid>112272654151</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>txzxyz123456</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-18 19:45:58</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>77c1560f68e92bd98c67581f49c8470e</iid>
+            <modified>2010-11-18 19:49:10</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>77c1560f68e92bd98c67581f49c8470e</iid>
+                    <num>1</num>
+                    <outer_iid>800-000070</outer_iid>
+                    <pic_path>http://img03.tbsandbox.com/bao/uploaded/i3/T1iVdXXhPwUtZmFHU5_055119.jpg</pic_path>
+                    <price>178.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_SELLER_SEND_GOODS</status>
+                    <title>组全包测试-800-000070</title>
+                    <total_fee>178.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-18 19:48:46</pay_time>
+            <pic_path>http://img03.tbsandbox.com/bao/uploaded/i3/T1iVdXXhPwUtZmFHU5_055119.jpg</pic_path>
+            <price>178.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272644151</sid>
+            <status>WAIT_SELLER_SEND_GOODS</status>
+            <tid>112272644151</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>txzxyz123456</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-18 19:45:20</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>d8634704fc296d7bb2512cd3124b43e9</iid>
+            <modified>2010-11-24 10:51:56</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>d8634704fc296d7bb2512cd3124b43e9</iid>
+                    <num>1</num>
+                    <outer_iid>802-000014</outer_iid>
+                    <price>10.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_BUYER_CONFIRM_GOODS</status>
+                    <title>TEST802-000014</title>
+                    <total_fee>10.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-18 19:48:09</pay_time>
+            <price>10.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272634151</sid>
+            <status>WAIT_BUYER_CONFIRM_GOODS</status>
+            <tid>112272634151</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>txzxyz123456</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-18 19:44:36</created>
+            <discount_fee>0.00</discount_fee>
+            <modified>2010-11-18 19:50:04</modified>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>77c1560f68e92bd98c67581f49c8470e</iid>
+                    <num>1</num>
+                    <outer_iid>800-000070</outer_iid>
+                    <payment>178.00</payment>
+                    <pic_path>http://img03.tbsandbox.com/bao/uploaded/i3/T1iVdXXhPwUtZmFHU5_055119.jpg</pic_path>
+                    <price>178.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_SELLER_SEND_GOODS</status>
+                    <title>组全包测试-800-000070</title>
+                    <total_fee>178.00</total_fee>
+                </order>
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>d1d076d8c81668c124dca50a85481f86</iid>
+                    <num>1</num>
+                    <outer_iid>800-000020</outer_iid>
+                    <payment>0.90</payment>
+                    <price>0.90</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_SELLER_SEND_GOODS</status>
+                    <title>TEST 800-000020</title>
+                    <total_fee>0.90</total_fee>
+                </order>
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>d8634704fc296d7bb2512cd3124b43e9</iid>
+                    <num>1</num>
+                    <outer_iid>802-000014</outer_iid>
+                    <payment>10.00</payment>
+                    <price>10.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_SELLER_SEND_GOODS</status>
+                    <title>TEST802-000014</title>
+                    <total_fee>10.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-18 19:47:25</pay_time>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272594151</sid>
+            <status>WAIT_SELLER_SEND_GOODS</status>
+            <tid>112272594151</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>txz1234</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-18 18:45:18</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>77c1560f68e92bd98c67581f49c8470e</iid>
+            <modified>2010-11-19 18:27:43</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>77c1560f68e92bd98c67581f49c8470e</iid>
+                    <num>1</num>
+                    <outer_iid>800-000070</outer_iid>
+                    <pic_path>http://img03.tbsandbox.com/bao/uploaded/i3/T1iVdXXhPwUtZmFHU5_055119.jpg</pic_path>
+                    <price>178.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_BUYER_CONFIRM_GOODS</status>
+                    <title>组全包测试-800-000070</title>
+                    <total_fee>178.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-18 18:48:08</pay_time>
+            <pic_path>http://img03.tbsandbox.com/bao/uploaded/i3/T1iVdXXhPwUtZmFHU5_055119.jpg</pic_path>
+            <price>178.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272585951</sid>
+            <status>WAIT_BUYER_CONFIRM_GOODS</status>
+            <tid>112272585951</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>pc414460365</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-18 17:28:57</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>d71c8637833a76decb9c34a9711eb40c</iid>
+            <modified>2010-11-18 18:46:29</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>d71c8637833a76decb9c34a9711eb40c</iid>
+                    <num>1</num>
+                    <outer_iid>801-000001</outer_iid>
+                    <pic_path>http://img05.tbsandbox.com/bao/uploaded/i5/T1iVdXXXruUtYP2GTb_092827.jpg</pic_path>
+                    <price>112.56</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_SELLER_SEND_GOODS</status>
+                    <title>淘宝虚拟包邮卡,卡面金额15元-801-000001</title>
+                    <total_fee>112.56</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-18 17:31:44</pay_time>
+            <pic_path>http://img05.tbsandbox.com/bao/uploaded/i5/T1iVdXXXruUtYP2GTb_092827.jpg</pic_path>
+            <price>112.56</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272555051</sid>
+            <status>WAIT_SELLER_SEND_GOODS</status>
+            <tid>112272555051</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>txzxyz123456</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-18 16:23:43</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>3dfe0dffe048ec31a462548a28a79b61</iid>
+            <modified>2010-11-18 17:16:48</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>3dfe0dffe048ec31a462548a28a79b61</iid>
+                    <num>1</num>
+                    <outer_iid>M4345</outer_iid>
+                    <pic_path>http://img04.tbsandbox.com/bao/uploaded/i4/T1jXdXXXfHYJVIXaPc_125744.jpg</pic_path>
+                    <price>158.00</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <sku_id>4009876433</sku_id>
+                    <sku_properties_name>颜色:大红</sku_properties_name>
+                    <status>WAIT_SELLER_SEND_GOODS</status>
+                    <title>感恩相送 Nike 100% 巴克利 篮球运动鞋 2345</title>
+                    <total_fee>158.00</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-18 16:26:29</pay_time>
+            <pic_path>http://img04.tbsandbox.com/bao/uploaded/i4/T1jXdXXXfHYJVIXaPc_125744.jpg</pic_path>
+            <price>158.00</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272514151</sid>
+            <status>WAIT_SELLER_SEND_GOODS</status>
+            <tid>112272514151</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+        <trade>
+            <adjust_fee>0.00</adjust_fee>
+            <buyer_nick>txzxyz123456</buyer_nick>
+            <buyer_rate>false</buyer_rate>
+            <created>2010-11-18 16:19:32</created>
+            <discount_fee>0.00</discount_fee>
+            <iid>5d49a5db3fbbde79bbe88e1141dc984a</iid>
+            <modified>2010-11-18 16:35:50</modified>
+            <num>1</num>
+            <orders list="true">
+                <order>
+                    <adjust_fee>0.00</adjust_fee>
+                    <buyer_rate>false</buyer_rate>
+                    <discount_fee>0.00</discount_fee>
+                    <iid>5d49a5db3fbbde79bbe88e1141dc984a</iid>
+                    <num>1</num>
+                    <outer_iid>802-000017</outer_iid>
+                    <price>0.10</price>
+                    <refund_status>NO_REFUND</refund_status>
+                    <seller_rate>false</seller_rate>
+                    <seller_type>B</seller_type>
+                    <status>WAIT_SELLER_SEND_GOODS</status>
+                    <title>物料组合包802-000017</title>
+                    <total_fee>0.10</total_fee>
+                </order>
+            </orders>
+            <pay_time>2010-11-18 16:22:21</pay_time>
+            <price>0.10</price>
+            <seller_nick>alipublic01</seller_nick>
+            <seller_rate>false</seller_rate>
+            <sid>112272504151</sid>
+            <status>WAIT_SELLER_SEND_GOODS</status>
+            <tid>112272504151</tid>
+            <title>saonektest</title>
+            <type>fixed</type>
+        </trade>
+    </trades>
+    <total_results>306</total_results>
+</trades_sold_get_response><!--vsandbox068047.cm4-->

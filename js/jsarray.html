@@ -1,0 +1,96 @@
+<script>
+	var a = [[1,2],{x:1,y:2},function(){alert("我是数组元素")}]  
+	document.write(a[0]);        // 返回第一个元素的值，显示为数组结构  
+	document.write("<br>");
+	a[2]();             // 返回第三个元素的值，返回一个函数体，然后通过小括号执行运 
+	var a = [[11,12,13],[21,22,23]]; 
+	document.write(a[0][0]);
+	document.write("<br>");
+	var point ={print: function f(){document.write("x="+point.x+", y="+point.y);}, x: 1, y: 2};
+	document.write(point.x);
+	document.write("<br>");
+	point.print();
+	document.write("<br>");
+	document.write(point["x"]);
+	document.write("<br>");
+	document.write(typeof point);
+	
+	document.write("<br>--------------<br>");
+	var o = new Object();
+	var now = new Date();
+	now.fuxk = "fuxk";
+	document.write(now.fuxk);
+	document.write("<br>");
+	document.write(now["fuxk"]);
+	document.write("<br>");
+	document.write("<br>");
+	document.write(o);
+	document.write("<br>");
+	o.toString = function f(){
+		alert("cao");
+		return "HeiHei";
+	}
+	document.write(o);
+	document.write("<br>");
+	o.toString = function f(){
+	}
+	document.write(o);
+	document.write("<br>");
+	document.write(now.toString);
+	document.write("<br>");	
+	document.write("<br>----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-----<br>");
+	Date.prototype.toString = function(){}
+	document.write(new Date());   //输出"undefined"
+	document.write("<br>");	
+	document.write(new Date());	//输出"undefined"
+	document.write("<br>");	
+	Object.prototype.toString = function(){return 1}
+	document.write(new Object());   //输出1
+	document.write("<br>");	
+	document.write(o.key == undefined);	  //输出true
+	document.write("<br>");	
+	document.write(o.key + 2);	  //输出NaN
+	document.write("<br>----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-----<br>");
+	document.write(undefined);   //输出undefined 
+	document.write("<br>");	
+	var undefined = 2
+	document.write(undefined);   //输出2
+	document.write("<br>");	
+	document.write(typeof undefined);   //输出"number"
+	document.write("<br>");	
+	var undefined = void 1;
+	document.write(typeof undefined);   //输出"undefined"
+	document.write("<br>");
+	// var null = 1;   // 语法错误
+	document.write("<br>");
+	
+	document.write("<br>----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-----<br>");
+	var a = new Array();
+	a.toString = function f(){
+		return 100;
+	}
+	document.write(a);   //输出100
+	document.write("<br>-------------------------------<br>");
+	var a = [];
+	document.write(a.length);   //输出0
+	document.write("<br>");
+	document.write(a[1]);   //输出undefined
+	document.write("<br>");
+	document.write(a.length);   //输出0
+	document.write("<br>");
+	a[1]=null;
+	document.write(a.length);   //输出2
+	document.write("<br>");
+	document.write("<br>-------------------------------<br>");
+	var aa = Array(2);
+	aa.toString = function(){}
+	document.write(aa);   //输出"undefined"
+	document.write("<br>");
+	document.write(aa.length);  //输出2
+	document.write("<br>");
+	var aa = [,,]	
+	aa.toString = function(){}
+	document.write(aa);   //输出"undefined"
+	document.write("<br>");
+	document.write(aa.length);  //输出2
+</script>

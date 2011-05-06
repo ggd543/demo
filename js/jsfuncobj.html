@@ -1,0 +1,15 @@
+<script>
+	function f1(){
+		this.x = 1;
+		this.y = 2;
+		this.shout = function(msg){
+			alert(msg);
+		};
+		return 1+1;
+	}
+	var f = new f1; //可以不使用括号，括号里是构造参数
+	f.shout("hello");
+	f.x = function(){alert("hi");}
+	f.x();
+	
+</script>

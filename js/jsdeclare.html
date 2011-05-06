@@ -1,0 +1,19 @@
+<script type="text/javascript">
+	document.write((typeof f)+"<br>");  //function
+	document.write(f+"<br>");   //function f() {alert(2); return 1;	}
+	document.write(f()+"<br>");  //弹出对话框(2)，并返回值1
+	alert(f);  //弹出对话框(function f() {alert(2); return 1;})
+	function f() {
+		Math.pow(2,3)
+		alert(2);
+		return 1;
+	}
+	document.write(g+"<br>");  //undefined
+	document.write((typeof g)+"<br>");  //undefined
+	var g = f;
+	g();  //弹出对话框(2)
+	document.write("-------------<br>");
+	alert(a);   //弹出对话框(undefined)
+	var a = 1;
+	alert(a);  //弹出对话框(1)
+</script>

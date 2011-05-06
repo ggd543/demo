@@ -1,0 +1,10 @@
+title{
+	font-color: red;
+}
+
+.myStyle {
+	font-color: green;	
+	font-size: small;
+	font-face: proportional;
+	background-color: 0xff2300;
+}

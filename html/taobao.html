@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>淘宝开发者社区—获取授权码</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		
+		<link rel="shortcut icon" href="http://www.taobao.com/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="http://a.tbcdn.cn/tbsp/tbsp.css?t=20090602.css" />
+		<link href="http://open.taobao.com/assets/top.css" media="screen" rel="stylesheet" type="text/css" />
+		
+		
+	</head>
+	<body  >
+<script type="text/javascript">
+(function(){function atrand(num){return Math.floor(Math.random()*num)+1}var P=location.pathname;if((parent===self)||P.indexOf('/list_forum')!=-1||P.indexOf('/theme/info/info')!= -1||P.indexOf('/promo/co_header.php')!= -1||P.indexOf('fast_buy.htm')!= -1||P.indexOf('/add_collection.htm')!= -1||P.indexOf('/taobao_digital_iframe')!= -1||window.tbdw_frame_count==true){var R=escape(document.referrer);document.write('<img src="http://www.atpanel.com/1.gif?cache='+atrand(9999999)+'&pre='+R+'&scr='+screen.width+'x'+screen.height+'&category=&userid=&tid=f570626d618f6f5197b89233fef1a521&channel=112&ad_id=" width="0" height="0" style="display:none;" />')}})();
+</script>
+
+<script type="text/javascript">
+(function(){function akrand(num){return Math.floor(Math.random()*num)+1}var P=location.pathname;if((parent===self)||P.indexOf('/list_forum')!=-1||P.indexOf('/theme/info/info')!= -1||P.indexOf('/promo/co_header.php')!= -1||P.indexOf('fast_buy.htm')!= -1||P.indexOf('/add_collection.htm')!= -1||P.indexOf('/taobao_digital_iframe')!= -1||window.tbdw_frame_count==true){var R=escape(document.referrer);var acookie_load_id=""+akrand(9999999999)+akrand(9999999999);var isv_title=escape(document.title);document.write('<img src="http://acookie.taobao.com/1.gif?acookie_load_id='+acookie_load_id+'&title='+isv_title+'&pre='+R+'&category=&userid=&channel=112&ad_id=" width="0" height="0" style="display:none;" />')}})();
+</script>
+
+	<!--new header sta-->
+	<div id="header_t">
+	<div id="main_t_mid">
+	    <!--top_div sta-->
+	    <div id="logo_t">
+	    <a href="http://www.taobao.com/" title="淘宝网"><img src="/assets/images/logo_tb.png" width="140" height="38" /></a>
+        <span class="sub-logo"></span>
+	    </div>
+	    	                <div id="login_t">
+	                    <span>您好， 欢迎来到开放平台！</span>
+	                    <span>[<a href="http://member1.taobao.com/member/login.jhtml?f=top&redirectURL=http://open.taobao.com/isv/authorize.php?appkey=test">请登录</a>]</span>
+	                    <span>[<a href="http://member1.taobao.com/member/newbie.htm">免费注册</a>]</span>
+	                    <span>[<a href="http://my.open.taobao.com/isv/index.htm">合作伙伴后台</a>]</span>
+	                </div>
+                	    <div class="clearfloat_2"></div>
+	    <!--top_div end-->
+	    <!--menu sta-->
+	    <div id="menu_t">
+	        <ul>
+	            <li >
+					<a href="/">首页</a>
+				</li>
+				<li>
+					<a href="http://open.taobao.com/biz/">商务合作</a>
+				</li>
+				<li>
+					<a href="http://open.taobao.com/dev/">开发文档</a>
+				</li>
+				<li>
+					<a href="http://fuwu.taobao.com" target="_blank">淘宝服务</a>
+					<img src="http://assets.taobaocdn.com/sys/common/icon/misc/new.gif" style="width: 19px; display: block; margin-top:-45px; margin-left:58px;position:absolute;">
+				</li>
+				<li>
+					<a href="http://blog.open.taobao.com/" target="_blank">博客</a>
+				</li>
+				<li>
+					<a href="/bbs/forum.php">论坛</a>
+				</li>
+	        </ul>
+	    </div>
+	    <!--menu end-->
+	    <!--select sta-->
+	    <div id="search_t">
+	    <form action="/search.php" name="cse-search-box" id="cse-search-box" target="_blank">
+		    <input type="hidden" name="cx" value="011245880764277182835:sajvztfgcd0" />
+		    <input type="hidden" name="cof" value="FORID:9" />
+		    <input type="hidden" name="ie" value="UTF-8" />
+	      <label for="search_t_input" style="display: none">输入您的搜索字词</label>
+	        <input type="text" name="q" id="q" value="请输入关键词" class="search_t_input" onFocus="this.style.color='black';
+	                if (this.value == '请输入关键词' ) {
+	                this.value='';
+	                }" onBlur="this.style.color = '#666';
+	                if ( this.value =='' ){
+	                this.value = '请输入关键词';
+	                }" style="color:#666;">
+	        <label for="search_btn" style="display: none">提交搜索表单</label>
+	      <input type="submit" name="sa" value="" id="search_btn" class="search_btn" onclick="if(document.getElementById('q').value == '请输入关键词')return false;"></input>
+	      <div class="clearfloat_2"></div>
+	    </form>
+	    </div>
+	    <!--select end-->
+	    <div class="clearfloat_2"></div>
+	    </div>
+	</div>
+	<!--new header end--><script>
+function CreateHTTP() {
+	var xmlhttp = false;
+	if(window.ActiveXObject) {
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	} else {
+		xmlhttp = new XMLHttpRequest();
+	}
+	return xmlhttp;
+}
+
+function HTTPGet(uri, callback_function, callback_parameter) {
+	var xmlhttp = CreateHTTP();
+	var bAsync = true;
+	if (!callback_function)
+		bAsync = false;
+	xmlhttp.open('GET', uri, false);
+	xmlhttp.send(null);
+
+	if (bAsync) {
+		//if (callback_function)
+		//xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState == 4) {
+			callback_function(xmlhttp.responseText, xmlhttp, callback_parameter);
+		}
+		//}
+		return true;
+	} else
+		return xmlhttp.responseText;
+}
+
+function HTTPalert(html, http, retval) {
+	if(html != "") {
+		retval.value = 1;
+		alert(html);
+	} else {
+		retval.value = 0;
+	}
+}
+
+function checkRA() {
+	var retval = {};
+	var url = "/isv/authorize.php?action=cra";
+	retval.value = 0;
+	url += "&recommendAccount=" + encodeURI(document.getElementById('nick').value);
+	HTTPGet(url, HTTPalert, retval);
+	return retval.value;
+}
+</script>
+<link rel="stylesheet" type="text/css" href="http://assets.taobaocdn.com/tbsp/tbsp.css?t=20090429.css" />
+
+	<div style="width:950px;padding-top:15px;margin:0 auto">
+	<form action="" method="post" onsubmit="return callback();">
+		<span class="l">
+			账号选择：<input type="radio" name="zhxz" id="zhxz_1" value="1" checked onclick=checkZh(this.value);> 系统默认 <input type="radio" name="zhxz" id="zhxz_2" value="2" onclick=checkZh(this.value);> 自定义
+		</span>
+		<br><br>
+		<span class="l" id="zhxzSpan">
+			<select id="nick" name="nick">
+			<option value=''>--请选择测试环境账号--</option>
+						<option value='sandbox_c_1'>sandbox_c_1</option>
+						<option value='sandbox_c_2'>sandbox_c_2</option>
+						<option value='sandbox_c_3'>sandbox_c_3</option>
+						<option value='sandbox_c_4'>sandbox_c_4</option>
+						<option value='sandbox_c_5'>sandbox_c_5</option>
+						<option value='sandbox_c_6'>sandbox_c_6</option>
+						<option value='sandbox_c_7'>sandbox_c_7</option>
+						<option value='sandbox_c_8'>sandbox_c_8</option>
+						<option value='sandbox_c_9'>sandbox_c_9</option>
+						<option value='sandbox_c_10'>sandbox_c_10</option>
+						<option value='sandbox_c_11'>sandbox_c_11</option>
+						<option value='sandbox_c_12'>sandbox_c_12</option>
+						<option value='sandbox_c_13'>sandbox_c_13</option>
+						<option value='sandbox_c_14'>sandbox_c_14</option>
+						<option value='sandbox_c_15'>sandbox_c_15</option>
+						<option value='sandbox_c_16'>sandbox_c_16</option>
+						<option value='sandbox_c_17'>sandbox_c_17</option>
+						<option value='sandbox_c_18'>sandbox_c_18</option>
+						<option value='sandbox_c_19'>sandbox_c_19</option>
+						<option value='sandbox_c_20'>sandbox_c_20</option>
+						<option value='sandbox_c_21'>sandbox_c_21</option>
+						<option value='sandbox_c_22'>sandbox_c_22</option>
+						<option value='sandbox_c_23'>sandbox_c_23</option>
+						<option value='sandbox_c_24'>sandbox_c_24</option>
+						<option value='sandbox_c_25'>sandbox_c_25</option>
+						<option value='sandbox_c_26'>sandbox_c_26</option>
+						<option value='sandbox_c_27'>sandbox_c_27</option>
+						<option value='sandbox_c_28'>sandbox_c_28</option>
+						<option value='sandbox_c_29'>sandbox_c_29</option>
+						<option value='sandbox_c_30'>sandbox_c_30</option>
+						<option value='alipublic00'>alipublic00</option>
+						<option value='alipublic01'>alipublic01</option>
+						<option value='alipublic02'>alipublic02</option>
+						<option value='alipublic03'>alipublic03</option>
+						<option value='alipublic04'>alipublic04</option>
+						<option value='alipublic05'>alipublic05</option>
+						<option value='alipublic06'>alipublic06</option>
+						<option value='alipublic07'>alipublic07</option>
+						<option value='alipublic08'>alipublic08</option>
+						<option value='alipublic09'>alipublic09</option>
+						<option value='alipublic10'>alipublic10</option>
+						<option value='alipublic11'>alipublic11</option>
+						<option value='alipublic12'>alipublic12</option>
+						<option value='alipublic13'>alipublic13</option>
+						<option value='alipublic14'>alipublic14</option>
+						<option value='alipublic15'>alipublic15</option>
+						<option value='alipublic16'>alipublic16</option>
+						<option value='alipublic17'>alipublic17</option>
+						<option value='alipublic18'>alipublic18</option>
+						<option value='alipublic19'>alipublic19</option>
+						<option value='alipublic20'>alipublic20</option>
+						<option value='alipublic21'>alipublic21</option>
+						<option value='alipublic22'>alipublic22</option>
+						<option value='alipublic23'>alipublic23</option>
+						<option value='alipublic24'>alipublic24</option>
+						<option value='alipublic25'>alipublic25</option>
+						<option value='alipublic26'>alipublic26</option>
+						<option value='alipublic27'>alipublic27</option>
+						<option value='alipublic28'>alipublic28</option>
+						<option value='alipublic29'>alipublic29</option>
+						</select>　
+		</span>
+		<span class="l">
+				</span>
+		<span class="l">
+			　<input type="submit" value="获取授权码">
+		</span>　
+	</form>
+	</div>
+
+		<div style="width:950px;margin:0 auto">
+		<div style="width:100%;color:#545454;font-weight:bold;font-size:16px;padding-top:10px">
+			您好，sandbox_c_1：
+		</div>
+		<div style="width:920px;float:right;padding:15px 0px 50px 0px">
+			<div style="width:100%;float:left;color:#000000;font-weight:bold;font-size:14px">
+				您正要授权给：<font color=#2B5FD9></font>
+			</div>
+			<div style="width:100%;height:25px;float:left;color:#000000;font-weight:bold;font-size:14px;margin-top:20px">
+				<div style="float:left">淘宝TOP授权码：</div><div id="ShowDiv" style="color:#545454;font-size:12px;font-weight:normal;float:left;line-height:22px"></div>
+			</div>
+			<div style="width:100%;float:left;color:#000000;font-weight:bold;font-size:14px;margin-top:5px">
+				<span style="float:left">
+					<input type="text" id="autoInput" value="vBAUcMEMGx6nWubxc8LEOILHhOxMZMtcwTuXAa%2FEtJ%2FqEuRJfjYu7fnHoeGXZtCY9hdugPmlqSdtW8t6gZ7QqA%3D%3D" style="width:600px;border-top:#716F64 1px solid;border-left:#716F64 1px solid;border-right:#F1EFE2 1px solid;border-bottom:#F1EFE2 1px solid">
+				</span>
+				<span style="float:left;height:22px" id="authButton">
+					　<a href="javascript:void(0);" onclick="copy();"><img src="http://open.taobao.com/assets/isv/auth_button1.png" border="0"></a>
+				</span>
+			</div>
+			<div class="msg" style="float:left;margin:5px auto">
+				<span class="tips" style="width:887px"><b>操作提示：</b>您可以点击“复制授权码”按钮或手工复制授权码到的授权码输入框中。一旦您输入授权码到中，将视为您允许访问相关授权数据。</span>
+			</div>
+		</div>
+	</div>
+	
+<script type="text/javascript">
+var secs = 600;
+var selectHtml = document.getElementById('zhxzSpan').innerHTML;
+var inputHtml = "<input type='text' name='nick' id='nick' value='--请输入测试昵称--' onfocus='if (this.value == \"--请输入测试昵称--\") this.value = \"\";' onblur='if (this.value == \"\") this.value=\"--请输入测试昵称--\";'>";
+var radioCheck = 1;
+
+function goTime(){
+	for(var i=secs;i>=0;i--) {
+		window.setTimeout('doUpdate(' + i + ')', (secs-i) * 1000);
+	}
+}
+
+function doUpdate(num) {
+	var minutes = num/60;
+	minutes = parseInt(minutes);
+	var seconds = num%60;
+	document.getElementById('ShowDiv').innerHTML = '本授权码<b>一次性有效</b>并将在<font class="timecss">'+minutes+'分'+seconds+'秒</font>后过期...' ;
+	if(num == 0) {
+		document.getElementById('ShowDiv').innerHTML = '<div class="msg" style="float:left"><p class="attention">本授权码已过期，请重新获取</p></div>';
+	}
+}
+
+function copy() {
+	var authTxt = document.getElementById('autoInput').value;
+	copyToClipboard(authTxt);
+}
+
+function copyToClipboard(txt) {
+	if(window.clipboardData) {
+    	window.clipboardData.clearData();
+        window.clipboardData.setData("Text", txt);
+		alert("复制成功！")
+     } else if(navigator.userAgent.indexOf("Opera") != -1) {
+        window.location = txt;
+		alert("复制成功！")
+     } else if (window.netscape) {
+          try {
+               netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+          } catch (e) {
+               alert("此浏览器不支持剪贴板，建议手动复制！\n如果想打开剪贴板，请在浏览器地址栏输入'about:config'并回车；\n然后将'signed.applets.codebase_principal_support'设置为'true'。");
+          }
+          var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);
+          if (!clip)
+               return;
+          var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);
+          if (!trans)
+               return;
+          trans.addDataFlavor('text/unicode');
+          var str = new Object();
+          var len = new Object();
+          var str = Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);
+          var copytext = txt;
+          str.data = copytext;
+          trans.setTransferData("text/unicode",str,copytext.length*2);
+          var clipid = Components.interfaces.nsIClipboard;
+          if (!clip)
+               return false;
+          clip.setData(trans,null,clipid.kGlobalClipboard);
+          alert("复制成功！")
+     }
+}
+
+String.prototype.trim   =   function()  {
+	return   this.replace(/(^\s*)|(\s*$)/g, '');
+}
+
+function checkUrl(obj) {
+	obj = obj.trim();
+	var strRegex = "^((https|http|HTTPS|HTTP)?://)" + "(([0-9]{1,3}\.){3}[0-9]{1,3}" + "|" + "([0-9a-zA-Z_!~*'()-]+\.)*" + "([0-9a-zA-Z][0-9a-zA-Z-]{0,61})?[0-9a-zA-Z]\." + "[a-zA-Z]{2,6})" + "(:[0-9]{1,4})?" + "((/?)|" + "(/[0-9a-zA-Z_!~*'().;?:@&=+$,%#-]+)+/?)$";
+	var reg = new RegExp(strRegex);
+	return reg.test(obj);
+}
+
+function checkZh(v) {
+	if (1 == v) {
+		document.getElementById('zhxzSpan').innerHTML = selectHtml;
+		radioCheck = 1;
+	} else {
+		document.getElementById('zhxzSpan').innerHTML = inputHtml;
+		radioCheck = 2;
+	}
+}
+
+function callback() {
+	if(document.getElementById('zhxz_1').checked){
+		if ('' == document.getElementById('nick').value){
+			alert('请选择测试环境账号');
+			return false;
+		}
+	}
+	else{
+		if ('--请输入测试昵称--' == document.getElementById('nick').value || '' == document.getElementById('nick').value) {
+			alert('请输入测试昵称');
+			return false;
+		}
+		else{
+			if(checkRA()) {
+				return false;
+			}
+		}
+	}
+	if (null != document.getElementById('url')) {
+		if ('' == document.getElementById('url').value || '请填写您的应用回调URL' == document.getElementById('url').value) {
+			alert('请填写您的应用回调URL');
+			document.getElementById('url').focus();
+			return false;
+		} else if(!checkUrl(document.getElementById('url').value)) {
+			alert('请填写合法URL！');
+			document.getElementById('url').focus();
+			return false;
+		}
+	}
+}
+</script>
+
+<script type="text/javascript">
+	goTime();
+</script>
+
+<style type='text/css'>
+div {margin:0px auto;padding:0px;}
+#header-content li a {height:22px;padding-top:2px}
+.timecss {color:#FF7800;font-weight:bolder;}
+</style>
+<div class="clearfloat_2"></div>
+<br>
+         <!--footer_t sta-->
+<div id="footer_t">
+        <a target="_blank" href="http://www.taobao.com/about/">关于淘宝</a>　<a target="_blank" href="http://pro.taobao.com/">广告服务</a>　<a target="_blank" href="http://www.taobao.com/about/partners.php">合作伙伴</a>　<a target="_blank" href="http://cs.taobao.com/">帮助中心</a>　<a target="_blank" href="http://job.taobao.com/">诚征英才</a>　<a target="_blank" href="http://my.taobao.com/mytaobao/misc/contact.jhtml">联系我们</a>　<a target="_blank" href="http://www.taobao.com/sitemap.php">网站地图</a>　<a target="_blank" href="http://www.taobao.com/theme/hotbrands.php">热门品牌</a>　<a target="_blank" href="http://www.taobao.com/about/copyright.php">法律声明</a>　<a target="_blank" href="http://list.mall.taobao.com/promotion/activity/zhaoshang.htm">加入商城</a>　<a target="_blank" href="http://taoke.alimama.com/">淘宝客</a>　<a target="_blank" href="http://www.taobao.com/theme/tao_source/">开放平台</a>　<a target="_blank" href="http://trust.taobao.com/">买卖安全</a>　<a target="_blank" href="http://www.taobao.com/go/act/315/xfzbzfw.PHP?ad_id=&am_id=1300117110a02b16093f&cm_id=&pm_id=">售后保障</a>
+		<br/>
+		<a target="_blank" href="http://page.china.alibaba.com/shtml/about/ali_group1.shtml">阿里巴巴集团</a>
+		：阿里巴巴网络 -
+		<a target="_blank" href="http://china.alibaba.com/">中国站</a>
+		<a target="_blank" href="http://www.alibaba.com/">国际站</a>
+		<a target="_blank" href="http://www.alibaba.co.jp/">日文站</a>
+		|
+		<a target="_blank" href="http://www.taobao.com/">淘宝站</a>
+		|
+		<a target="_blank" href="http://www.alipay.com/">支付宝</a>
+		|
+		<a target="_blank" href="http://www.yahoo.com.cn/">中国雅虎</a>
+		|
+		<a target="_blank" href="http://www.koubei.com/">雅虎口碑网</a>
+		|
+		<a target="_blank" href="http://www.alisoft.com">阿里软件</a>
+		|
+		<a target="_blank" href="http://www.alimama.com/">阿里妈妈</a>
+		<br/>
+		Copyright 2003-2010,　版权所有 TAOBAO.COM
+</div>
+<!--footer_t end-->
+
+
+<!--量子统计&Google Analytics-->
+<script type="text/javascript" src="http://js.tongji.linezing.com/2079396/tongji.js"></script>
+<noscript>
+	<a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/2079396/tongji.gif"/></a>
+</noscript>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15598117-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- Piwik Image Tracker -->
+<img src="http://localhost/piwik/piwik.php?idsite=7&rec=1" style="border:0" alt="" />
+<!-- End Piwik -->
+</body>
+<html>

@@ -1,0 +1,45 @@
+<script>
+	function f(){                       // 声明函数f  
+		return 1;   
+	}  
+	document.write(f()+"<br>");                         // 返回2  
+	function f(){                       // 声明函数f  
+		return 2;   
+	} 
+	document.write(f()+"<br>");                         // 返回2 
+	document.write("<br>");
+</script>
+<script>
+	var f = function(){             // 定义匿名函数f  
+		return 1;   
+	}  
+	document.write(f()+"<br>");                         // 返回1  
+	function f(){                       // 声明函数f  
+		return 2;   
+	}  
+	document.write(f()+"<br>");   						// 返回1
+	document.write("<br>");
+</script>
+<script>
+	function f(){                       // 声明函数f  
+		return 1;  
+	}
+	document.write(f()+"<br>");                         // 返回1  
+	var f = function(){             // 定义匿名函数f  
+		return 2;  
+	}  
+	document.write(f()+"<br>");                         // 返回2 
+	document.write("<br>");
+</script>
+<script>
+	var f = function(){             // 定义匿名函数f  
+		return 1;  
+	}  
+	document.write(f()+"<br>");                         // 返回1  
+	var f = function(){             // 定义匿名函数f  
+		return 2;  
+	}  
+	document.write(f()+"<br>");                         // 返回2 
+	document.write("<br>");
+
+</script>

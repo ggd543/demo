@@ -1,0 +1,32 @@
+<script>
+	var cc = [1,2,3]
+	var array = new Array();
+	var obj = new Object();
+	var func = new Function("x", "return x");
+	document.write(typeof cc+"<br>");  //object
+	document.write(typeof array+"<br>");  //object
+	document.write(typeof obj+"<br>");   //object	
+	document.write(typeof func+"<br>");   //function
+	cc["a"]="a"
+	cc.b = 'b'
+	document.write(cc+"<br>");   //1,2,3
+	document.write(cc.a+" "+cc.b+"<br>");   //a b
+	//obj["1"]=1   //不行，这种用法只适用于数组对象
+	//obj["2"]=2   //不行，这种用法只适用于数组对象
+	//object["typeof"]=3
+	//document.write(obj["1"]+" "+obj["2"]+" "+obj["typeof"]);   //
+	obj.a=1
+	obj.b=2
+	document.write(obj["a"]+" "+obj.b+"<br>");  // 1 2
+	i = 1  //js会自动帮你隐式的声明
+	document.write(i+"<br>");   //1
+	var a;
+	document.write(a+"<br>");  //undefined
+	var undefined = 100
+	document.write(undefined+"<br>");  //100
+	undefined=a	
+	document.write(undefined+"<br>");	  //undefined
+	
+	var i;
+	document.write(i+"<br>");   // 1
+</script>

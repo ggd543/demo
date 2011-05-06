@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="jettyAntDemo" default="jar" basedir=".">
+	<import file="${basedir}/template.xml"/>
+	
+	<property name="M2_REPO" value="d:/.m2/repository"/>
+	<property name="jetty.version" value="7.1.5.v20100705"/>
+	<property name="jetty-ant-plugin.version" value="7.1.5.v20100705"/>
+	
+	<path id="jetty.plugin.classpath">
+    <fileset dir="${M2_REPO}">
+      <include name="org/mortbay/jetty/jetty-ant/${jetty-ant-plugin.version}/jetty-ant-${jetty-ant-plugin.version}.jar" />
+	  <include name="org/eclipse/jetty/jetty-http/${jetty.version}/jetty-http-${jetty.version}.jar" />
+	  <include name="org/eclipse/jetty/jetty-server/${jetty.version}/jetty-server-${jetty.version}.jar" />
+      <include name="org/eclipse/jetty/jetty-io/${jetty.version}/jetty-io-${jetty.version}.jar" />
+      <include name="org/eclipse/jetty/jetty-util/${jetty.version}/jetty-util-${jetty.version}.jar" />
+	  <include name="org/eclipse/jetty/jetty-webapp/${jetty.version}/jetty-webapp-${jetty.version}.jar" />
+      <include name="org/eclipse/jetty/jetty-plus/${jetty.version}/jetty-plus-${jetty.version}.jar" />
+	  <include name="org/eclipse/jetty/jetty-security/${jetty.version}/jetty-security-${jetty.version}.jar" />
+	  <include name="org/eclipse/jetty/jetty-continuation/${jetty.version}/jetty-continuation-${jetty.version}.jar" />
+      <include name="org/eclipse/jetty/jetty-naming/${jetty.version}/jetty-naming-${jetty.version}.jar" />
+	  <include name="org/eclipse/jetty/jetty-servlets/${jetty.version}/jetty-servlets-${jetty.version}.jar" />
+      <include name="org/eclipse/jetty/jetty-servlet/${jetty.version}/jetty-servlet-${jetty.version}.jar" />
+      <include name="org/eclipse/jetty/jetty-jsp-2.1/${jetty.version}/jetty-jsp-2.1-${jetty.version}.jar" />
+		<include name="org/eclipse/jetty/jetty-xml/${jetty.version}/jetty-xml-${jetty.version}.jar" />
+		<include name="javax/servlet/jsp-api/2.0/jsp-api-2.0.jar"/>
+		<include name="javax/servlet/servlet-api/2.5/servlet-api-2.5.jar"/>
+		<include name="org/eclipse/jdt/core/3.1.1/core-3.1.1.jar" />
+		</fileset>
+	</path>
+
+	<taskdef classpathref="jetty.plugin.classpath" resource="tasks.properties" loaderref="jetty.loader" />
+	<!-- <typedef name="selectChannelConnector" classname="org.eclipse.jetty.server.nio.SelectChannelConnector" classpathref="jetty.plugin.classpath" loaderref="jetty.loader" /> -->
+  
+	<target name="war" >	
+		<jar destfile="${ant.project.name}.war" basedir="${basedir}/src/webapp">			
+		</jar>
+	</target>
+	<target name="jetty.run" depends="war">
+		<jetty tempDirectory="jetty-temp">
+		<webApp name="${ant.project.name}" warfile="${ant.project.name}.war" contextpath="/${ant.project.name}" />
+	</jetty>
+  </target>
+</project>

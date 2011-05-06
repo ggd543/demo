@@ -1,0 +1,50 @@
+<script>
+//	使用delete运算符删除一个对象的属性（或数组元素），不只是把他们的值设为undefined。当删除一个属性后，该属性就不存在。当用delete删除一个不存在的属性时，返回true
+// （某些内部的核心属性和客户端属性不能被删除,不能删除对象,函数）
+//  delete所能影响的只是属性值，并不能影响被这些属性引用的对象。
+  
+	var o ={x:1, y:2}
+	document.write(delete o.x);    //删除一个对象属性，返回 true
+	document.write("<br>");
+	document.write(typeof o.x);   //该对象undefined	
+	document.write("<br>");
+	document.write(delete o.x);   // 删除一个不存在的对象属性，返回true
+	document.write("<br>");   
+	document.write(delete o);      //返回false
+	document.write("<br>");   
+	document.write(delete o.y);    // 返回true
+	document.write("<br>");   
+	document.write(o.y);    // 返回undefined
+	
+	document.write("<hr>");
+	document.write("<br>");   
+	document.write(delete o);      //返回false
+	document.write("<br>");   
+	document.write(delete 1);    // 1 不是this的属性（即this中不存在属性1），返回true
+	document.write("<br>");   
+	x =1    //隐式声明一个变量x
+	document.write(delete x);   //删除this中的属性x，返回true	
+	document.write("<br>");   
+	document.write(typeof  x);   //undefined
+	//x;        //x没有被定义，运行错误
+	
+	document.write("<hr>");
+	var oo = {}
+	document.write(delete oo);    // 返回false
+	
+	document.write("<hr>");
+	var f = function() {}
+	document.write(delete f);    // 返回false
+	
+	document.write("<hr>");
+	var array =[]
+	document.write(delete array);   //返回false
+	
+	document.write("<hr>");
+	var my = new Object
+	my.name = "Archer"
+	my.nickName = my.name 
+	delete my.nickName 
+	document.write(my.name);   //Archer
+	
+</script>

@@ -1,0 +1,4 @@
+<?xml  version="1.0" encoding="utf-8" ?>
+<project name="antSimpleTask" default="jar" basedir=".">
+	<import file="${basedir}/template.xml"/>
+</project>

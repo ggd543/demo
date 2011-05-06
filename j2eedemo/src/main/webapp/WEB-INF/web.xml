@@ -1,0 +1,66 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<web-app>
+    <display-name>Archetype Created Web Application</display-name>
+
+    <context-param>
+        <param-name>admin</param-name>
+        <param-value>root</param-value>
+    </context-param>
+    <context-param>
+        <param-name>dumpMessage</param-name>
+        <param-value>This is a dump message</param-value>
+    </context-param>
+
+    <filter>
+        <filter-name>CharsetEncodingFilter</filter-name>
+        <filter-class>com.ggd543.filter.CharsetEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+    </filter>
+    <filter>
+        <filter-name>IPFilter</filter-name>
+        <filter-class>com.ggd543.filter.IPFilter</filter-class>
+        <init-param>
+            <param-name>ip</param-name>
+            <param-value>127.0.0.1</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharsetEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>IPFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <listener>
+        <listener-class>com.ggd543.listener.DumpListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>com.ggd543.listener.StartupListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>helloServlet</servlet-name>
+        <servlet-class>com.ggd543.servlet.HelloServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>genericServlet</servlet-name>
+        <servlet-class>com.ggd543.servlet.GenericServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>genericServlet</servlet-name>
+        <url-pattern>/*.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>helloServlet</servlet-name>
+        <url-pattern>/hello/*</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+    
+    <servlet>
+        <servlet-name>JSServlet</servlet-name>
+        <servlet-class>servlet.JSServlet</servlet-class>
+        <init-param>
+            <param-name>Cache-Control</param-name>
+            <param-value>no-cache</param-value>
+        </init-param>
+        <init-param>
+            <param-name>Content-Type</param-name>
+            <param-value>text/plain</param-value>
+        </init-param>
+        <init-param>
+            <param-name>Max-Cached-Scripts</param-name>
+            <param-value>1000</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>JSServlet</servlet-name>
+        <url-pattern>*.jss</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DemoServlet</servlet-name>
+        <servlet-class>servlet.DemoServlet</servlet-class>        
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DemoServlet</servlet-name>
+        <url-pattern>/info/abc/*</url-pattern>
+    </servlet-mapping>
+</web-app>

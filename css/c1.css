@@ -1,0 +1,29 @@
+h1{
+	color:red;
+}
+
+html 	{ 
+		min-width: 966px;
+		background: #f9f9f9;
+		overflow:scroll;
+		color:green;
+		overflow-x:hidden;
+
+		}
+		
+p {
+	font-family: "sans serif";
+	color: blue;
+}
+		
+table{
+	border-style: solid;
+border-width: thick
+}
+
+li strong {
+    font-style: italic;
+    /* font-weight: normal; */
+  }
+  
+  

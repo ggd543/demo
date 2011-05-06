@@ -1,0 +1,18 @@
+<script>
+String.prototype.toString = function(){
+   return "123";	
+}
+
+var s = "abc";
+alert(s);                   //  显示 abc
+document.write(s);                   //  显示 abc
+document.write("<br>");
+
+var o = new String("abc");
+alert(o);                   //  显示 123
+document.write(o);                   //  显示 123
+document.write("<br>");
+
+var s = "abc";
+var t =s ;
+</script>
