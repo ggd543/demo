@@ -1,0 +1,5 @@
+#External Dependencies
+#Mon Jun 13 06:30:33 CST 2011
+H\:\\demo\\sbtdemo\\lib\\jettison-1.1.jar=src\\main\\scala\\RunApp.scala
+H\:\\demo\\sbtdemo\\project\\boot\\scala-2.9.0\\lib\\scala-library.jar=src\\main\\scala\\RunApp.scala
+C\:\\Java\\jre6\\lib\\rt.jar=src\\main\\scala\\RunApp.scala

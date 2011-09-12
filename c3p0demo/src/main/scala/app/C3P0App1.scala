@@ -2,6 +2,7 @@ package app
 
 
 import com.mchange.v2.c3p0.{DataSources, ComboPooledDataSource}
+import actors.Actor
 
 /*******************************************************************************
  * Copyright (c) 2009 Kalengo, LLC. All Rights Reserved.
@@ -64,6 +65,11 @@ object C3P0App1 {
     println("--------- Sleep 10 seconds ------")
     Thread.sleep(10000L);
     //    DataSources.destroy(cpds);
-    println(cpds.getConnection.getTransactionIsolation)    
+    println(cpds.getConnection.getTransactionIsolation)
+    var act = Actor.actor{
+      receive{
+
+      }
+    }
   }
 }
