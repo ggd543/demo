@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.geronimo.specs:geronimo-j2ee-connector_1.5_spec:1.1-osgi">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/geronimo/specs/geronimo-j2ee-connector_1.5_spec/1.1-osgi/geronimo-j2ee-connector_1.5_spec-1.1-osgi.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/geronimo/specs/geronimo-j2ee-connector_1.5_spec/1.1-osgi/geronimo-j2ee-connector_1.5_spec-1.1-osgi-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/geronimo/specs/geronimo-j2ee-connector_1.5_spec/1.1-osgi/geronimo-j2ee-connector_1.5_spec-1.1-osgi-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

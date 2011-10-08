@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: commons-httpclient:commons-httpclient:3.1-osgi">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/commons-httpclient/commons-httpclient/3.1-osgi/commons-httpclient-3.1-osgi.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/commons-httpclient/commons-httpclient/3.1-osgi/commons-httpclient-3.1-osgi-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/commons-httpclient/commons-httpclient/3.1-osgi/commons-httpclient-3.1-osgi-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
