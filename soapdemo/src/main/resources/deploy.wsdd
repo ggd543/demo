@@ -1,0 +1,7 @@
+<deployment name="test" xmlns="http://xml.apache.org/axis/wsdd/"
+        xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+    <service name="urn:helloservice" provider="java:RPC">
+        <parameter name="className" value="com.ggd543.soap.HelloService"/>
+        <parameter name="allowedMethods" value="sayHello"/>
+    </service>
+</deployment>
