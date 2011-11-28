@@ -1,11 +1,12 @@
 # use glob syntax.
 syntax: glob
 *.ser
-**/*.class
 *~
 *.bak
 #*.off
 *.old
+
+**/*.class
 
 # eclipse conf file
 **/.settings
