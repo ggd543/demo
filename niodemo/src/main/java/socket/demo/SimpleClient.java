@@ -1,8 +1,8 @@
 package socket.demo;
 
-import java.net.Socket;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.net.Socket;
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,28 +12,29 @@ import java.io.OutputStream;
  * To change this template use File | Settings | File Templates.
  */
 public class SimpleClient {
-    public static void main(String args[]){
+    public static void main(String args[]) {
         try {
-            Socket s=new Socket("localhost",8000);
-            s.setSoLinger(true,0);
-//            s.setSoLinger(true,3600);
-            OutputStream os=s.getOutputStream();
-            StringBuffer sb=new StringBuffer();
-            for (int i=0; i<10; i++){
-                sb.append(i+" ");
+            Socket socket = new Socket("localhost", 8000);
+            socket.setSoLinger(true, 0);
+//            socket.setSoLinger(true,3600);
+            OutputStream os = socket.getOutputStream();
+            StringBuffer sb = new StringBuffer();
+            for (int i = 0; i < 10; i++) {
+                sb.append(i + " ");
             }
-           os.write(sb.toString().getBytes());
-//           os.flush();
-           try {
+            os.write(sb.toString().getBytes());
+            os.flush();
+            try {
                 Thread.sleep(5000);
             } catch (InterruptedException e) {
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             }
             System.out.println("start closing the socket");
-           long begin=System.currentTimeMillis();
-            s.close();
-            long end=System.currentTimeMillis();
-            System.out.println((end-begin)+" ms");
+            long begin = System.currentTimeMillis();
+            os.close();
+            socket.close();
+            long end = System.currentTimeMillis();
+            System.out.println((end - begin) + " ms");
         } catch (IOException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }

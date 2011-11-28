@@ -68,10 +68,6 @@ object SC1 {
   def f1() = 1
 }
 
-object A extends Application {
-  println("Hello world ")
-}
-
-
+ 
 
 
