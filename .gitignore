@@ -16,7 +16,7 @@ syntax: glob
 .scala_dependencies
 
 # idea
-*.idea
+*.idea/
 *.iml
 *.ipr
 *.iws
