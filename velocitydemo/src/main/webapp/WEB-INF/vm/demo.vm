@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD html 4.0 Transitional//EN">
+<html>
+<head>
+    <title> velocity </title>
+</head>
+
+##嘿嘿,我是velocity中的注释噢
+#*
+    嘿嘿,我也是velocity中的注释噢
+*#
+
+<body>
+<h1>hehe,这是经过由servlet返回的velocity视图</h1>
+hello ${username},这是你的信息
+<ul>
+    <li>用户密码为:${password}</li>
+    <li>年龄为:${age}</li>
+    <li>出生地址为:${address}</li>
+    <li>个人主页为:<a href='${blog}'>${blog}</a></li>
+</ul>
+
+<br/>
+
+    #foreach($emp in $!{list})
+        $!{velocityCount}&nbsp;&nbsp;&nbsp;&nbsp;
+        $!{emp.id} &nbsp;&nbsp;&nbsp;&nbsp;
+        $!{emp.ename} &nbsp;&nbsp;&nbsp;&nbsp;
+        $!{emp.eaddress} &nbsp;&nbsp;&nbsp;&nbsp;
+        $!{emp.age} &nbsp;&nbsp;&nbsp;&nbsp;
+        $!{emp.department.id} &nbsp;&nbsp;&nbsp;&nbsp;
+        $!{emp.department.deptname}
+    <hr/>
+    #end
+
+</body>
+</html>
