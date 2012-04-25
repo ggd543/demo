@@ -1,8 +1,11 @@
 package com.ggd543.mulerestletdemo
 
-import org.restlet.data.{MediaType, Response, Request}
-import org.restlet.resource.{StringRepresentation, Variant, Resource}
-import org.restlet.{Router, Context}
+import org.restlet.routing.Router
+import org.restlet.{Response, Request, Context}
+import org.restlet.resource.Resource
+import org.restlet.data.MediaType
+import org.restlet.representation.{StringRepresentation, Variant}
+
 
 /**
  * Created by IntelliJ IDEA.
@@ -28,5 +31,5 @@ class HelloWorldResource(context: Context, request: Request, response: Response)
   getVariants.add(new Variant(MediaType.TEXT_PLAIN))
 
 
-  override def getRepresentation(variant: Variant) = new StringRepresentation("Hello world")
+  override def represent(variant: Variant) = new StringRepresentation("Hello world")
 }

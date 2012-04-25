@@ -2,32 +2,77 @@
 <mule xmlns="http://www.mulesoft.org/schema/mule/core"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xmlns:spring="http://www.springframework.org/schema/beans"
-      xmlns:tcp="http://www.mulesoft.org/schema/mule/tcp"
-      xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf"
       xmlns:vm="http://www.mulesoft.org/schema/mule/vm"
       xmlns:http="http://www.mulesoft.org/schema/mule/http"
       xmlns:restlet="http://www.mulesoft.org/schema/mule/restlet"
       xsi:schemaLocation="
 	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 	http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
-	http://www.mulesoft.org/schema/mule/tcp http://www.mulesoft.org/schema/mule/tcp/3.1/mule-tcp.xsd
 	http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/3.1/mule-vm.xsd
-	http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/3.1/mule-cxf.xsd
-	http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/3.1/mule-http.xsd
+	http://www.mulesoft.org/sch ema/mule/http http://www.mulesoft.org/schema/mule/http/3.1/mule-http.xsd
 	http://www.mulesoft.org/schema/mule/restlet http://www.mulesoft.org/schema/mule/restlet/3.1/mule-restlet.xsd">
 
     <description>
         This configuration uses an HTTP endpoint to receive requests.
     </description>
-    
+
+    <model name="greetingModel">
+        <service name="greetingService">
+            <inbound>
+                <inbound-endpoint name="" address="http://localhost:9004"/>
+            </inbound>
+            <component class="com.ggd543.mulerestletdemo.LogComponent"/>
+            <outbound>
+                <filtering-router>
+                    <outbound-endpoint address="vm://greeting"/>
+                    <restlet:uri-template-filter pattern="/hello/{set-payload.name}" verbs="GET"/>
+                </filtering-router>
+            </outbound>
+        </service>
+        <service name="greeting">
+            <inbound>
+                <inbound-endpoint address="vm://greeting" exchange-pattern="request-response"></inbound-endpoint>
+            </inbound>
+            <component class="com.ggd543.mulerestletdemo.GreetingComponent"></component>
+        </service>
+    </model>
+
     <model name="helloModel">
-           <service name="helloService">
-               <inbound>
-                   <inbound-endpoint  address="http://localhost:9002"/>
-               </inbound>
-               <restlet:component restlet-ref="helloWorld"/>
-           </service>
-       </model>
-       <spring:bean id="helloWorld" class="com.ggd543.mulerestletdemo.HelloWorldApplication"/>
-      
+        <service name="helloService">
+            <inbound>
+                <inbound-endpoint address="http://localhost:9002"/>
+            </inbound>
+            <restlet:component restlet-ref="helloWorld"/>
+        </service>
+    </model>
+
+    <spring:bean id="helloWorld" class="com.ggd543.mulerestletdemo.HelloWorldApplication"/>
+
+    <model name="userModel">
+        <service name="userService">
+            <inbound>
+                <inbound-endpoint address="http://localhost:63080"/>
+            </inbound>
+            <outbound>
+                <filtering-router>
+                    <outbound-endpoint address="vm://userController"/>
+                    <or-filter>
+                        <restlet:uri-template-filter pattern="/users/{userId}" verbs="GET"/>
+                        <restlet:uri-template-filter pattern="/users" verbs="POST"/>
+                        <!--<restlet:uri-template-filter pattern="/users" verbs="PUT"/>-->
+                        <!--<restlet:uri-template-filter pattern="/users/{userId}" verbs="DELETE"/>-->
+                    </or-filter>
+                </filtering-router>
+            </outbound>
+        </service>
+
+        <service name="userController">
+            <inbound>
+                <inbound-endpoint address="vm://userController"/>
+            </inbound>
+            <!-- TODO: How to implement UserController -->
+            <component class="com.ggd543.mulerestletdemo.user.UserController"/>
+        </service>
+    </model>
+
 </mule>

@@ -1,4 +1,3 @@
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -15,9 +14,31 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-
     <build>
+
         <plugins>
+            <!--<plugin>-->
+            <!--<groupId>org.apache.maven.plugins</groupId>-->
+            <!--<artifactId>maven-demo-plugin</artifactId>-->
+            <!--<version>1.0</version>-->
+            <!--<executions>-->
+            <!--<execution>-->
+            <!--<phase>compile</phase>-->
+            <!--<goals>-->
+            <!--<goal>helloworld</goal>-->
+            <!--</goals>-->
+            <!--</execution>-->
+            <!--<execution>-->
+            <!--<phase>process-resources</phase>-->
+            <!--<goals>-->
+            <!--<goal>display</goal>-->
+            <!--</goals>-->
+            <!--</execution>-->
+            <!--</executions>-->
+            <!--<configuration>-->
+            <!--<name>Jack</name>-->
+            <!--</configuration>-->
+            <!--</plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -30,20 +51,6 @@
                     <!--<showDeprecation>true</showDeprecation>-->
                 </configuration>
             </plugin>
- 
-            <plugin>
-                <groupId>org.scala-tools</groupId>
-                <artifactId>maven-scala-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>compile</goal>
-                            <goal>testCompile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
- 
         </plugins>
     </build>
 
@@ -54,29 +61,54 @@
             <version>4.8</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
- 
- 
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-compiler</artifactId>
-            <version>2.9.1</version>
-            <!--<version>2.7.7</version>-->
-        </dependency>
-        <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-library</artifactId>
-            <!--<version>2.8.1</version>-->
-            <version>2.9.1</version>
-            <!--<version>2.7.7</version>-->
-        </dependency>
-        <dependency>
- 
             <groupId>commons-pool</groupId>
             <artifactId>commons-pool</artifactId>
             <version>1.5.6</version>
         </dependency>
- 
+        <dependency>
+            <groupId>easyconf</groupId>
+            <artifactId>easyconf</artifactId>
+            <version>0.9.5</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>xpp3</groupId>
+                    <artifactId>xpp3_min</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>xdoclet</groupId>
+                    <artifactId>xdoclet</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>javax.sql</groupId>
+                    <artifactId>jdbc-stdext</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>xdoclet</groupId>
+                    <artifactId>xdoclet-web-module</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>xdoclet</groupId>
+            <artifactId>xdoclet-web-module</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>xdoclet</groupId>
+            <artifactId>xdoclet</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.14</version>
+        </dependency>
     </dependencies>
 
     <profiles>
@@ -88,12 +120,7 @@
             <properties>
                 <scala.version>2.9.1</scala.version>
             </properties>
-            <repositories>
-                <repository>
-                    <id>scala-repo</id>
-                    <url>http://www.scala-tools.org/repo-releases/</url>
-                </repository>
-            </repositories>
+
             <dependencies>
                 <dependency>
                     <groupId>org.scala-lang</groupId>
@@ -104,6 +131,11 @@
                 <dependency>
                     <groupId>org.scala-lang</groupId>
                     <artifactId>scala-library</artifactId>
+                    <version>${scala.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.scala-lang</groupId>
+                    <artifactId>scala-swing</artifactId>
                     <version>${scala.version}</version>
                 </dependency>
             </dependencies>

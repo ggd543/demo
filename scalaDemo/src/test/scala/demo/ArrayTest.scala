@@ -14,6 +14,7 @@ import collection.mutable.ArrayOps
 class ArrayTest {
    @Test
    def testArrayMap(){
-     Array(1,2,3,4).map(x => x) 
+     Array(1,2,3,4).map(x => x)
+
    }
 }
