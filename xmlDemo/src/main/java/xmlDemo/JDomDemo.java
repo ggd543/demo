@@ -19,6 +19,7 @@ public class JDomDemo {
     public static void main(String[] args) {
         JDomDemo jdd = new JDomDemo();
         jdd.createXml(System.out);
+        jdd.parserXml(Thread.currentThread().getContextClassLoader().getResourceAsStream("sample.xml"));
     }
 
     public void createXml(OutputStream os) {
