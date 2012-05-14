@@ -1,0 +1,108 @@
+Hello $user.name()! Welcome to $site world!
+$!{fuxk}
+user.password: $user.password, user.age: $user.age, greeting: $user.greeting()
+user's friends:
+#foreach($person in $user.friends)
+    $person
+#end
+
+-------------------------
+#set($Jack=$user)
+#set($num=32)
+#set($age=$num+34)
+
+#set($Jack.age=$age)
+#set($Jack.password = $user.talk("Jack"))
+#set($Jack.friends = $user.produceFriends())
+
+Jack.name: $Jack.name(), Jack.password: $Jack.password, Jack.age: $Jack.age
+Jack's friends:
+#foreach($person in $Jack.friends)
+    $velocityCount: $person.name()
+#end
+
+-------------------------
+
+#set( $criteria = ["name", "address"] )
+#foreach( $criterion in $criteria )
+    #set($result = false)
+    #set( $result = $table.get($criterion) )
+    #if( $result )
+    Query was successful
+    #end
+#end
+
+--------------------------------
+
+#set ( $directoryRoot = "www" )
+#set ( $templateName = "index.vm" )
+#set ( $template = "$directoryRoot/$templateName" )
+$template
+#set($Fuxk = '$directoryRoot')
+$Fuxk
+
+#set($foo="")
+#if ( $foo )
+<strong>Velocity!</strong>
+#end
+
+-----------------------------------
+#set ( $foo = "deoxyribonucleic acid" )
+#set ( $bar = "ribonucleic acid" )
+#if ( $foo == $foo )
+In this case it's clear they aren't equivalent.So…
+#else
+They are not equivalent and this will be the output.
+#end
+
+===================================
+## #include("dbtest.vm")
+#include("txt/a.txt", "txt/a.txt")
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#parse("hello.vm")
+
+...................................
+Count down.
+#set ( $count = 11 )
+#parse ("parsefoo.vm" )
+All done with dofoo.vm!
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+#macro ( d )
+<tr>
+    <td></td>
+</tr>
+#end
+
+#d()
+
+array：
+#macro ( tablerows $color $somelist )
+    #foreach ( $something in $somelist )
+    <tr>
+        <td bgcolor=$color>$something</td
+    </tr>
+    #end
+#end
+
+调用#tablerows Velocimacro：
+#set ( $greatlakes = [ "Superior", "Michigan", "Huron", "Erie", "Ontario" ] )
+#set ( $color = "blue" )
+<table>
+    #tablerows( $color $greatlakes )
+</table>
+
+#macro(Print $a)
+    $a $a $a
+#end
+
+#Print($user.greeting())
+
+
+
+#set ( $parts = ["volva","stipe","annulus","gills", "pileus"] )
+#set ( $cellbgcol = "#CC00FF")
+<table>
+    #tablerows( $cellbgcol $parts )
+</table>

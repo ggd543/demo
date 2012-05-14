@@ -1,7 +1,7 @@
 //package demo;
 //
 //class Coder(words: List[String]){
-//   private val mnemonics = Map(
+//   private val mnemonic = Map(
 //	'2' -> "abc", '3' -> "DEF", '4' -> "GHI" , '5' -> "JKL" , '6' -> "MNO" ,'7' -> "PQRS" , '8' -> "TUV" ,'9' -> "WXYZ"
 //   )
 //   /* Invert the mnemonic map to give a map from char 'A', ... 'Z' to '2' ... '9' */
@@ -12,7 +12,7 @@
 //
 //   /* A map from digit strings to the words that represent them,
 //      e,g. "5882" -> Set("Java", "Kata", "Lava", ...) */
-//   private val wordsForNum: Map[String, List[String]] = (words groupBy wordCode) withDefaultValue 0
+//   private val wordsForNum  = (words groupBy wordCode).withDefaultValue
 //
 //   /* return all ways to encode a number as a list of words */
 //   def encode(number: String) : Set[List[String]] = {

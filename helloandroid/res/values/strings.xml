@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HelloAndroid</string>
+    <string name="label_name">WTF</string>
+    <string name="greeting">Good morning</string>
+    <color name="red">#ff0000</color>
+    <color name="green">#ffb061ff</color>
+    <color name="blue">#0000ff</color>
+    <color name="black">#000000</color>
+    <color name="yellow">#ffff00</color>
+    <color name="grey">#ff9eccff</color>
+</resources>

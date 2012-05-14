@@ -1,0 +1,65 @@
+--> Wrapper Started as Console
+------------------------------------------------------------------------
+The JVM is being launched with a debugger enabled and could possibly be
+suspended.  To avoid unwanted shutdowns, timeouts will be disabled,
+removing the ability to detect and restart frozen JVMs.
+------------------------------------------------------------------------
+Launching a JVM...
+Listening for transport dt_socket at address: 7776
+Starting the Mule Container...
+Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+  Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+
+INFO  2011-12-08 12:50:19,025 [WrapperListener_start_runner] org.mule.module.launcher.MuleContainer: 
+**********************************************************************
+* Mule ESB and Integration Platform                                  *
+* Version: 3.1.2 Build: 21975                                        *
+* MuleSoft, Inc.                                                     *
+* For more information go to http://www.mulesoft.org                 *
+*                                                                    *
+* Server started: 11-12-8 下午12:50                                *
+* JDK: 1.7.0_01 (mixed mode)                                         *
+* OS: Linux (3.0.0-13-generic-pae, i386)                             *
+* Host: ubuntu.ubuntu-domain (127.0.1.1)                             *
+**********************************************************************
+INFO  2011-12-08 12:50:19,130 [WrapperListener_start_runner] org.mule.module.launcher.DeploymentService: 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Mule is up and kicking (every 5000ms)                    +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INT trapped.  Shutting down.
+INFO  2011-12-08 12:50:49,878 [WrapperListener_stop_runner] org.mule.module.launcher.MuleContainer: Mule container shutting down due to normal shutdown request
+<-- Wrapper Stopped
+--> Wrapper Started as Console
+------------------------------------------------------------------------
+The JVM is being launched with a debugger enabled and could possibly be
+suspended.  To avoid unwanted shutdowns, timeouts will be disabled,
+removing the ability to detect and restart frozen JVMs.
+------------------------------------------------------------------------
+Launching a JVM...
+Listening for transport dt_socket at address: 7776
+Starting the Mule Container...
+Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+  Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+
+INFO  2011-12-08 12:51:33,582 [WrapperListener_start_runner] org.mule.module.launcher.MuleContainer: 
+**********************************************************************
+* Mule ESB and Integration Platform                                  *
+* Version: 3.1.2 Build: 21975                                        *
+* MuleSoft, Inc.                                                     *
+* For more information go to http://www.mulesoft.org                 *
+*                                                                    *
+* Server started: 11-12-8 下午12:51                                *
+* JDK: 1.7.0_01 (mixed mode)                                         *
+* OS: Linux (3.0.0-13-generic-pae, i386)                             *
+* Host: ubuntu.ubuntu-domain (127.0.1.1)                             *
+**********************************************************************
+INFO  2011-12-08 12:51:33,617 [WrapperListener_start_runner] org.mule.module.launcher.DefaultMuleDeployer: Exploding a Mule application archive: file:/media/tools/java/mule-standalone-3.1.2/apps/mulerestletdemo-1.0.zip
+INFO  2011-12-08 12:51:34,607 [WrapperListener_start_runner] org.mule.module.launcher.application.DefaultMuleApplication: 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ New app 'mulerestletdemo-1.0'                            +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2011-12-08 12:51:34,611 [WrapperListener_start_runner] org.mule.module.launcher.MuleApplicationClassLoader: [mulerestletdemo-1.0] Loading the following jars:
+=============================
+file:/media/tools/java/mule-standalone-3.1.2/apps/mulerestletdemo-1.0/lib/scala-library-2.9.1.jar
+=============================
+

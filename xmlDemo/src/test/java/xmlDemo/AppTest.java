@@ -1,5 +1,6 @@
 package xmlDemo;
 
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -9,8 +10,7 @@ import java.io.InputStream;
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase
+public class AppTest     extends TestCase
 {
     public void setUp(){
         InputStream is = AppTest.class.getResourceAsStream("a.txt");
