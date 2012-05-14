@@ -13,6 +13,7 @@ package P1 {
 package P11 {
 
 package P111 {
+
 class PC_111 {
   private def print_1() = println("P1.P11.P111.PC_111.print_1()")
 
@@ -21,17 +22,21 @@ class PC_111 {
   def print_3() = println("P1.P11.P111.PC_111.print_3()")
 
   PC_111.ok
+
   //  private[PC_112] def _show_1() = println("to PC_112")  // error: PC_112 is not an enclosing class
   private[P111] def p111_print_1() = println("P1.P11.P111.PC_111.p111_print_1()")
-//   private[P12] def _show_2() = println("P1.P11.P111.PC_111.p111_print_1()") // error:P12 is not an enclosing class
+
+  //   private[P12] def _show_2() = println("P1.P11.P111.PC_111.p111_print_1()") // error:P12 is not an enclosing class
 
   private[P1] def P1_P11_print_1() = println("P1_P11.P1_P11_print_1()")
-  
+
 }
 
 object PC_111 {
   new PC_111().print_1(); //ok
-  new PC_111().print_2(); //ok
+  new PC_111().print_2();
+
+  //ok
 
   private def ok() = "ok"
 
@@ -41,6 +46,7 @@ class PC_112 {
   // def show_1() = new PC_111().print_1(); // compilation error
   //        def show_2() = new PC_111().print_2();  // compilation error
   def show_3() = new PC_111().print_3();
+
   def p111_print_1() = new PC_111().p111_print_1();
 
   def p1_p111_print_1() = new PC_111().P1_P11_print_1();
@@ -49,17 +55,27 @@ class PC_112 {
 class PC_113 extends PC_111 {
   //    def say_1() = super.print_1();  // compilation error
   def say_2() = super.print_2();
+
   def say_3() = super.print_3()
 }
-}//P111
 
-} //P11
+}
+
+//P111
+
+}
+
+//P11
 
 package P12 {
 
-} //P12
+}
 
-} //P1
+//P12
+
+}
+
+//P1
 
 class SC1 {
 }
@@ -70,7 +86,51 @@ object SC1 {
 
 object A extends Application {
   println("Hello world ")
+  type MMap[A, B] = scala.collection.mutable.Map[A, B]
+  val map: MMap[String, String] = null;
+
+  def func(map: MMap[String, String]) = null
+
+  Range.Long(1, 2, 1)
+  val myMap: com.ggd543.HashMap[String, String] = null
+  println(com.ggd543.print);
+  println(com.ggd543.HashMap)
+  println(com.aiguozhe.name)
+  com.aiguozhe.name = "AIGUOZHE"
+  println(com.aiguozhe.name)
+   val yourMap: com.Archer.HashMap[String, String] = null
+  println(com.Archer.HashMap)
 }
+
+package com {
+
+package object ggd543 {
+  type HashMap[A, B] = scala.collection.mutable.HashMap[A, B];
+  val HashMap = scala.collection.mutable.HashMap
+
+  def print = println("hello")
+}
+
+package object aiguozhe {
+  var name = "aiguozhe"
+
+  def sayHello = println("hello")
+}
+
+object Archer {
+  type HashMap[A, B] = scala.collection.mutable.HashMap[A, B];
+  val HashMap = scala.collection.mutable.HashMap
+}
+}
+
+
+
+
+
+
+
+
+
 
 
 
