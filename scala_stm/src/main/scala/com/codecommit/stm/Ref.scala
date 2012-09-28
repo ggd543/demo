@@ -15,7 +15,7 @@ class Ref[T](v: T) {
    * Alright, ballot time: who wants a unary_*(Context) method
    * as syntax sugar for this?  Anyone?  :-)
    */
-  def get(implicit c: Context) = c retrieve this
+  def get(implicit c: Context) = c retrieve(this)
   
   def :=(v: T)(implicit c: Transaction) {
     c.store(this)(v)

@@ -1,11 +1,11 @@
 import com.codecommit.stm._
-import com.codecommit.collection._
 
 object BankFrenzy {
   import Transaction._
   
   type Account = Ref[Long]
-  
+  private val EmptyVector = Vector[Transfer]();
+
   private val fees = new Account
   private val log: Ref[Vector[Transfer]] = new Ref(EmptyVector)
   
@@ -17,10 +17,10 @@ object BankFrenzy {
     val business3 = new Account(50000)
     
     val people = (0 until 100).foldLeft(Vector[Account]()) { (vec, i) =>
-      vec + new Account(1000)
+      vec :+ new Account(1000)
     }
     
-    val market = people + business1 + business2 + business3 + fees
+    val market = people :+ business1 :+ business2 :+ business3 :+ fees
     var running = true
     
     val secActor = thread {
@@ -66,7 +66,7 @@ object BankFrenzy {
   }
   
   def transfer(amount: Long, from: Account, to: Account)(implicit t: Transaction) {
-    log := log + Transfer(amount, from, to)
+    log := log :+ Transfer(amount, from, to)
     
     val less = Math.round(amount * 0.075)
     

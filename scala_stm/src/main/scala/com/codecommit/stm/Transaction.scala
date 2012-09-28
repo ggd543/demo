@@ -1,6 +1,7 @@
 package com.codecommit.stm
 
 import collection._
+import annotation.tailrec
 
 final class Transaction private[stm] (val rev: Int) extends Context {
   private[stm] val world = mutable.Map[Ref[Any], Any]()
@@ -94,11 +95,9 @@ object Transaction {
             
             attemptTransact()
           }
-          
           case FailureException(e) => {     // propagate exception 
             throw e
           }
-          
           case _ => attemptTransact()    // if exception, assume conflict and retry
         }
       } else null.asInstanceOf[A]
