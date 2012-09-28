@@ -18,14 +18,14 @@ object TransDemo extends App {
 
   def execTrans(fileName: String) {
     KettleEnvironment.init()
-    EnvUtil.environmentInit();
-    val transMeta = new TransMeta(fileName)
-    val trans = new Trans(transMeta)
-    trans.execute(null) // you can pass arguments instead of null
-    trans.waitUntilFinished();
-    if (trans.getErrors > 0) {
-      throw new RuntimeException("There were errors during transformation execution")
-    }
-
+  EnvUtil.environmentInit();
+  val transMeta = new TransMeta(fileName)
+  val trans = new Trans(transMeta)
+  trans.execute(null) // you can pass arguments instead of null
+  trans.waitUntilFinished();
+  if (trans.getErrors > 0) {
+    throw new RuntimeException("There were errors during transformation execution")
   }
+
+}
 }

@@ -13,13 +13,15 @@ import org.pentaho.di.job.{Job, JobMeta}
  */
 
 object JobsDemo extends App {
-  execJobs(args(0))
+//  val fileName = "file:///C:/Users/Administrator/Desktop/etl/etl/test.kjb"
+//  execJobs(fileName)
+   execJobs(args(0))
 
   def execJobs(fileName: String) = {
     KettleEnvironment.init()
     EnvUtil.environmentInit()
-    val jobMeta = new JobMeta()
-    jobMeta.setFilename(fileName)
+    val jobMeta = new JobMeta(fileName, null)
+//    jobMeta.setFilename()
     val job = new Job(null ,jobMeta)
     job.execute(1, null)
     job.waitUntilFinished();
