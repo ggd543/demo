@@ -17,7 +17,7 @@ case object EOF extends Input[Nothing]
 sealed trait IterV[E, A] {
   def get = end match {
     case Done(e, _) => e
-    case e => throw  new RuntimeException
+    case e => throw new RuntimeException
   }
 
   def flatMap[B](f: A => IterV[E, B]): IterV[E, B] = this match {
@@ -25,12 +25,13 @@ sealed trait IterV[E, A] {
     case Cont(k) => Cont(e => k(e) flatMap f)
   }
 
-    def map[B](f : A => B): IterV[E,B] =  this match{
-      case Done(x,e ) => Done(f(x),e)
-      case Cont(k) => Cont(e => k(e) map f)
-    }
-//
-//  def map[B](f: A => B): IterV[E, B] = flatMap(x => unit(f(x)))
+  def map[B](f: A => B): IterV[E, B] = this match {
+    case Done(x, e) => Done(f(x), e)
+    case Cont(k) => Cont(e => k(e) map f)
+  }
+
+  //
+  //  def map[B](f: A => B): IterV[E, B] = flatMap(x => unit(f(x)))
 
   private def unit[B](b: B): IterV[E, B] = this match {
     case Done(_, e) => Done(b, e)
@@ -38,7 +39,10 @@ sealed trait IterV[E, A] {
   }
 
   def end = this match {
-    case Cont(f) => f(EOF) match{ case Cont(ff) => Done(None,EOF); case e => e }
+    case Cont(f) => f(EOF) match {
+      case Cont(ff) => Done(None, EOF);
+      case e => e
+    }
     case e => e
   }
 }
@@ -51,12 +55,12 @@ object Enumerator extends App {
 
   //  @scala.annotation.tailrec
   def enumerate[E, A]: (List[E], IterV[E, A]) => IterV[E, A] = {
-    val f2: (List[E], IterV[E, A]) => IterV[E, A] =  {
+    val f2: (List[E], IterV[E, A]) => IterV[E, A] = {
       case (Nil, i) => i
       case (_, i@Done(_, _)) => i
       case (x :: xs, Cont(f)) => enumerate(xs, f(El(x)))
     }
-//    println("create a new Function2 "+f2);
+    //    println("create a new Function2 "+f2);
     f2;
   }
 
@@ -145,5 +149,7 @@ object Enumerator extends App {
   println(enumerate(List(3, 4, 5), drop1Keep1[Int]).get)
 
   println("=====")
-  println(enumerate(Nil, drop1Keep1[Int]).get)
+  println(enumerate(Nil, drop1Keep1[Int]).get);
+
+  
 }
