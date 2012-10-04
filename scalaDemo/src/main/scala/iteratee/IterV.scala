@@ -1,9 +1,9 @@
 /*
- * Created by IntelliJ IDEA.
- * User: Administrator
- * Date: 12-8-5
- * Time: 下午5:54
- */
+* Created by IntelliJ IDEA.
+* User: Administrator
+* Date: 12-8-5
+* Time: 下午5:54
+*/
 package iteratee
 
 trait Input[+E]
@@ -53,23 +53,23 @@ case class Cont[E, A](f: Input[E] => IterV[E, A]) extends IterV[E, A]
 
 object Enumerator extends App {
 
-  //  @scala.annotation.tailrec
-  def enumerate[E, A]: (List[E], IterV[E, A]) => IterV[E, A] = {
-    val f2: (List[E], IterV[E, A]) => IterV[E, A] = {
+//    @scala.annotation.tailrec
+//  def enumerate[E, A]: (List[E], IterV[E, A]) => IterV[E, A] = {
+//    val f2: (List[E], IterV[E, A]) => IterV[E, A] = {
+//      case (Nil, i) => i
+//      case (_, i@Done(_, _)) => i
+//      case (x :: xs, Cont(f)) => enumerate(xs, f(El(x)))
+//    }
+//    //    println("create a new Function2 "+f2);
+//    f2;
+//  }
+
+    @scala.annotation.tailrec
+    def enumerate[E, A](ls: List[E], iter: IterV[E, A]):  IterV[E, A] = (ls, iter) match{
       case (Nil, i) => i
       case (_, i@Done(_, _)) => i
-      case (x :: xs, Cont(f)) => enumerate(xs, f(El(x)))
+      case (x :: xs, Cont(f)) => enumerate[E,A](xs, f(El(x)))
     }
-    //    println("create a new Function2 "+f2);
-    f2;
-  }
-
-  //  @scala.annotation.tailrec
-  //  def enumerate[E, A](ls: List[E], iter: IterV[E, A]):  IterV[E, A] = (ls, iter) match{
-  //    case (Nil, i) => i
-  //    case (_, i@Done(_, _)) => i
-  //    case (x :: xs, Cont(f)) => enumerate(xs, f(El(x)))
-  //  }
 
   def counter[A]: IterV[A, Int] = {
     def step(n: Int): Input[A] => IterV[A, Int] = {
@@ -82,7 +82,7 @@ object Enumerator extends App {
 
   def drop[E](n: Int): IterV[E, Unit] = {
     def step: Input[E] => IterV[E, Unit] = {
-      case El(x) => drop(n - 1)
+      case El(x) => drop[E](n - 1)
       case Empty => Cont(step)
       case EOF => Done((), EOF)
     }
@@ -151,5 +151,5 @@ object Enumerator extends App {
   println("=====")
   println(enumerate(Nil, drop1Keep1[Int]).get);
 
-  
+
 }
