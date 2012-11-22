@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<project name="c" default="compile">
+    <import file="${basedir}/../build-common.xml"/>
+    <property name="jar.file" value="c.jar"/>
+
+</project>

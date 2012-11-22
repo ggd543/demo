@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<project name="common">
+    <property environment="env"/>
+    <property name="project.dir" value="${basedir}/.."/>
+    <property name="lib.dir" value="${project.dir}/lib"/>
+    <property name="java.src.dir" value="src/java"/>
+    <property name="scala.src.dir" value="src/scala"/>
+    <property name="classes.dir" value="classes"/>
+    <property name="test.classes.dir" value="test-classes"/>
+
+    <path id="lib.classpath">
+        <fileset dir="${project.dir}/lib" includes="*.jar"/>
+    </path>
+
+    <path id="compile.classpath">
+        <path refid="lib.classpath"/>
+    </path>
+
+    <taskdef resource="net/sf/antcontrib/antlib.xml">
+    </taskdef>
+
+    <!-- defines the Scala ant tasks fsc, sbaz, scalac and scalascript.  -->
+    <taskdef classpathref="lib.classpath" resource="scala/tools/ant/antlib.xml"/>
+
+    <target name="compile">
+        <mkdir dir="${classes.dir}"/>
+        <javac
+                classpathref="compile.classpath"
+                verbose="yes"
+                compiler="modern"
+                debug="on"
+                debuglevel="source"
+                deprecation="on"
+                destdir="${classes.dir}"
+                fork="yes"
+                includeAntRuntime="false"
+                includeJavaRuntime="false"
+                nowarn="on"
+                srcdir="${java.src.dir}"
+                />
+        <scalac srcdir="${scala.src.dir}" destdir="${classes.dir}" classpathref="compile.classpath"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="${classes.dir}"/>
+        <delete dir="${test.classes.dir}"/>
+        <delete>
+            <fileset dir="." includes="*.jar"/>
+        </delete>
+    </target>
+
+    <target name="jar" depends="compile">
+        <jar file="${jar.file}" basedir="${basedir}/classes"/>
+    </target>
+</project>

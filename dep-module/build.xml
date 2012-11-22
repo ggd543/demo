@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<project name="module" basedir="." default="compile">
+    <property name="project.dir" value="${basedir}"/>
+    <import file="${project.dir}/build-common.xml"/>
+
+    <target name="clean">
+        <ant dir="a" target="clean"/>
+        <ant dir="b" target="clean"/>
+        <ant dir="c" target="clean"/>
+    </target>
+
+    <target name="compile">
+        <ant dir="c" target="compile"/>
+        <ant dir="a" target="compile"/>
+        <ant dir="b" target="compile"/>
+        <ant dir="d" target="compile"/>
+
+    </target>
+
+	<target name="jar">
+        <ant dir="c" target="jar"/>
+        <ant dir="a" target="jar"/>
+        <ant dir="b" target="jar"/>
+        <ant dir="d" target="jar"/>
+
+    </target>
+
+</project>

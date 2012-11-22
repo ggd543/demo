@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<project name="d" basedir="." default="compile">
+    <import file="${basedir}/../build-common.xml"/>
+    <property name="jar.file" value="d.jar"/>
+
+    <path id="compile.classpath">
+        <path refid="lib.classpath"/>
+        <pathelement location="${project.dir}/c/c.jar"/>
+        <pathelement location="${project.dir}/b/b.jar"/>
+        <pathelement location="${project.dir}/a/a.jar"/>
+    </path>
+
+    <path id="runtime.classpath">
+        <path refid="compile.classpath"/>
+        <pathelement location="${project.dir}/d/d.jar"/>
+    </path>
+
+    <target name="run-test">
+        <ant dir=".." target="compile"/>
+        <java
+                classname="com.ggd543.ClientApp"
+                classpathref="runtime.classpath"
+                fork="true"
+                />
+    </target>
+</project>

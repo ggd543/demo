@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<project name="b" basedir="." default="compile">
+<import file="${basedir}/../build-common.xml"/>
+    <property name="jar.file" value="b.jar"/>
+<path id="compile.classpath">
+    <path refid="lib.classpath"/>
+    <pathelement location="${project.dir}/c/c.jar"/>
+</path>
+
+</project>
