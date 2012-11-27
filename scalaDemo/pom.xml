@@ -56,6 +56,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>net.java.dev.jna</groupId>
+            <artifactId>jna</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.agilewiki.jactor</groupId>
             <artifactId>jactor</artifactId>
             <version>4.1.0</version>
@@ -173,4 +178,10 @@
         </profile>
     </profiles>
 
+    <repositories>
+        <repository>
+            <id>dev.java</id>
+            <url>http://download.java.net/maven/2</url>
+        </repository>
+    </repositories>
 </project>
