@@ -1,0 +1,9 @@
+package test
+import java.util.List;
+
+rule "rule1"
+    when
+        $customer:Customer(name matches "li.*")
+    then
+        System.out.println($customer.getName());
+    end
