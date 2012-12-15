@@ -32,5 +32,6 @@ public class DroolsDemo1 {
         session.fireAllRules();
         session.dispose();
         System.out.println("end.");
+        // why
     }
 }
