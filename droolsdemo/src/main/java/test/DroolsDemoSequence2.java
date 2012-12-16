@@ -14,26 +14,20 @@ import org.drools.builder.KnowledgeBuilderFactory;
 import org.drools.builder.ResourceType;
 import org.drools.io.ResourceFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
-import org.drools.runtime.rule.QueryResults;
 
 import java.util.Collection;
 
-public class DroolsDemo1 {
+public class DroolsDemoSequence2 {
     public static void main(String[] args) {
         KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-        kbuilder.add(ResourceFactory.newClassPathResource("test1.drl"), ResourceType.DRL);
+        kbuilder.add(ResourceFactory.newClassPathResource("test_sequence_2.drl"), ResourceType.DRL);
         Collection collection = kbuilder.getKnowledgePackages();
         KnowledgeBase knowledgeBase = KnowledgeBaseFactory.newKnowledgeBase();
         knowledgeBase.addKnowledgePackages(collection);
         StatefulKnowledgeSession session = knowledgeBase.newStatefulKnowledgeSession();
-//        session.insert(new Customer("zhang san"));
-        session.insert(new Customer("li si"));
-//        session.insert(new Customer("wang er"));
-//        session.insert(new Customer("li xiao long"));
+        session.insert("test");
         session.fireAllRules();
 
-        QueryResults qr = session.getQueryResults("query fact count");
-        System.out.println("customer 数目: "+qr.size());
         session.dispose();
         System.out.println("end.");
         // why

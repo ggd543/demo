@@ -15,25 +15,31 @@ import org.drools.builder.ResourceType;
 import org.drools.io.ResourceFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.drools.runtime.rule.QueryResults;
+import org.drools.runtime.rule.QueryResultsRow;
 
 import java.util.Collection;
 
-public class DroolsDemo1 {
+public class DroolsQueryDemo {
     public static void main(String[] args) {
         KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-        kbuilder.add(ResourceFactory.newClassPathResource("test1.drl"), ResourceType.DRL);
+        kbuilder.add(ResourceFactory.newClassPathResource("query.drl"), ResourceType.DRL);
         Collection collection = kbuilder.getKnowledgePackages();
         KnowledgeBase knowledgeBase = KnowledgeBaseFactory.newKnowledgeBase();
         knowledgeBase.addKnowledgePackages(collection);
         StatefulKnowledgeSession session = knowledgeBase.newStatefulKnowledgeSession();
 //        session.insert(new Customer("zhang san"));
-        session.insert(new Customer("li si"));
+        session.insert(new Customer("lisi",23));
+        session.insert(new Customer("zhangsan",32));
 //        session.insert(new Customer("wang er"));
 //        session.insert(new Customer("li xiao long"));
         session.fireAllRules();
 
-        QueryResults qr = session.getQueryResults("query fact count");
-        System.out.println("customer 数目: "+qr.size());
+        QueryResults qrs = session.getQueryResults("testQuery", 10);
+        System.out.println("customer 数目: "+qrs.size());
+        for (QueryResultsRow  qrr: qrs){
+            Customer customer = (Customer) qrr.get("customer");
+            System.out.println("customer name: "+customer.getName()+" "+customer.getAge());
+        }
         session.dispose();
         System.out.println("end.");
         // why

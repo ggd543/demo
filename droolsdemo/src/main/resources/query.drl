@@ -1,0 +1,6 @@
+package test;
+
+query "testQuery"
+    customer:Customer( age > 3 )
+end
+
