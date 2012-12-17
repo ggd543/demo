@@ -53,14 +53,14 @@ case class Cont[E, A](f: Input[E] => IterV[E, A]) extends IterV[E, A]
 
 object Enumerator extends App {
 
-//    @scala.annotation.tailrec
+//  伪递归，通过创建很多个对象来代替循环
 //  def enumerate[E, A]: (List[E], IterV[E, A]) => IterV[E, A] = {
 //    val f2: (List[E], IterV[E, A]) => IterV[E, A] = {
 //      case (Nil, i) => i
 //      case (_, i@Done(_, _)) => i
 //      case (x :: xs, Cont(f)) => enumerate(xs, f(El(x)))
 //    }
-//    //    println("create a new Function2 "+f2);
+//        println("create a new Function2 "+f2);
 //    f2;
 //  }
 

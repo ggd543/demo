@@ -37,8 +37,15 @@ public class DroolsDateEffectDemo {
         knowledgeBase.addKnowledgePackages(collection);
         StatefulKnowledgeSession session = knowledgeBase.newStatefulKnowledgeSession();
         session.fireAllRules();
-        session.dispose();
         System.out.println("current thread: "+Thread.currentThread());
+        try {
+			Thread.sleep(5000L);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        session.dispose();
+        
         // why
     }
 }
