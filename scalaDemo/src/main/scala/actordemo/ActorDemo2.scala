@@ -25,6 +25,9 @@ object NewMain {
 
       Thread.sleep(3000)
       println("Number os messages received while I was busy? " + mailboxSize)
+      loop{
+
+      }
       receive {
         case msg =>
           val receivedTime= System.currentTimeMillis() - startTime
