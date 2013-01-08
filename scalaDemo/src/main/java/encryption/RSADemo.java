@@ -21,8 +21,9 @@ public class RSADemo{
 
         //A生成一个密钥对
         KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
-        generator.initialize(1024);
+        generator.initialize(1024); // 指定密钥长度
         KeyPair keyPair = generator.generateKeyPair();
+
         //A把公钥公开
         PublicKey publicKey = keyPair.getPublic();
         //A自己保存好私钥
@@ -32,7 +33,7 @@ public class RSADemo{
 
         Cipher cipher = Cipher.getInstance("RSA");
         //B用A的公钥把信息加密后发给A
-        cipher.init(Cipher.ENCRYPT_MODE,publicKey);
+        cipher.init(Cipher.ENCRYPT_MODE, publicKey);
         cipher.update(plain);
         byte[] result1 = cipher.doFinal();
         System.out.println("加密结果："+Arrays.toString(result1));

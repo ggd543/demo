@@ -1,20 +1,28 @@
+/**
+ * @Copyright (c) 2002-2012 Travelsky Limited. All rights reserved.
+ */
 package encryption;
 
-import javax.crypto.*;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.KeyGenerator;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
 
 /**
- * User: 刘永健
- * Date: 12-10-4
- * Time: 下午8:56
- * To change this template use File | Settings | File Templates.
+ * @author 刘永健(liuyongjian@travelsky.com)
+ * @since 2013/01/08
  */
-public class AESDemo {
-    public static void main(String[] args) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException {
+public class DESDemo {
+
+    public static void main(String[] args) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, InvalidKeySpecException, UnsupportedEncodingException {
         String plainText = "abc123";
         byte[] plainData1 = plainText.getBytes("UTF-8");
         System.out.println("Original text：" + Arrays.toString(plainData1));
@@ -43,6 +51,6 @@ public class AESDemo {
 
         System.out.println("The decrypted result：" + Arrays.toString(plainData2));
         System.out.println("Compare：" + Arrays.equals(plainData2, plainData1));
- 
     }
+
 }
