@@ -21,7 +21,7 @@ public class RSADemo{
 
         //A生成一个密钥对
         KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
-        generator.initialize(1024); // 指定密钥长度
+        generator.initialize(3072); // 指定密钥长度
         KeyPair keyPair = generator.generateKeyPair();
 
         //A把公钥公开

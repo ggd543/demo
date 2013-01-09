@@ -8,6 +8,7 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
+import java.security.spec.KeySpec;
 import java.util.Arrays;
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -15,6 +16,7 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.KeyGenerator;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
+import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.SecretKeySpec;
 
 /**
@@ -25,13 +27,16 @@ public class SymmetricCipherDemo {
     /**
      * 加密算法
      */
-    private static final String[] CIPHER_ALGORITHM = {"AES", "DES", "TripleDes", "Blowfish", "RC4"};
+    private static final String[] CIPHER_ALGORITHM = {"AES", "DES", "TripleDes", "Blowfish"};
+//    private static final String[] CIPHER_ALGORITHM = { "AES"};
+    private static SecretKey key;
 
     public static void main(String[] args) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, InvalidKeySpecException, UnsupportedEncodingException {
         byte[] plainData1 = getPlainData();
 
         for (String algorithm : CIPHER_ALGORITHM) {
             SecretKey secretKey = generateKey(algorithm);
+//            SecretKey secretKey = getKey(algorithm);
             byte[] encryptedData = encryptData(plainData1, secretKey, algorithm);
             byte[] plainData2 = decryptData(encryptedData, secretKey, algorithm);
             System.out.println("加密前后对比：" + Arrays.equals(plainData2, plainData1));
@@ -114,4 +119,20 @@ public class SymmetricCipherDemo {
         System.out.println("解密结果：" + Arrays.toString(plainData2));
         return plainData2;
     }
+
+    public static SecretKey getKey( String algorithm) throws NoSuchAlgorithmException, InvalidKeyException, InvalidKeySpecException {
+        int keySize = 24;
+        byte[] key = new byte[keySize];
+        for (byte i = 0; i < keySize; i++) {
+            key[i] = i;
+        }
+//        KeySpec keySpec = new SecretKeySpec(key, algorithm);
+//        KeySpec keySpec = new DESKeySpec(key);
+//        KeySpec keySpec = new DESedeKeySpec(key);
+        KeySpec keySpec = new SecretKeySpec(key,"AES");
+        SecretKeyFactory keyFactory = SecretKeyFactory.getInstance(algorithm);
+        SecretKey secretKey = keyFactory.generateSecret(keySpec);
+        return secretKey;
+    }
 }
+
