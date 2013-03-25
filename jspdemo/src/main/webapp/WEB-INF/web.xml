@@ -8,13 +8,55 @@
     <display-name>jspdemo</display-name>
     <description>This is a jsp demo</description>
 
+    <!--<filter>-->
+        <!--<filter-name>TeeFilter</filter-name>-->
+        <!--<filter-class>ch.qos.logback.access.servlet.TeeFilter</filter-class>-->
+        <!--<init-param>-->
+            <!--<param-name>excludes</param-name>-->
+            <!--<param-value>localhost</param-value>-->
+        <!--</init-param>-->
+    <!--</filter>-->
+
+    <!--<filter-mapping>-->
+        <!--<filter-name>TeeFilter</filter-name>-->
+        <!--<url-pattern>/*</url-pattern>-->
+    <!--</filter-mapping>-->
+
     <servlet>
         <servlet-name>MyServlet</servlet-name>
         <servlet-class>servlet.MyServlet</servlet-class>
     </servlet>
+    <!--<servlet>-->
+        <!--<servlet-name>AccessViewStatusMessages</servlet-name>-->
+        <!--<servlet-class>ch.qos.logback.access.ViewStatusMessagesServlet</servlet-class>-->
+    <!--</servlet>-->
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>servlet.HelloServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewLastLog</servlet-name>
+        <servlet-class>servlet.ViewLastLog</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ViewLastLog</servlet-name>
+        <url-pattern>/lastlog</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>AccessViewStatusMessages</servlet-name>-->
+        <!--<url-pattern>/lbAccessStatus</url-pattern>-->
+    <!--</servlet-mapping>-->
     <servlet-mapping>
         <servlet-name>MyServlet</servlet-name>
         <url-pattern>/myservlet</url-pattern>
     </servlet-mapping>
+
     <distributable/>
 </web-app>

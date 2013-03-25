@@ -1,0 +1,18 @@
+rule "test first"
+    salience 0
+    no-loop false
+    when
+        $test: String()
+    then
+        System.out.println($test);
+        insert("test second");
+end
+
+rule "test second"
+    salience -10
+    when
+        $test: String( )
+    then
+        System.out.println($test + " the 2nd");
+    insert("test three");
+end

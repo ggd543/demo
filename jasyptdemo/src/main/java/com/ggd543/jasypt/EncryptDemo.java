@@ -7,8 +7,11 @@
  */
 package com.ggd543.jasypt;
 
+import org.jasypt.encryption.StringEncryptor;
+
 public class EncryptDemo {
+
     public static void main(String[] args) {
-        StringEncryptor
+
     }
 }

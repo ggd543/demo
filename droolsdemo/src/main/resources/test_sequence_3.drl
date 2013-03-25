@@ -1,0 +1,23 @@
+//同一互斥组下,优先级高的如果no-loop true,则,此规则内如果插入新对象,视本规则为不匹配,执行下一规则.
+rule "test second"
+	salience 0
+	activation-group "show"  // 互斥组名
+	no-loop true
+	when
+		$test: String( )
+	then 
+		System.out.println($test);
+		insert("test second");
+end
+
+rule "test first"
+	salience 0
+	activation-group "show"
+	no-loop true
+	when
+		$test: String( )
+	then 
+		System.out.println($test + " the 2nd");
+		insert("test three");
+end
+

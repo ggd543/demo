@@ -37,6 +37,6 @@ class Log4jInitServlet extends HttpServlet {
     //    println(context.getRealPath("/"))
     val propFileName = context.getRealPath("/") + "WEB-INF/log4j.properties"
     //    println(propFileName)
-    PropertyConfigurator.configure(propFileName)
+     PropertyConfigurator.configure(propFileName)
   }
 }
