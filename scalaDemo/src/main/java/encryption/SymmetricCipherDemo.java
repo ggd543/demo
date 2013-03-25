@@ -4,6 +4,7 @@
 package encryption;
 
 import java.io.UnsupportedEncodingException;
+import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -17,6 +18,7 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
 /**
@@ -31,7 +33,7 @@ public class SymmetricCipherDemo {
 //    private static final String[] CIPHER_ALGORITHM = { "AES"};
     private static SecretKey key;
 
-    public static void main(String[] args) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, InvalidKeySpecException, UnsupportedEncodingException {
+    public static void main(String[] args) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, InvalidKeySpecException, UnsupportedEncodingException, InvalidAlgorithmParameterException {
         byte[] plainData1 = getPlainData();
 
         for (String algorithm : CIPHER_ALGORITHM) {
@@ -76,6 +78,14 @@ public class SymmetricCipherDemo {
         return secretKey;
     }
 
+    private static byte[] generateIV(){
+        int ivLen = 16;
+        byte[] iv = new byte[ivLen];
+        for(byte i = 0; i< ivLen; i++){
+            iv[i] = i;
+        }
+        return iv;
+    }
     /**
      * 加密数据
      *
@@ -89,9 +99,10 @@ public class SymmetricCipherDemo {
      * @throws BadPaddingException
      * @throws IllegalBlockSizeException
      */
-    private static byte[] encryptData(byte[] plainData, SecretKey secretKey, String algorithm) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
+    private static byte[] encryptData(byte[] plainData, SecretKey secretKey, String algorithm) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, InvalidAlgorithmParameterException {
         Cipher cipher = Cipher.getInstance(algorithm);
-        cipher.init(Cipher.ENCRYPT_MODE, secretKey, new SecureRandom());
+//        IvParameterSpec ivSpec = new IvParameterSpec(generateIV());
+        cipher.init(Cipher.ENCRYPT_MODE, secretKey,  new SecureRandom());
         cipher.update(plainData);
         byte[] encryptedData = cipher.doFinal();
         System.out.println("加密结果：" + Arrays.toString(encryptedData));
@@ -111,9 +122,10 @@ public class SymmetricCipherDemo {
      * @throws BadPaddingException
      * @throws IllegalBlockSizeException
      */
-    private static byte[] decryptData(byte[] encryptedData, SecretKey secretKey, String algorithm) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
+    private static byte[] decryptData(byte[] encryptedData, SecretKey secretKey, String algorithm) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, InvalidAlgorithmParameterException {
         Cipher cipher = Cipher.getInstance(algorithm);
-        cipher.init(Cipher.DECRYPT_MODE, secretKey, new SecureRandom());
+//        IvParameterSpec ivSpec = new IvParameterSpec(generateIV());
+        cipher.init(Cipher.DECRYPT_MODE, secretKey ,new SecureRandom());
         cipher.update(encryptedData);
         byte[] plainData2 = cipher.doFinal();
         System.out.println("解密结果：" + Arrays.toString(plainData2));
