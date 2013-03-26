@@ -22,7 +22,8 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         MyMessageProducer sender = new MyMessageProducer();
         MyMessageConsumer consumer = new MyMessageConsumer("zhc");
-        String url = "tcp://localhost:10000",queue="zhc.queue";
+        String url = "tcp://localhost:10000";
+        String queue="zhc.queue";
         try {
             Server.startServer();
             sender.product(url,queue);

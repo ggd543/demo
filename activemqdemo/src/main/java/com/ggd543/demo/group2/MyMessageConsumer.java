@@ -21,7 +21,7 @@ import javax.jms.TextMessage;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
-public class MyMessageConsumer{
+public class MyMessageConsumer {
     private String name;
 
     public MyMessageConsumer(String name) {
@@ -29,7 +29,7 @@ public class MyMessageConsumer{
     }
 
     public void revice(String url, String queue) throws JMSException {
-        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(null,null, url);
+        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(null, null, url);
         Connection connection = connectionFactory.createConnection();
         connection.start();
         Session session = connection.createSession(true,
@@ -38,12 +38,11 @@ public class MyMessageConsumer{
         Destination destination = session.createQueue(queue);
         MessageConsumer consumer = session.createConsumer(destination);
         while (true) {
-            System.out.println(name+"------等待消息------");
+            System.out.println(name + "------等待消息------");
             Message msg = consumer.receive(1000);
             TextMessage message = (TextMessage) msg;
             if (null != message) {
-                System.out
-                        .println("收到消息:" + message.getText());
+                System.out.println("收到消息:" + message.getText());
             }
         }
     }
