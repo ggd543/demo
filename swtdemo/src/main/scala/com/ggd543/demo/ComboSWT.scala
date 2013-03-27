@@ -6,5 +6,7 @@
 package com.ggd543.demo
 
 object ComboSWT {
-
+def main(args: Array[String]):Unit={
+    
+}
 }
