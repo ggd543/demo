@@ -25,6 +25,7 @@ object MenuSWT {
       //"文件"项
       val fileItem = new MenuItem(mainMenu, SWT.CASCADE);
       fileItem.setText("文件&F");
+      fileItem.setAccelerator(SWT.ALT+'F')
       //"文件"菜单
       val fileMenu = new Menu(shell, SWT.DROP_DOWN);
       fileItem.setMenu(fileMenu);

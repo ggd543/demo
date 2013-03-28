@@ -29,11 +29,8 @@
             <activation>
                 <os>
                     <family>windows</family>
+                    <arch>amd64</arch>
                 </os>
-                <property>
-                    <name>os.arch</name>
-                    <value>amd64</value>
-                </property>
             </activation>
             <dependencies>
                 <dependency>
@@ -50,11 +47,8 @@
             <activation>
                 <os>
                     <family>windows</family>
+                    <arch>x86</arch>
                 </os>
-                <property>
-                    <name>os.arch</name>
-                    <value>amd64</value>
-                </property>
             </activation>
             <dependencies>
                 <dependency>
@@ -70,11 +64,8 @@
             <activation>
                 <os>
                     <family>unix</family>
+                    <arch>x86</arch>
                 </os>
-                <property>
-                    <name>os.arch</name>
-                    <value>x86</value>
-                </property>
             </activation>
             <dependencies>
                 <dependency>
@@ -90,11 +81,8 @@
             <activation>
                 <os>
                     <family>unix</family>
+                    <arch>amd64</arch>
                 </os>
-                <property>
-                    <name>os.arch</name>
-                    <value>amd64</value>
-                </property>
             </activation>
             <dependencies>
                 <dependency>
@@ -186,5 +174,27 @@
             </dependencies>
         </profile>
     </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                            <!-- 将所有依赖的jar都拷贝出来 -->
+                        </goals>
+                        <configuration>
+                            <outputDirectory>deps</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
     
 </project>
