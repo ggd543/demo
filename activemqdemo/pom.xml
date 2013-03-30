@@ -26,7 +26,6 @@
 
     <repositories>
         <repository>
-
             <id>nexus-public</id>
             <url>http://oss.sonatype.org/content/groups/public/</url>
         </repository>
@@ -50,6 +49,7 @@
             <artifactId>activemq-core</artifactId>
             <version>5.7.0</version>
         </dependency>
+
     </dependencies>
 
     <profiles>
