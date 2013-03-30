@@ -22,9 +22,18 @@ object FormLayout4 {
 
     formData.height = 50;
     formData.width = 50;
-    formData.right = new FormAttachment(50, 0);
-//    formData.left = new FormAttachment(0,10)
+    formData.left = new FormAttachment(0, 10)
+    formData.right = new FormAttachment(100, -50);
+    formData.top = new FormAttachment(1, 4, 0);
     button.setLayoutData(formData);
+
+    val button2 = new Button(shell, SWT.PUSH)
+    button2.setText("Button 2")
+    val formData2 = new FormData();
+    formData2.top = new FormAttachment(button, 5)
+    formData2.left = new FormAttachment(button, 0, SWT.LEFT)
+    formData2.right = new FormAttachment(button, 0, SWT.RIGHT)
+    button2.setLayoutData(formData2)
 
     shell.pack()
     shell.open()
