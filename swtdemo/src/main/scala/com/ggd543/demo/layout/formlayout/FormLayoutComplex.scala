@@ -3,7 +3,7 @@
  * @Author:liuyongjian(liuyongjian@travelsky.com) 2013-03-29
  * @Copyright (c) 2002-2013 Travelsky Limited. All rights reserved.
  */
-package com.ggd543.demo.formlayout
+package com.ggd543.demo.layout.formlayout
 
 import org.eclipse.swt.widgets.{Composite, Button, Shell, Display}
 import org.eclipse.swt.layout._
