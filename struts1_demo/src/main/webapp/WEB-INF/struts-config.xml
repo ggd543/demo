@@ -6,22 +6,28 @@
     <form-beans>
         <form-bean name="loginForm" type="com.tao.struts.form.LoginForm"/>
         <form-bean name="loginResultForm" type="com.tao.struts.form.LoginResultForm"/>
+
     </form-beans>
 
     <global-exceptions/>
     <global-forwards/>
 
     <action-mappings>
-        <action attribute="loginForm" input="login.jsp" name="loginForm"
-                path="/login" scope="request" type="com.tao.struts.action.LoginAction"
-                cancellable="true">
-            <forward name="success" path="/loginResult.do?method=success"/>
-            <forward name="failure" path="/loginResult.do?method=failure"/>
+        <action attribute="loginForm" input="/login.jsp" name="loginForm"
+                path="/login" scope="session" type="com.tao.struts.action.LoginAction" validate="true"
+                parameter="method">
+            <forward name="next" path="/loginResult.do?method=execute"/>
+            <!--<forward name="success" path="/loginResult.do?method=success"/>-->
+            <!--<forward name="failure" path="/loginResult.do?method=failure"/>-->
         </action>
 
         <action attribute="loginResultForm" input="/login.do" name="loginResultForm"
                 path="/loginResult" scope="request" type="com.tao.struts.action.LoginResultAction"
                 cancellable="true" parameter="method">
+        </action>
+
+        <action input="/status.jsp" path="/status" scope="request" type="com.tao.struts.action.LoginResultAction"
+                name="loginResultForm" attribute="loginResultForm" cancellable="true" parameter="method">
         </action>
 
     </action-mappings>
