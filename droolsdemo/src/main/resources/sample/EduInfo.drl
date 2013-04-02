@@ -1,0 +1,20 @@
+package sample
+import sample.Employ;
+
+rule"Bachelor"
+      ruleflow-group"basic_salary"
+when
+   emp:Employ(eduInfo =="bachelor");
+then
+   System.out.println(Thread.currentThread()+  " : execrule Bachelor ... ");
+   emp.setBasicSalary(1500);
+end
+
+rule"Master"
+      ruleflow-group"basic_salary"
+when
+   emp:Employ(eduInfo=="master")
+then
+   System.out.println(Thread.currentThread()+  " : execrule Master ... ");
+   emp.setBasicSalary(2500);
+end

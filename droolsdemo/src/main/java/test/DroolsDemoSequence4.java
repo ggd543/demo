@@ -20,7 +20,7 @@ import java.util.Collection;
 public class DroolsDemoSequence4 {
     public static void main(String[] args) {
         KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-        kbuilder.add(ResourceFactory.newClassPathResource("test_sequence_4.drl"), ResourceType.DRL);
+        kbuilder.add(ResourceFactory.newClassPathResource("test/test_sequence_4.drl"), ResourceType.DRL);
         Collection collection = kbuilder.getKnowledgePackages();
         KnowledgeBase knowledgeBase = KnowledgeBaseFactory.newKnowledgeBase();
         knowledgeBase.addKnowledgePackages(collection);

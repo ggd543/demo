@@ -8,7 +8,6 @@ package test;
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactory;
 import org.drools.builder.*;
-import org.drools.definition.type.FactType;
 import org.drools.io.ResourceFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
 
@@ -23,7 +22,7 @@ public class DroolsDSLDemo {
         KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
             System.setProperty("drools.dateformat", "yyyy-MM-dd HH:mm:ss");
 
-            kbuilder.add(ResourceFactory.newClassPathResource("fact.drl"), ResourceType.DRL);
+            kbuilder.add(ResourceFactory.newClassPathResource("test/fact.drl"), ResourceType.DRL);
             if (kbuilder.hasErrors()) {
                 System.out.println("规则中存在错误: ");
                 KnowledgeBuilderErrors errors = kbuilder.getErrors();

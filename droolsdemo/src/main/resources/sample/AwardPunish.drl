@@ -1,0 +1,40 @@
+package sample
+import sample.Employ
+import java.util.Random
+
+rule"Award"
+       ruleflow-group"award_punish"
+when
+   emp:Employ(awardPunish=="award")
+then
+try {
+Thread.sleep(new Random().nextInt(10)* 1000);
+} catch (InterruptedException e) {
+    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+}
+   System.out.println(Thread.currentThread()+ " : execrule Award ... ");
+  emp.setPercent(1.10);
+end
+
+rule"Punishment"
+       ruleflow-group"award_punish"
+when
+   emp:Employ(awardPunish=="punish")
+then
+try {
+Thread.sleep(new Random().nextInt(5)* 1000);
+} catch (InterruptedException e) {
+    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+}
+   System.out.println(Thread.currentThread()+ " : execrule Punishment ... ");
+  emp.setPercent(0.90);
+end
+
+rule"None"
+      ruleflow-group"award_punish"
+when
+   emp:Employ(awardPunish=="none")
+then
+   System.out.println(Thread.currentThread()+ " : execrule None ... ");
+  emp.setPercent(1.00);
+end

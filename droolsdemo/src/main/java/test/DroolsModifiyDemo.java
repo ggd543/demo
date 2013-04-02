@@ -12,7 +12,6 @@ import org.drools.KnowledgeBaseFactory;
 import org.drools.builder.*;
 import org.drools.io.ResourceFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
-import org.drools.runtime.rule.QueryResults;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -20,7 +19,7 @@ import java.util.Iterator;
 public class DroolsModifiyDemo {
     public static void main(String[] args) {
         KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-        kbuilder.add(ResourceFactory.newClassPathResource("modify.drl"), ResourceType.DRL);
+        kbuilder.add(ResourceFactory.newClassPathResource("test/modify.drl"), ResourceType.DRL);
         if (kbuilder.hasErrors()) {
             System.out.println("规则中存在错误: ");
             KnowledgeBuilderErrors errors = kbuilder.getErrors();
