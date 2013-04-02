@@ -16,8 +16,9 @@ public class HelloTask extends Task implements org.apache.tools.ant.TaskContaine
     private int count;
 
     public void execute() {
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < count; i++){
             info.execute();
+        }
     }
 
     public void setCount(int c) {

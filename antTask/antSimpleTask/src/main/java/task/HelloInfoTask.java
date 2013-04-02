@@ -6,15 +6,16 @@
 package task;
 
 import org.apache.tools.ant.BuildException;
+import org.apache.tools.ant.Task;
 
 /**
  * @author liuyongjian
  * @version 1.0
  */
-public class HelloInfoTask {
+public class HelloInfoTask extends Task {
     private String msg;
 
-    public void execute() throws BuildException {
+    public void execute()  {
         System.out.println(msg);
     }
 

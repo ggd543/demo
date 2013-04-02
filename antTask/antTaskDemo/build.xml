@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<project name="ant-task">
+	<path id="lib.classpath">		
+		<fileset dir="${basedir}/lib" includes="*.jar"/>	
+	</path>
+	
+	<taskdef name="hello" classname="task.HelloTask" classpathref="lib.classpath"/>
+		<taskdef name="helloInfo" classname="task.HelloInfoTask" classpathref="lib.classpath"/>
+		<taskdef name="simpleTask" classname="task.AntSimpleTask" classpathref="lib.classpath" />
+		
+	<target name="hello">
+		
+		
+		<simpleTask count="5" message="java" />
+		 
+		<hello count="3" >
+			<helloInfo message="hello world" /> <!--  Could not create task of type ??  -->
+		</hello>
+	 
+	</target>
+	
+</project>
