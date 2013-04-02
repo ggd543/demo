@@ -22,7 +22,7 @@ import java.util.Collection;
 public class DroolsQueryDemo {
     public static void main(String[] args) {
         KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-        kbuilder.add(ResourceFactory.newClassPathResource("query.drl"), ResourceType.DRL);
+        kbuilder.add(ResourceFactory.newClassPathResource("test/query.drl"), ResourceType.DRL);
         Collection collection = kbuilder.getKnowledgePackages();
         KnowledgeBase knowledgeBase = KnowledgeBaseFactory.newKnowledgeBase();
         knowledgeBase.addKnowledgePackages(collection);

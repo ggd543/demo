@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<process xmlns="http://drools.org/drools-5.0/process"
+         xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+         xs:schemaLocation="http://drools.org/drools-5.0/process drools-processes-5.0.xsd"
+         type="RuleFlow" name="flow" id="sample.salary" package-name="sample" >
+
+  <header>
+  </header>
+
+  <nodes>
+    <start id="1" name="Start" x="154" y="-1" width="48" height="48" />
+    <split id="2" name="Gateway" x="320" y="74" width="49" height="49" type="3" >
+      <constraints>
+        <constraint toNodeId="8" toType="DROOLS_DEFAULT" name="to_award_salary" priority="1" type="rule" dialect="mvel" >eval(true)</constraint>
+        <constraint toNodeId="7" toType="DROOLS_DEFAULT" name="to_bonus_salary" priority="1" type="rule" dialect="mvel" >eval(true)</constraint>
+        <constraint toNodeId="6" toType="DROOLS_DEFAULT" name="to_duty_salary" priority="1" type="rule" dialect="mvel" >eval(true)</constraint>
+        <constraint toNodeId="5" toType="DROOLS_DEFAULT" name="to_basic_salary" priority="1" type="rule" dialect="mvel" >eval(true)</constraint>
+      </constraints>
+    </split>
+    <join id="3" name="Gateway" x="188" y="305" width="49" height="49" type="1" />
+    <ruleSet id="5" name="Basic Salary" x="34" y="166" width="80" height="48" ruleFlowGroup="basic_salary" />
+    <ruleSet id="6" name="Duty Salary" x="222" y="202" width="80" height="48" ruleFlowGroup="duty_salary" />
+    <ruleSet id="7" name="Bonus Salary" x="374" y="200" width="80" height="48" ruleFlowGroup="bonus_salary" />
+    <ruleSet id="8" name="Award Punish" x="660" y="180" width="80" height="48" ruleFlowGroup="award_punish" />
+    <end id="9" name="End" x="213" y="373" width="48" height="48" />
+    <ruleSet id="10" name="Total Salary" x="480" y="330" width="80" height="48" ruleFlowGroup="sum_salary" />
+  </nodes>
+
+  <connections>
+    <connection from="1" to="2" />
+    <connection from="5" to="3" />
+    <connection from="6" to="3" />
+    <connection from="7" to="3" />
+    <connection from="8" to="3" />
+    <connection from="2" to="5" />
+    <connection from="2" to="6" />
+    <connection from="2" to="7" />
+    <connection from="2" to="8" />
+    <connection from="10" to="9" />
+    <connection from="3" to="10" />
+  </connections>
+
+</process>

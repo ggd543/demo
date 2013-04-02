@@ -1,0 +1,27 @@
+package sample
+
+import sample.Employ
+import java.util.Random
+
+rule"Technician"
+       ruleflow-group"duty_salary"
+when
+   emp:Employ(resume=="tech")
+then
+   System.out.println(Thread.currentThread()+  " : execrule Technician ... ");
+   try {
+   Thread.sleep(new Random().nextInt(10)* 1000);
+   } catch (InterruptedException e) {
+       e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+   }
+  emp.setDutySalary(2000);
+end
+
+rule"Manager"
+      ruleflow-group"duty_salary"
+when
+   emp:Employ(awardPunish=="manager")
+then
+   System.out.println(Thread.currentThread()+  " : execrule manager ... ");
+   emp.setDutySalary(4500);
+end

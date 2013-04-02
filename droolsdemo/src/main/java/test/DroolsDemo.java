@@ -5,10 +5,20 @@
  */
 package test;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseConfiguration;
 import org.drools.KnowledgeBaseFactory;
-import org.drools.builder.*;
+import org.drools.builder.KnowledgeBuilder;
+import org.drools.builder.KnowledgeBuilderError;
+import org.drools.builder.KnowledgeBuilderErrors;
+import org.drools.builder.KnowledgeBuilderFactory;
+import org.drools.builder.ResourceType;
 import org.drools.command.Command;
 import org.drools.command.CommandFactory;
 import org.drools.definition.KnowledgePackage;
@@ -16,16 +26,14 @@ import org.drools.io.ResourceFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.drools.runtime.StatelessKnowledgeSession;
 
-import java.util.*;
-
 /**
  * @author 刘永健(http://my.oschina.net/aiguozhe)
  */
 public class DroolsDemo {
     public static void main(String[] args) {
-        // 创建KnowledgeBuilder加载并编译相关的规则文件,产生对应的KnowledgePackage集合
+        // 创建KnowledgeBuilder,加载并编译相关的规则文件,产生对应的KnowledgePackage集合
         KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-        kbuilder.add(ResourceFactory.newClassPathResource("test.drl"), ResourceType.DRL);
+        kbuilder.add(ResourceFactory.newClassPathResource("test/test.drl"), ResourceType.DRL);
         if (kbuilder.hasErrors()) {
             System.out.println("规则中存在错误: ");
             KnowledgeBuilderErrors errors = kbuilder.getErrors();
@@ -37,11 +45,13 @@ public class DroolsDemo {
         }
         Collection<KnowledgePackage> kpackages = kbuilder.getKnowledgePackages();
         System.out.println(kpackages);
+
 // 通过KnowledgeBase把产生的KnowledgePackage集合收集起来
         KnowledgeBaseConfiguration kbConf = KnowledgeBaseFactory.newKnowledgeBaseConfiguration();
         kbConf.setProperty("org.drools.sequential", "true");
         KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase(kbConf);
         kbase.addKnowledgePackages(kpackages); // 将KnowledgePackage集合添加到KnowledgeBase中
+
 // 创建StatefulKnowledgeSession，将规则当中需要使用的fact对象插入进去，将需要用到的global设置进去, 最后调用fireAllRules()方法执行规则
         StatefulKnowledgeSession statefulKSession = kbase.newStatefulKnowledgeSession();
         statefulKSession.setGlobal("globalTest", new Object()); // 设置一个global对象

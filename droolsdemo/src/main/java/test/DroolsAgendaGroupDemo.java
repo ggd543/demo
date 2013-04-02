@@ -23,7 +23,7 @@ public class DroolsAgendaGroupDemo {
         KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
         System.setProperty("drools.dateformat", "yyyy-MM-dd HH:mm:ss");
 
-        kbuilder.add(ResourceFactory.newClassPathResource("agenda_group.drl"), ResourceType.DRL);
+        kbuilder.add(ResourceFactory.newClassPathResource("test/agenda_group.drl"), ResourceType.DRL);
         if (kbuilder.hasErrors()) {
             System.out.println("规则中存在错误: ");
             KnowledgeBuilderErrors errors = kbuilder.getErrors();

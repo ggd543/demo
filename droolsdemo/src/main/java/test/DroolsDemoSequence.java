@@ -14,14 +14,13 @@ import org.drools.builder.KnowledgeBuilderFactory;
 import org.drools.builder.ResourceType;
 import org.drools.io.ResourceFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
-import org.drools.runtime.rule.QueryResults;
 
 import java.util.Collection;
 
 public class DroolsDemoSequence {
     public static void main(String[] args) {
         KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-        kbuilder.add(ResourceFactory.newClassPathResource("test_sequence.drl"), ResourceType.DRL);
+        kbuilder.add(ResourceFactory.newClassPathResource("test/test_sequence.drl"), ResourceType.DRL);
         Collection collection = kbuilder.getKnowledgePackages();
         KnowledgeBase knowledgeBase = KnowledgeBaseFactory.newKnowledgeBase();
         knowledgeBase.addKnowledgePackages(collection);

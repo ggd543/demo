@@ -1,0 +1,20 @@
+rule "test second"
+	salience 0
+	no-loop true
+	when
+		$test: String( )
+	then 
+		System.out.println($test);
+		insert("test three");
+end
+
+rule "test first"
+	salience 0
+	no-loop true // 当no-loop == true时，引擎会忽略本次迭代已检查过的规则
+	when
+		$test: String( )
+	then 
+		System.out.println($test + " the 2nd");
+		insert("test second");
+end
+

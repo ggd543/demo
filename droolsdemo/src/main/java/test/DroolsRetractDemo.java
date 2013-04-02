@@ -20,7 +20,7 @@ import java.util.Iterator;
 public class DroolsRetractDemo {
     public static void main(String[] args) {
         KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-        kbuilder.add(ResourceFactory.newClassPathResource("retract.drl"), ResourceType.DRL);
+        kbuilder.add(ResourceFactory.newClassPathResource("test/retract.drl"), ResourceType.DRL);
         if (kbuilder.hasErrors()) {
             System.out.println("规则中存在错误: ");
             KnowledgeBuilderErrors errors = kbuilder.getErrors();

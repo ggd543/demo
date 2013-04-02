@@ -1,0 +1,39 @@
+package sample
+
+import sample.Employ
+
+rule"Excellent"
+      ruleflow-group"bonus_salary"
+when
+  emp: Employ(annualExam=="excellent")
+then
+   System.out.println(Thread.currentThread()+  " : execrule Excellent ... ");
+  emp.setBonus(1000*1.0);
+end
+
+rule"Good"
+       ruleflow-group"bonus_salary"
+when
+  emp: Employ(annualExam=="good")
+then
+   System.out.println(Thread.currentThread()+  " : execrule Good ... ");
+  emp.setBonus(1000*0.9);
+end
+
+rule"Common"
+      ruleflow-group"bonus_salary"
+when
+  emp: Employ(annualExam=="common")
+then
+   System.out.println(Thread.currentThread()+  " : execrule Common ... ");
+  emp.setBonus(1000*0.6);
+end
+
+rule"failing"
+       ruleflow-group"bonus_salary"
+when
+  emp: Employ(annualExam=="failing")
+then
+   System.out.println(Thread.currentThread()+  " : execrule failing ... ");
+  emp.setBonus(1000*0.0);
+end
