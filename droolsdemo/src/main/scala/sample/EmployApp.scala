@@ -15,7 +15,7 @@ object EmployApp {
   import scala.collection.JavaConversions._
 
   private def crateEmploy(): Employ = {
-    val emp = new Employ();
+    val emp = new Employ(); 
     emp.setEduInfo("master");
     emp.setResume("tech");
     emp.setAnnualExam("good");
@@ -37,6 +37,8 @@ object EmployApp {
     ksession.startProcess("sample.salary");
     ksession.fireAllRules();
 
+    ksession.dispose()
+
     println("Basic Salary: " + emp.getBasicSalary())
     println("Duty Salary: " + emp.getDutySalary())
     println("Bonus : " + emp.getBonus())
@@ -44,6 +46,7 @@ object EmployApp {
     println("Total Salary: %.0f", emp.getTotalSalary())
 
     logger.close();
+
   }
 
 
@@ -54,7 +57,11 @@ object EmployApp {
     kbuilder.add(ResourceFactory.newClassPathResource("sample/Bonus.drl"), ResourceType.DRL);
     kbuilder.add(ResourceFactory.newClassPathResource("sample/AwardPunish.drl"), ResourceType.DRL);
     kbuilder.add(ResourceFactory.newClassPathResource("sample/Total.drl"), ResourceType.DRL);
-    kbuilder.add(ResourceFactory.newClassPathResource("sample/salary.rf"), ResourceType.DRF);
+    kbuilder.add(ResourceFactory.newClassPathResource("sample/parallel_salary.rf"), ResourceType.DRF);
+    kbuilder.add(ResourceFactory.newClassPathResource("sample/basic_salary.rf"), ResourceType.DRF);
+    kbuilder.add(ResourceFactory.newClassPathResource("sample/duty_salary.rf"), ResourceType.DRF);
+    kbuilder.add(ResourceFactory.newClassPathResource("sample/bonus_salary.rf"), ResourceType.DRF);
+    kbuilder.add(ResourceFactory.newClassPathResource("sample/award_punish.rf"), ResourceType.DRF);
 
     val errors = kbuilder.getErrors();
 
@@ -65,11 +72,8 @@ object EmployApp {
       }
       throw new IllegalArgumentException("Could not parse knowledge.");
     }
-
-
-
     val kbConf: KnowledgeBaseConfiguration = KnowledgeBaseFactory.newKnowledgeBaseConfiguration
-    println(kbConf.getProperty("org.drools.sequential"))
+    println("org.drools.sequential: " + kbConf.getProperty("org.drools.sequential"))
     kbConf.setProperty("org.drools.sequential", "false")
     val kbase = KnowledgeBaseFactory.newKnowledgeBase(kbConf);
     kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());

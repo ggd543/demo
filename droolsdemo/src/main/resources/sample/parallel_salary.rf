@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<process xmlns="http://drools.org/drools-5.0/process"
+         xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+         xs:schemaLocation="http://drools.org/drools-5.0/process drools-processes-5.0.xsd"
+         type="RuleFlow" name="flow" id="sample.salary" package-name="sample" >
+
+  <header>
+  </header>
+
+  <nodes>
+    <start id="1" name="Start" x="154" y="-1" width="48" height="48" />
+    <join id="3" name="Gateway" x="188" y="305" width="49" height="49" type="1" />
+    <end id="9" name="End" x="217" y="429" width="48" height="48" />
+    <ruleSet id="10" name="Total Salary" x="356" y="343" width="80" height="48" ruleFlowGroup="sum_salary" />
+    <subProcess id="11" name="Basic Salary" x="109" y="180" width="110" height="48" processId="basic.salary.eval" waitForCompletion="false" >
+    </subProcess>
+    <subProcess id="12" name="Duty Salary" x="334" y="187" width="110" height="48" processId="duty.salary.eval" waitForCompletion="false" independent="false" >
+    </subProcess>
+    <split id="13" name="Gateway" x="314" y="85" width="49" height="49" type="1" />
+    <humanTask id="14" name="User Task" x="551" y="354" width="100" height="58" >
+      <work name="Human Task" >
+        <parameter name="ActorId" >
+          <type name="org.drools.process.core.datatype.impl.type.StringDataType" />
+        </parameter>
+        <parameter name="Comment" >
+          <type name="org.drools.process.core.datatype.impl.type.StringDataType" />
+        </parameter>
+        <parameter name="Content" >
+          <type name="org.drools.process.core.datatype.impl.type.StringDataType" />
+        </parameter>
+        <parameter name="GroupId" >
+          <type name="org.drools.process.core.datatype.impl.type.StringDataType" />
+        </parameter>
+        <parameter name="Priority" >
+          <type name="org.drools.process.core.datatype.impl.type.StringDataType" />
+        </parameter>
+        <parameter name="Skippable" >
+          <type name="org.drools.process.core.datatype.impl.type.StringDataType" />
+        </parameter>
+        <parameter name="TaskName" >
+          <type name="org.drools.process.core.datatype.impl.type.StringDataType" />
+        </parameter>
+      </work>
+    </humanTask>
+  </nodes>
+
+  <connections>
+    <connection from="11" to="3" />
+    <connection from="12" to="3" />
+    <connection from="14" to="9" />
+    <connection from="3" to="10" />
+    <connection from="13" to="11" />
+    <connection from="13" to="12" />
+    <connection from="1" to="13" />
+    <connection from="10" to="14" />
+  </connections>
+
+</process>

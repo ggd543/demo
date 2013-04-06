@@ -53,9 +53,8 @@ class MyAgendaFilter implements AgendaFilter {
     public MyAgendaFilter(String startName) {
         this.startName = startName;
     }
-
-    @Override
-    public boolean accept(Activation activation) {
+    
+    public  boolean accept(Activation activation) {
         String ruleName = activation.getRule().getName();
         if (ruleName.startsWith(startName)) {
             return true;

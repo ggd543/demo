@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<process xmlns="http://drools.org/drools-5.0/process"
+         xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+         xs:schemaLocation="http://drools.org/drools-5.0/process drools-processes-5.0.xsd"
+         type="RuleFlow" name="duty.salary.flow" id="duty.salary.eval" package-name="sample" >
+
+  <header>
+  </header>
+
+  <nodes>
+    <start id="1" name="Start" x="100" y="100" width="48" height="48" />
+    <ruleSet id="2" name="Duty Salary" x="163" y="167" width="80" height="48" ruleFlowGroup="duty_salary" />
+    <end id="3" name="End" x="288" y="261" width="48" height="48" />
+  </nodes>
+
+  <connections>
+    <connection from="1" to="2" />
+    <connection from="2" to="3" />
+  </connections>
+
+</process>
