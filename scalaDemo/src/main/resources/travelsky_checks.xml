@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+        "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+        "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+
+<!--
+该文件的使用方法请参见《HXGZ-HXGZ-JAVA编码规范实施指南》
+-->
+
+<module name="Checker">
+    <!-- header设置 -->
+    <module name="RegexpHeader">
+        <property name="header"
+                  value="^/(\*){1}$\n^ \*( )*\@\(\#\)( )*[a-zA-Z0-9]{1,}.java( )*$\n^ \*( )*\@Author\:[a-zA-Z0-9_]{1,}\((\S){0,}\)( )*[0-9]{4}[/|-][0-9]{1,2}[/|-][0-9]{1,2}( )*$\n^ \*( )*@Copyright( )*\(c\)( )*2002\-[0-9]{4}( )*Travelsky Limited. All rights reserved\.( )*$\n^( )*\*/( )*$"/>
+        <property name="fileExtensions" value="java"/>
+    </module>
+
+    <!--<property name="charset" value="UTF-8"/>-->
+
+    <!-- 长度方面的检查 -->
+    <!-- 文件长度不超过1500行 -->
+    <module name="FileLength">
+        <property name="max" value="1500"/>
+    </module>
+
+    <module name="TreeWalker">
+
+        <!-- Checks for Javadoc comments.                     -->
+        <!-- See http://checkstyle.sf.net/config_javadoc.html -->
+        <module name="JavadocMethod">
+            <property name="scope" value="protected"/>
+            <property name="allowMissingParamTags" value="true"/>
+            <property name="allowMissingThrowsTags" value="true"/>
+            <property name="allowMissingReturnTag" value="true"/>
+            <property name="allowMissingPropertyJavadoc" value="true"/>
+        </module>
+        <module name="JavadocType">
+            <property name="authorFormat" value="\S"/>
+            <property name="versionFormat" value=".*"/>
+            <property name="allowUnknownTags" value="true"/>
+            <property name="allowMissingParamTags" value="true"/>
+        </module>
+        <module name="JavadocVariable">
+            <property name="scope" value="protected"/>
+        </module>
+
+        <!-- Checks for Naming Conventions.  -->
+        <!-- 常量 -->
+        <module name="ConstantName"/>
+        <!-- 局部的final变量，包括catch中的参数-->
+        <module name="LocalFinalVariableName"/>
+        <!-- 局部的非final型的变量，包括catch中的参数 -->
+        <module name="LocalVariableName"/>
+        <!-- 非static成员变量 -->
+        <module name="MemberName"/>
+        <!-- 方法名 -->
+        <module name="MethodName"/>
+        <!-- 包名 -->
+        <module name="PackageName"/>
+        <!-- 参数名 -->
+        <module name="ParameterName"/>
+        <!-- 非final的静态变量 -->
+        <module name="StaticVariableName"/>
+        <!-- 类或者接口名 -->
+        <module name="TypeName"/>
+
+        <!-- Checks for imports  -->
+        <module name="AvoidStarImport"/>
+        <module name="IllegalImport"/>
+        <!-- defaults to sun.* packages -->
+        <module name="RedundantImport"/>
+        <module name="UnusedImports"/>
+        <!-- 包导入顺序 -->
+        <module name="ImportOrder">
+            <property name="groups" value="/^javax?\./,org,com,net,cn"/>
+        </module>
+
+        <!-- Checks for Size Violations.    -->
+        <!-- 行最大长度 ,注释不校验-->
+        <module name="LineLength">
+            <property name="max" value="150"/>
+            <property name="ignorePattern" value="^[\s]*[\*|\/\/|\/\*]{1}.+$"/>
+        </module>
+        <module name="MethodLength">
+            <property name="tokens" value="METHOD_DEF"/>
+            <property name="max" value="150"/>
+            <property name="countEmpty" value="false"/>
+        </module>
+
+
+        <!-- Checks for whitespace     -->
+        <!-- 检查for iterator语句是否使用空格 -->
+        <module name="EmptyForIteratorPad"/>
+        <!-- 检查<和>周围的空白。泛型 -->
+        <module name="GenericWhitespace"/>
+        <!-- 方法参数的格式 -->
+        <module name="MethodParamPad"/>
+        <!-- 检查操作符的空白规则。 -->
+        <module name="OperatorWrap"/>
+        <!-- 不允许左圆括号右边有空格，也不允许与右圆括号左边有空格 -->
+        <module name="ParenPad"/>
+        <!-- 在类型转换时，不允许左圆括号右边有空格，也不允许与右圆括号左边有空格 -->
+        <module name="TypecastParenPad"/>
+        <!-- 特殊符号后必须有空格，此处只配逗号和分号，没配置类型转换 -->
+        <module name="WhitespaceAfter">
+            <property name="tokens" value="COMMA,SEMI"/>
+        </module>
+        <!-- Modifier Checks   -->
+        <!-- 关键字出现的次序1.public,2.protected,3.private,4.abstract,5.static,6.final,
+           7.transient,8.volatile,9.synchronized,10.native,11.strictfp
+        -->
+        <module name="ModifierOrder"/>
+
+        <!-- Checks for blocks. You know, those {}'s         -->
+        <!-- 检查不必要的括号 -->
+        <module name="AvoidNestedBlocks"/>
+        <!-- 只要是{} 包含起来的，都是区域。比如if , else, catch,区域内不能出现空语句  -->
+        <module name="EmptyBlock"/>
+        <!-- 检查’{’和左边的代码块是否在同一行  -->
+        <module name="LeftCurly">
+            <property name="option" value="eol"/>
+        </module>
+        <!-- 需要使用括号，代码块 subset of tokens DO, ELSE, IF, FOR, WHILE -->
+        <module name="NeedBraces"/>
+        <!-- 右括号的限制  -->
+        <module name="RightCurly">
+            <property name="option" value="same"/>
+            <property name="shouldStartLine" value="true"/>
+        </module>
+
+        <!-- Checks for common coding problems    -->
+        <!-- 避免内联(inline)条件判断 -->
+        <module name="AvoidInlineConditionals"/>
+        <!-- 禁止空语句  -->
+        <module name="EmptyStatement"/>
+        <!-- 禁止使用内如赋值语句  -->
+        <module name="InnerAssignment"/>
+        <!-- 禁止使用魔法数 -->
+        <module name="MagicNumber">
+            <property name="severity" value="warning"/>
+        </module>
+        <!-- switch必须含有default分支  -->
+        <module name="MissingSwitchDefault"/>
+        <!-- 检查是否抛出了多余的异常  -->
+        <module name="RedundantThrows">
+            <property name="allowUnchecked" value="true"/>
+        </module>
+        <!-- 未被简化的条件表达式。 -->
+        <module name="SimplifyBooleanExpression"/>
+        <!-- 未被简化的布尔返回值 -->
+        <module name="SimplifyBooleanReturn"/>
+        <!-- 避免null的equals -->
+        <module name="EqualsAvoidNull"/>
+
+        <!-- Checks for class design       -->
+        <!-- 只有私有构造函数的类须声明为final -->
+        <module name="FinalClass"/>
+        <!-- 检查接口是否仅定义类型,而没有定义方法。 -->
+        <module name="InterfaceIsType"/>
+
+        <!-- Miscellaneous other checks.     -->
+        <!-- 检查数组定义是否使用了java风格 -->
+        <module name="ArrayTypeStyle"/>
+    </module>
+
+</module>
