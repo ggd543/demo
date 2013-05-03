@@ -64,6 +64,7 @@ public class MainApp {
            System.out.println(Thread.currentThread()+" failed , "+totalBytes+" "+action);
        }
    }
+
     private static SSLSocketFactory createSSLSocketFactory() throws NoSuchAlgorithmException, KeyManagementException {
         TrustManager[] trustManagers = {
                 new X509TrustManager(){
@@ -108,6 +109,7 @@ public class MainApp {
             client.download("ListenerManager.java", new File("ListenerManager.java"), new MyFTPDataTransferListener("download"));
             client.download("ListenerManager.java",new File("ListenerManager.java.part"), 1000, new MyFTPDataTransferListener("download"));
             try {
+
                 prints(client.list());
             } catch (FTPListParseException e) {
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
