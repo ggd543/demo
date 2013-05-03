@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project name="ant-task">
+<project name="ant-task" xmlns:artifact="antlib:org.apache.maven.artifact.ant">
 	<path id="lib.classpath">		
 		<fileset dir="${basedir}/lib" includes="*.jar"/>	
 	</path>
@@ -10,14 +10,34 @@
 		<taskdef name="simpleTask" classname="task.AntSimpleTask" classpathref="lib.classpath" />
 		
 	<target name="hello">
-		
-		
 		<simpleTask count="5" message="java" />
 		 
 		<hello count="3" >
 			<helloInfo message="hello world" /> <!--  Could not create task of type ??  -->
 		</hello>
 	 
+	</target>
+	
+	<target name="copyMavenFile">
+
+		<artifact:dependencies filesetId="dependency.fileset" useScope="runtime">
+			<dependency groupId="com.travelsky.bravo" artifactId="bravo-util" version="3.0.0-SNAPSHOT" /> <!-- -->
+			<dependency groupId="com.travelsky.datareaper" artifactId="datareaper" version="1.1.0-SNAPSHOT" /> <!-- -->
+			<dependency groupId="junit" artifactId="junit" version="4.11" />
+			 <artifact:remoteRepository id="travelsky-snapshot"
+                             url="http://10.123.78.58/nexus/content/repositories/snapshots/" >
+				<snapshots enabled="true"/>
+				
+			</artifact:remoteRepository>
+		</artifact:dependencies>
+		
+		<copy todir="${basedir}/extlib">
+			<fileset refid="dependency.fileset" />
+			<!-- This mapper strips off all leading directory information -->
+			<mapper type="flatten" />
+		</copy>
+
+		
 	</target>
 	
 </project>
