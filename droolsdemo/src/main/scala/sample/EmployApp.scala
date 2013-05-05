@@ -70,6 +70,7 @@ object EmployApp {
 
     val kbConf: KnowledgeBaseConfiguration = KnowledgeBaseFactory.newKnowledgeBaseConfiguration
     println(kbConf.getProperty("org.drools.sequential"))
+    kbConf.setProperty("drools.sequential.agenda", "dynamic")
     kbConf.setProperty("org.drools.sequential", "false")
     val kbase = KnowledgeBaseFactory.newKnowledgeBase(kbConf);
     kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
