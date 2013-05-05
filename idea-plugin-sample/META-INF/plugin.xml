@@ -1,0 +1,58 @@
+<idea-plugin version="2">
+    <id>idea-sample-plugin</id>
+    <name>idea sample plugin</name>
+    <description></description>
+    <version>1.0</version>
+    <vendor email="ggd543@mail.com">Archer</vendor>
+
+    <description><![CDATA[
+      This is a sample plugin of IntelliJ that demonstrates the plugin development
+      ]]></description>
+
+    <!--<change-notes><![CDATA[
+        Add change notes here.<br>
+        <small>most HTML tags may be used</small>
+        ]]>
+    </change-notes>-->
+
+    <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="107.105"/>
+
+    <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <application-components>
+        <!-- Add your application components here -->
+        <component>
+            <implementation-class>com.ggd543.idea.plugin.component.MyPluginRegistrationComponent</implementation-class>
+        </component>
+    </application-components>
+
+    <project-components>
+        <!-- Add your project components here -->
+    </project-components>
+
+    <actions>
+        <group id="MyPlugin.SampleMenu" text="_Sample Menu"
+               class="com.intellij.openapi.actionSystem.DefaultActionGroup"
+               description="Thsi is a sample menu">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action id="MyPlugin.SampleAction1" class="com.ggd543.idea.plugin.action.TextBoxAction" text="My _Item 1"
+                    description="The action implemented by the TextBoxAction class" icon="/icon/setting.png"/>
+            <reference ref="EditorCopy"/>
+        </group>
+        <!-- Add your actions here -->
+        <action id="MyPlugin.SampleAction2" class="com.ggd543.idea.plugin.action.TextBoxAction" text="My _Item 2"
+                description="This is a plugin item added to MainToolBar" icon="/icon/setting.png">
+            <add-to-group group-id="MainToolBar" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt M"/>
+        </action>
+    </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+</idea-plugin>
