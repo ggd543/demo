@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration debug="false" scan="true" scanPeriod="3 seconds">
+    <contextName>logback-demo</contextName>
+    <statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener"/>
+
+    <property scope="context" resource="prop.config"/>
+
+    <property scope="context" name="firstName" value="liu"/>
+    <property scope="context" name="lastName" value="yongjian"/>
+    <property scope="system" name="nickName" value="aiguozhe"/>
+    <property name="email" value="ggd543@gmail.com"/>
+
+    <define name="fuxkLevel" class="com.ggd543.demo.FuxkPropertyDefiner">
+        <!--<shape>round</shape>-->
+        <!--<color>brown</color>-->
+        <!--<size>24</size>-->
+    </define>
+
+    <appender name="CYCLIC"
+              class="ch.qos.logback.core.read.CyclicBufferAppender">
+        <MaxSize>512</MaxSize>
+    </appender>
+
+    <appender name="STDOUT"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="com.ggd543.demo.HelloFilter"/>
+        <filter class="com.ggd543.demo.FuxkFilter"/>
+
+        <encoder>
+            <pattern>
+                <!--%d{HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{32} - %msg%n-->
+                %X{first} %X{last} %d %contextName [%thread] %t %level %logger - %msg%n
+            </pattern>
+        </encoder>
+
+    </appender>
+
+    <appender name="FILE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${user.dir}/logs/logFile.log</File>
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>
+                ${user.dir}/logs/logFile.%d{yyyy-MM-dd_HH-mm}.log.zip
+            </FileNamePattern>
+        </rollingPolicy>
+
+        <encoder>
+            <Pattern>
+                %d{HH:mm:ss,SSS} [%thread] %-5level %logger{32} - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <!--<appender name="MONGO" class="logback.mongodb.MongoDBAppender">-->
+    <!--<connectionSource class="logback.mongodb.MongoDBConnectionSource">-->
+    <!--<uri>mongodb://10.123.76.90:27017</uri>-->
+    <!--<db>logback-demo</db>-->
+    <!--<collection>flash_dog_log</collection>-->
+    <!--</connectionSource>-->
+
+    <!--</appender>-->
+
+    <!--<appender name="ASYNCMONGO" class="ch.qos.logback.classic.AsyncAppender">-->
+    <!--<appender-ref ref="MONGO"/>-->
+    <!--</appender>-->
+
+    <!--<root>-->
+    <!--<level value="DEBUG"/>-->
+    <!--<appender-ref ref="STDOUT"/>-->
+    <!--<appender-ref ref="FILE"/>-->
+    <!--<appender-ref ref="CYCLIC"/>-->
+    <!--<appender-ref ref="ASYNCMONGO"/>-->
+    <!--</root>-->
+
+    <!--<include file="/tmp/logback-demo.xml"/>-->
+
+    <!--<if condition='"Fuxk".equalsIgnoreCase("Fduxk")'>-->
+    <!--<then>-->
+    <!--<root>-->
+    <!--<level value="WARN"/>-->
+    <!--</root>-->
+    <!--</then>-->
+    <!--<else>-->
+    <!--<root>-->
+    <!--<level value="INFO"/>-->
+    <!--</root>-->
+    <!--</else>-->
+    <!--</if>-->
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <!--<appender-ref ref="FILE"/>-->
+    </root>
+
+    <logger name="com.ggd543.demo.LogBackDemo1">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+</configuration>

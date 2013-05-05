@@ -23,12 +23,13 @@ syntax: glob
 *.lnk
 
 # building
-log*/
+log/
+logs/
 target/
 build/
 null/
-tmp*/
-temp*/
+tmp/
+temp/
 dist/
 test-output
 build.log
@@ -44,3 +45,4 @@ build.log
 
 #SHITTY output not in target directory
 build.log
+

@@ -22,8 +22,8 @@
     <ruleSet id="6" name="Duty Salary" x="222" y="202" width="80" height="48" ruleFlowGroup="duty_salary" />
     <ruleSet id="7" name="Bonus Salary" x="374" y="200" width="80" height="48" ruleFlowGroup="bonus_salary" />
     <ruleSet id="8" name="Award Punish" x="660" y="180" width="80" height="48" ruleFlowGroup="award_punish" />
-    <end id="9" name="End" x="213" y="373" width="48" height="48" />
-    <ruleSet id="10" name="Total Salary" x="480" y="330" width="80" height="48" ruleFlowGroup="sum_salary" />
+    <end id="9" name="End" x="217" y="429" width="48" height="48" />
+    <ruleSet id="10" name="Total Salary" x="356" y="343" width="80" height="48" ruleFlowGroup="sum_salary" />
   </nodes>
 
   <connections>

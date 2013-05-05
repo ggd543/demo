@@ -1,0 +1,10 @@
+/*.sdf
+/*.opensdf
+/*.v11.suo
+/*.sln
+/*.vcxproj
+/*.vcxproj.filters
+
+/Debug
+/Release
+/TestResults
