@@ -8,10 +8,10 @@
 
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="org.apache.derby.jdbc.ClientDriver" />
-		<property name="url" value="jdbc:derby://localhost:1527/mycompany" />
-		<property name="username" value="app" />
-		<property name="password" value="admin" />
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/springsecurity" />
+		<property name="username" value="root" />
+		<property name="password" value="1234" />
 	</bean>
 
 	<bean id="userDetailsService"
@@ -20,13 +20,10 @@
 	</bean>
 
 	<sec:http use-expressions="true">
-		<sec:intercept-url pattern="/president_portal.do**"
-			access="hasRole('ROLE_PRESIDENT')" />
-		<sec:intercept-url pattern="/manager_portal.do**"
-			access="hasRole('ROLE_MANAGER')" />
-		<sec:intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
-		<sec:form-login default-target-url="/index.do"
-			always-use-default-target="true" />
+		<sec:intercept-url pattern="/president_portal.do**" access="hasRole('ROLE_PRESIDENT')" />
+		<sec:intercept-url pattern="/manager_portal.do**" access="hasRole('ROLE_MANAGER')" />
+		<sec:intercept-url pattern="/WEB-INF" access="hasRole('ROLE_USER')" />
+		<sec:form-login default-target-url="/index.do" always-use-default-target="true" />
 		<sec:logout />
 		<sec:remember-me key="secret"/>
 		<sec:session-management invalid-session-url="/sessionTimeout.jsp" >
@@ -71,6 +68,7 @@
 	<bean id="userDao" class="mycompany.dao.UserDao">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
+
 	<bean id="userService" class="mycompany.service.UserService">
 		<property name="userDao" ref="userDao"></property>
 	</bean>
