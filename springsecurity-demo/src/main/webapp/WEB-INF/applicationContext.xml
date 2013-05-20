@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sec="http://www.springframework.org/schema/security"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.apache.derby.jdbc.ClientDriver" />
+		<property name="url" value="jdbc:derby://localhost:1527/mycompany" />
+		<property name="username" value="app" />
+		<property name="password" value="admin" />
+	</bean>
+
+	<bean id="userDetailsService"
+		class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<sec:http use-expressions="true">
+		<sec:intercept-url pattern="/president_portal.do**"
+			access="hasRole('ROLE_PRESIDENT')" />
+		<sec:intercept-url pattern="/manager_portal.do**"
+			access="hasRole('ROLE_MANAGER')" />
+		<sec:intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
+		<sec:form-login default-target-url="/index.do"
+			always-use-default-target="true" />
+		<sec:logout />
+		<sec:remember-me key="secret"/>
+		<sec:session-management invalid-session-url="/sessionTimeout.jsp" >
+			<sec:concurrency-control max-sessions="1" error-if-maximum-exceeded="true" />
+		</sec:session-management>
+	</sec:http>
+
+	<sec:authentication-manager alias="authenticationManager">
+		<sec:authentication-provider
+			user-service-ref="userDetailsService" />
+	</sec:authentication-manager>
+
+	<bean id="accessDecisionManager"
+		class="org.springframework.security.access.vote.AffirmativeBased">
+		<property name="decisionVoters">
+			<list>
+				<bean class="org.springframework.security.access.vote.RoleVoter" />
+				<bean class="org.springframework.security.access.vote.AuthenticatedVoter" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userSalarySecurity"
+		class="org.springframework.security.access.intercept.aspectj.AspectJMethodSecurityInterceptor">
+		<property name="authenticationManager" ref="authenticationManager" />
+		<property name="accessDecisionManager" ref="accessDecisionManager" />
+		<property name="securityMetadataSource">
+			<value>
+				mycompany.service.UserService.raiseSalary=ROLE_MANAGER
+				mycompany.service.ReportService.createNewReport=ROLE_PRESIDENT
+				mycompany.service.ReportService.grantRead=ROLE_PRESIDENT
+			</value>
+		</property>
+	</bean>
+
+	<bean id="userSalarySecurityAspect" class="mycompany.service.SalaryManagementAspect"
+		factory-method="aspectOf">
+		<property name="securityInterceptor" ref="userSalarySecurity" />
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+
+	<bean id="userDao" class="mycompany.dao.UserDao">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<bean id="userService" class="mycompany.service.UserService">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+
+	<bean id="aclCache"
+		class="org.springframework.security.acls.domain.EhCacheBasedAclCache">
+		<constructor-arg>
+			<bean class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+				<property name="cacheManager">
+					<bean class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" />
+				</property>
+				<property name="cacheName" value="aclCache" />
+			</bean>
+		</constructor-arg>
+	</bean>
+
+	<bean id="lookupStrategy"
+		class="org.springframework.security.acls.jdbc.BasicLookupStrategy">
+		<constructor-arg ref="dataSource" />
+		<constructor-arg ref="aclCache" />
+		<constructor-arg>
+			<bean
+				class="org.springframework.security.acls.domain.AclAuthorizationStrategyImpl">
+				<constructor-arg>
+					<list>
+						<bean
+							class="org.springframework.security.core.authority.GrantedAuthorityImpl">
+							<constructor-arg value="ROLE_PRESIDENT" />
+						</bean>
+						<bean
+							class="org.springframework.security.core.authority.GrantedAuthorityImpl">
+							<constructor-arg value="ROLE_PRESIDENT" />
+						</bean>
+						<bean
+							class="org.springframework.security.core.authority.GrantedAuthorityImpl">
+							<constructor-arg value="ROLE_PRESIDENT" />
+						</bean>
+					</list>
+				</constructor-arg>
+			</bean>
+		</constructor-arg>
+		<constructor-arg>
+			<bean class="org.springframework.security.acls.domain.ConsoleAuditLogger" />
+		</constructor-arg>
+	</bean>
+
+	<bean id="aclService"
+		class="org.springframework.security.acls.jdbc.JdbcMutableAclService">
+		<constructor-arg ref="dataSource" />
+		<constructor-arg ref="lookupStrategy" />
+		<constructor-arg ref="aclCache" />
+		<property name="classIdentityQuery" value="values IDENTITY_VAL_LOCAL()" />
+		<property name="sidIdentityQuery" value="values IDENTITY_VAL_LOCAL()" />
+	</bean>
+	<bean id="reportService" class="mycompany.service.ReportService">
+		<property name="reportDao" ref="reportDao" />
+		<property name="mutableAclService" ref="aclService" />
+		<property name="platformTransactionManager" ref="transactionManager" />
+	</bean>
+
+	<bean id="reportDao" class="mycompany.dao.ReportDao">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+</beans>
