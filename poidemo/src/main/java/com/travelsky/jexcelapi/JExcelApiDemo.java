@@ -20,7 +20,7 @@ import jxl.read.biff.BiffException;
 public class JExcelApiDemo {
     public static void main(String[] args) throws IOException, BiffException {
 //        InputStream is = JExcelApiDemo.class.getResourceAsStream("/wzllgjdb.xlsx");
-        InputStream is = JExcelApiDemo.class.getResourceAsStream("/机场测试环境配置信息.xls");
+        InputStream is = JExcelApiDemo.class.getResourceAsStream("/text1.xls");
         Workbook workbook = Workbook.getWorkbook(is);
         Sheet sheet = workbook.getSheet(0);
 
