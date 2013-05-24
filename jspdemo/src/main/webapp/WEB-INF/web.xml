@@ -59,4 +59,12 @@
     </servlet-mapping>
 
     <distributable/>
+
+    <jsp-config>
+        <taglib>
+            <taglib-uri>/hello</taglib-uri>
+            <taglib-location>/WEB-INF/hello.tld</taglib-location>
+        </taglib>
+    </jsp-config>
+
 </web-app>

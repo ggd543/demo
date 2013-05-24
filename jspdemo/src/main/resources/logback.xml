@@ -39,7 +39,7 @@
         <level value="DEBUG"/>
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
-        <appender-ref ref="CYCLIC"/>
+        <!--<appender-ref ref="CYCLIC"/>-->
     </root>
 
     <!--<include file="/tmp/logback-demo.xml"/>-->

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+    <tlib-version>1.0</tlib-version>
+    <short-name>hello</short-name>
+
+    <tag>
+        <description><![CDATA[This is a jsp tag demo]]></description>
+        <name>hello</name>
+        <tag-class>com.ggd543.tag.HelloTag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <description><![CDATA[message attribute in hello tag]]></description>
+            <name>message</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+</taglib>
