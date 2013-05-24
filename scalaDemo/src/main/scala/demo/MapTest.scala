@@ -28,7 +28,7 @@ object MapTest {
   def javaConcurrentHashMap(n: Int) {
     val m = new java.util.concurrent.ConcurrentHashMap[Int, Int];
     var i = 0;
-    while (i < 100000) {
+    while (i < n) {
       i = i + 1; m.put(i, i);
     };
   }

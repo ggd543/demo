@@ -37,12 +37,11 @@
             <item name="For Maven 1.x Users" href="maven1.html"/>
             <item name="Road Map" href="roadmap.html"/>
             <item name="FAQ" href="faq.html"/>
-
         </menu>
 
-        <menu ref="reports"/>
-        <menu ref="parent"/>
-        <menu ref="modules"/>
+        <!--<menu ref="reports"/>-->
+        <!--<menu ref="parent"/>-->
+        <!--<menu ref="modules"/>-->
 
     </body>
 </project>

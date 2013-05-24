@@ -1,12 +1,12 @@
 package actordemo
 
 /**
- * Created by IntelliJ IDEA.
- * User: Administrator
- * Date: 11-1-22
- * Time: 下午3:07
- * To change this template use File | Settings | File Templates.
- */
+* Created by IntelliJ IDEA.
+* User: Administrator
+* Date: 11-1-22
+* Time: 下午3:07
+* To change this template use File | Settings | File Templates.
+*/
 
 import scala.actors._
 import Actor._
