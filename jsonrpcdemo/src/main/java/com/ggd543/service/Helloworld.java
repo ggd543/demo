@@ -9,5 +9,6 @@ package com.ggd543.service;
  * @author liuyongjian
  * @version 1.0
  */
-public class Helloworld {
+public interface HelloWorld {
+    public String sayHelloWorld(String name);
 }

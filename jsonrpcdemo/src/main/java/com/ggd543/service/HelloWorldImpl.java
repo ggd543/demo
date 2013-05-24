@@ -9,5 +9,8 @@ package com.ggd543.service;
  * @author liuyongjian
  * @version 1.0
  */
-public class HelloWorldImpl {
+public class HelloWorldImpl implements HelloWorld {
+    public String sayHelloWorld(String name) {
+        return "Hello World! hello, " + name;
+    }
 }
