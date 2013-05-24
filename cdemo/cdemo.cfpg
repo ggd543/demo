@@ -1,0 +1,6 @@
+<Projects version="2.0">
+	<Project active="1">cdemo.cfp</Project>
+	<File active="0">src\cdemo.c</File>
+	<File active="1">src\dyn_arr.c</File>
+	<File active="0">src\func.c</File>
+</Projects>

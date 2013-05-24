@@ -1,0 +1,43 @@
+<idea-plugin version="2">
+  <name>DevModule</name>
+  <description>short description of the plugin</description>
+  <version>1.0</version>
+  <vendor>taobao</vendor>
+  <idea-version since-build="8000"/>
+
+  <application-components>
+    <!-- Add your application components here -->
+      <component>
+          <implementation-class>com.taobao.devmodule.plugin.idea.DevmoduleApplicationComponent</implementation-class>
+      </component>
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+      <action id="AddModule" class="com.taobao.devmodule.plugin.idea.action.AddModuleAction" text="AddModule"
+              description="增加模块" icon="/icon/plus_16.png">
+          <add-to-group group-id="MainToolBar" anchor="last"/>
+      </action>
+      <action id="UpdateLocalDB" class="com.taobao.devmodule.plugin.idea.action.UpdateLocalDBAction"
+              text="UpdateLocalDB" description="更新到本地数据库文件并加载" icon="/icon/down_16.png">
+          <add-to-group group-id="MainToolBar" anchor="last"/>
+      </action>
+      <action id="uploadOnLine" class="com.taobao.devmodule.plugin.idea.action.UploadOnLineAction" text="uploadOnLine"
+              description="上传上线" icon="/icon/up_16.png">
+          <add-to-group group-id="MainToolBar" anchor="last"/>
+      </action>
+      <action id="UploadDaily" class="com.taobao.devmodule.plugin.idea.action.UploadDailyAction" text="UploadDaily"
+              description="上传到日常" icon="/icon/gear_16.png">
+          <add-to-group group-id="MainToolBar" anchor="last"/>
+      </action>
+
+  </actions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+</idea-plugin>

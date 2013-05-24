@@ -1,16 +1,18 @@
-假设雇员 Employ 有：
-      学历信息 eduInfo, 简历信息 resume ,考核信息 annualExam 和奖惩信息  awardPunish
-要确定其：
-      基本工资 basicSalary,职务工资 dutySalary,分红金额 bonus 和 总工资 totalSalary
+鍋囪闆囧憳 Employ 鏈夛細
+      瀛﹀巻淇℃伅 eduInfo, 绠�巻淇℃伅 resume ,鑰冩牳淇℃伅 annualExam 鍜屽鎯╀俊鎭� awardPunish
+瑕佺‘瀹氬叾锛�
+      鍩烘湰宸ヨ祫 basicSalary,鑱屽姟宸ヨ祫 dutySalary,鍒嗙孩閲戦 bonus 鍜�鎬诲伐璧�totalSalary
 
-规则如下：
-(1) 学历决定基本工资(basicSalary): 本科 1500 研究生 2500
-(2) 简历决定职务工资 (dutySalary): 技术 2000 管理 4500
-(3)年度考核决定分红(bonus):
-    分红总金额 1000
-    考核结果：优秀 100% （ 1000 ）；良好 90% （ 900 ）；合格 60% （ 600 ）； 不合格 0% （ 0 ）
-(4)奖惩决定计算最终工资与(basicSalary + dutySalary + bonus)的比例(salaryPercentage)：
-    奖励： * 110% （ +10% ）
-    惩罚： * 90% （ -10% ）
-    无： * 100% （ 0% ）
-(5)计算总工资： totalSalary = (basicSalary + dutySalary + bonus) * salaryPercentage
+瑙勫垯濡備笅锛�
+(1) 瀛﹀巻鍐冲畾鍩烘湰宸ヨ祫(basicSalary): 鏈 1500 鐮旂┒鐢�2500
+(2) 绠�巻鍐冲畾鑱屽姟宸ヨ祫 (dutySalary): 鎶�湳 2000 绠＄悊 4500
+(3)骞村害鑰冩牳鍐冲畾鍒嗙孩(bonus):
+    鍒嗙孩鎬婚噾棰�1000
+    鑰冩牳缁撴灉锛氫紭绉�100% 锛�1000 锛夛紱鑹ソ 90% 锛�900 锛夛紱鍚堟牸 60% 锛�600 锛夛紱 涓嶅悎鏍�0% 锛�0 锛�
+(4)濂栨儵鍐冲畾璁＄畻鏈�粓宸ヨ祫涓�basicSalary + dutySalary + bonus)鐨勬瘮渚�salaryPercentage)锛�
+    濂栧姳锛�* 110% 锛�+10% 锛�
+    鎯╃綒锛�* 90% 锛�-10% 锛�
+    鏃狅細 * 100% 锛�0% 锛�
+(5)璁＄畻鎬诲伐璧勶細 totalSalary = (basicSalary + dutySalary + bonus) * salaryPercentage
+
+http://drools.46999.n3.nabble.com/Using-multiple-threads-for-parallel-rule-flow-execution-td61186.html

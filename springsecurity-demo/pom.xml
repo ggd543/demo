@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ggd543.spring-security</groupId>
+    <artifactId>spring-security-demo</artifactId>
+    <version>1.0</version>
+    <packaging>war</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>3.0.7.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.5</version>
+        </dependency>
+
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>spring</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spring.version>3.0.7.RELEASE</spring.version>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.springframework.security</groupId>
+                    <artifactId>spring-security-core</artifactId>
+                    <version>${spring.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.springframework.security</groupId>
+                    <artifactId>spring-security-config</artifactId>
+                    <version>${spring.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.springframework.security</groupId>
+                    <artifactId>spring-security-web</artifactId>
+                    <version>${spring.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-webmvc</artifactId>
+                    <version>${spring.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-aop</artifactId>
+                    <version>${spring.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-jdbc</artifactId>
+                    <version>${spring.version}</version>
+                </dependency>
+            </dependencies>
+        </profile>
+
+    </profiles>
+    <build>
+        <finalName>spring-security-demo</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+                <version>6.1.26</version>
+                <configuration>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>
