@@ -1,0 +1,6 @@
+LIBRARY dll
+EXPORTS	
+	test_a
+	test_b
+	test_c
+	MAX_TIMES DATA
