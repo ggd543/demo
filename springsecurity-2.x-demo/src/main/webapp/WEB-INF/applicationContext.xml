@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:beans="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-2.0.2.xsd">
+    <!-- http配置如何拦截用户请求。将auto-config设为'true'将自动配置几种常用的权限控制机制，包括form, anonymous, rememberMe。 -->
+    <beans:http auto-config="true">
+        <!-- 我们利用intercept-url来判断用户需要具有何种权限才能访问对应的url资源，
+             可以在pattern中指定一个特定的url资源，也可以使用通配符指定一组类似的url资源。
+             例子中定义的两个intercepter-url，第一个用来控制对/admin.jsp的访问，
+             第二个使用了通配符/**，说明它将控制对系统中所有url资源的访问。
+
+            在实际使用中，Spring Security采用的是一种就近原则，
+            就是说当用户访问的url资源满足多个intercepter-url时，
+            系统将使用第一个符合条件的intercept-url进行权限控制。
+            在我们这个例子中就是，当用户访问/admin.jsp时，
+            虽然两个intercept-url都满足要求，
+            但因为第一个intercept-url排在上面，
+            所以Spring Security会使用第一个intercept-url中的配置处理对/admin.jsp的请求，
+            也就是说，只有那些拥有了ROLE_ADMIN权限的用户才能访问/admin.jsp。 -->
+        <beans:intercept-url pattern="/admin.jsp" access="ROLE_ADMIN"/>
+        <beans:intercept-url pattern="/**" access="ROLE_USER"/>
+    </beans:http>
+    <beans:authentication-provider>
+        <!-- user-service中定义了两个用户，admin和user,
+        重要的部分是authorities，这里定义了这个用户登陆之后将会拥有的权限，
+        它与上面intercept-url中定义的权限内容一一对应。每个用户可以同时拥有多个权限，
+        例子中的admin用户就拥有ROLE_ADMIN和ROLE_USER两种权限，
+        这使得admin用户在登陆之后可以访问ROLE_ADMIN和ROLE_USER允许访问的所有资源。
+
+        与之对应的是，user用户就只拥有ROLE_USER权限，所以他只能访问ROLE_USER允许访问的资源，
+        而不能访问ROLE_ADMIN允许访问的资源。-->
+        <beans:user-service>
+            <beans:user name="admin" password="admin" authorities="ROLE_USER,ROLE_ADMIN"/>
+            <beans:user name="user" password="user" authorities="ROLE_USER"/>
+        </beans:user-service>
+    </beans:authentication-provider>
+</beans>
