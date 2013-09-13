@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<web-app version="2.4"
-         xmlns="http://java.sun.com/xml/ns/j2ee"
+<!--<web-app version="2.4"-->
+         <!--xmlns="http://java.sun.com/xml/ns/j2ee"-->
+         <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+         <!--xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee-->
+	<!--http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">-->
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
-	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0"
+         metadata-complete="true">
     <display-name>jspdemo</display-name>
     <description>This is a jsp demo</description>
 
@@ -23,6 +29,10 @@
     <!--</filter-mapping>-->
 
     <servlet>
+        <servlet-name>SessionServlet</servlet-name>
+        <servlet-class>servlet.SessionServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>MyServlet</servlet-name>
         <servlet-class>servlet.MyServlet</servlet-class>
     </servlet>
@@ -40,6 +50,11 @@
     </servlet>
 
     <servlet-mapping>
+        <servlet-name>SessionServlet</servlet-name>
+        <url-pattern>/session</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
         <servlet-name>ViewLastLog</servlet-name>
         <url-pattern>/lastlog</url-pattern>
     </servlet-mapping>
@@ -48,6 +63,8 @@
         <servlet-name>HelloServlet</servlet-name>
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
+
+
 
     <!--<servlet-mapping>-->
         <!--<servlet-name>AccessViewStatusMessages</servlet-name>-->
@@ -58,13 +75,60 @@
         <url-pattern>/myservlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>CookieServlet</servlet-name>
+        <servlet-class>servlet.CookieServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CookieServlet</servlet-name>
+        <url-pattern>/cookie</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NewSessionServlet</servlet-name>
+        <servlet-class>servlet.NewSessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewSessionServlet</servlet-name>
+        <url-pattern>/new</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>InvalidateSessionServlet</servlet-name>
+        <servlet-class>servlet.InvalidateSessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InvalidateSessionServlet</servlet-name>
+        <url-pattern>/invalid</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EncodeURLServlet</servlet-name>
+        <servlet-class>servlet.EncodeURLServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EncodeURLServlet</servlet-name>
+        <url-pattern>/encode</url-pattern>
+    </servlet-mapping>
+    
+    <listener>
+        <listener-class>listener.MySessionListener</listener-class>
+    </listener>
+
     <distributable/>
 
-    <jsp-config>
-        <taglib>
-            <taglib-uri>/hello</taglib-uri>
-            <taglib-location>/WEB-INF/hello.tld</taglib-location>
-        </taglib>
-    </jsp-config>
+    <!--<jsp-config>-->
+        <!--<taglib>-->
+            <!--<taglib-uri>/hello</taglib-uri>-->
+            <!--<taglib-location>/WEB-INF/hello.tld</taglib-location>-->
+        <!--</taglib>-->
+    <!--</jsp-config>-->
+    <welcome-file-list>
+        <welcome-file>index.html,index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <session-config>
+        <tracking-mode>COOKIE</tracking-mode>
+    </session-config>
+
 
 </web-app>

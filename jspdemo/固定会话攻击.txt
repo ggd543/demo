@@ -1,0 +1,11 @@
+准备两个浏览器，chrome和firefox，并清空cookies
+准备一个tomcat-7.0.42
+
+使用命令mvn clean package ,然后将target目录下的jspdemo.war复制到$TOMCAT_HOME/webapps/ ，启动tomcat
+
+在chrome地址栏输入 http://localhost:8080/jspdemo/session，产生一个session
+
+
+重新拼凑一个新的url：http://localhost:8080/jspdemo/hello;jsessionid=80CCB1EE9239B636B27ED399843672D4，放到firefox，然后会发现，控制台打出的sessionid和之前一样(即此时firefox使用了刚才chrome的会话)
+
+12092488  

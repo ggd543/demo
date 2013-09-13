@@ -16,13 +16,11 @@
 
     <dependencies>
 
-        <dependency>
-            <groupId>customjsptag</groupId>
-            <artifactId>customjsptag</artifactId>
-            <version>1.0</version>
-        </dependency>
-
-        
+        <!--<dependency>-->
+        <!--<groupId>customjsptag</groupId>-->
+        <!--<artifactId>customjsptag</artifactId>-->
+        <!--<version>1.0</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -61,6 +59,7 @@
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -87,6 +86,27 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>7.0.0.pre5</version>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>native2ascii-maven-plugin</artifactId>
+                <version>1.0-alpha-1</version>
+                <executions>
+                    <execution>
+                        <id>native2ascii-utf8-resources</id>
+                        <goals>
+                            <goal>native2ascii</goal>
+                        </goals>
+                        <phase>process-sources</phase>
+                        <configuration>
+                            <dest>target/classes</dest>
+                            <src>src/main/resources</src>
+                            <encoding>GBK</encoding>
+                            <includes>**/*.properties</includes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 
@@ -115,6 +135,11 @@
                     <groupId>org.scala-lang</groupId>
                     <artifactId>scala-swing</artifactId>
                     <version>${scala.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>net.sf.ehcache</groupId>
+                    <artifactId>ehcache-core</artifactId>
+                    <version>2.2.0</version>
                 </dependency>
             </dependencies>
             <build>
