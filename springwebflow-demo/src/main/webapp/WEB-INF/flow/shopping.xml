@@ -4,10 +4,22 @@
       xsi:schemaLocation="http://www.springframework.org/schema/webflow
  http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 
+    <on-start>
+        <evaluate expression="message.say('hello world')"/>
+    </on-start>
+
     <view-state id="viewCart" view="viewCart">
-        <transition on="submit" to="viewOrder">
+        <on-entry>
+            <evaluate expression="cart.printList()"/>
+        </on-entry>
+        <transition on="submit" to="tmpState">
         </transition>
     </view-state>
+
+    <action-state id="tmpState">
+        <evaluate expression="fuxk.print()"/>
+        <transition to="viewOrder"/>
+    </action-state>
 
     <view-state id="viewOrder" view="viewOrder">
         <transition on="confirm" to="orderConfirmed">
@@ -21,4 +33,5 @@
 
     <end-state id="returnToIndex" view="externalRedirect:servletRelative:/index.jsp">
     </end-state>
+
 </flow>

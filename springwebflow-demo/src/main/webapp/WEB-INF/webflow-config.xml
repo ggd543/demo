@@ -22,5 +22,6 @@
     <!--  指明 MVC 框架的 view resolver ，用于通过 view 名查找资源 -->
     <bean id="mvcViewFactoryCreator" class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator">
         <property name="viewResolvers" ref="viewResolver"/>
+
     </bean>
 </beans>

@@ -8,10 +8,12 @@
 
     <!-- Scans for application @Components to deploy -->
     <!-- 搜索 com.ggd543.samples.webflow 包里的 @Component 注解，并将其部署到容器中 -->
-    <!--<context:component-scan base-package="com.ggd543.samples.webflow"/>-->
+    <context:component-scan base-package="com.ggd543.bean"/>
+
     <!-- 启用基于注解的配置 -->
     <context:annotation-config/>
     <import resource="webmvc-config.xml"/>
     <import resource="webflow-config.xml"/>
+    <import resource="spring-beans.xml"/>
 
 </beans>

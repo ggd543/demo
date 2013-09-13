@@ -8,5 +8,6 @@ package com.ggd543.bean
  * To change this template use File | Settings | File Templates.
  */
 class Cart {
-
+  def list() = 1 to 5
+  def printList() = println(list)
 }
