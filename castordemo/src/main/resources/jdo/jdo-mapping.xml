@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Object Mapping DTD Version 1.0//EN"
+        "http://castor.org/mapping.dtd">
+<mapping>
+    <description>Description of the mapping</description>
+
+    <class name="com.ggd543.demo.jdo.Catalogue" identity="id">
+        <map-to table="catalogue"/>
+        <field name="id" type="long">
+            <sql name="id" type="integer"/>
+        </field>
+        <field name="name" type="java.lang.String">
+            <sql name="name" type="varchar"/>
+        </field>
+        <!--<field name="products" transient="true"/>-->
+        <field name="products" type="com.ggd543.demo.jdo.Product" collection="arraylist">
+            <sql many-key="ccc_id" cascading="all" />
+        </field>
+    </class>
+
+    <class name="com.ggd543.demo.jdo.Product" identity="id">
+        <map-to table="product"/>
+        <field name="id" type="long">
+            <sql name="id" type="integer"/>
+        </field>
+        <field name="description" type="string">
+            <sql name="description" type="varchar"/>
+        </field>
+        <field name="catalogue" type="com.ggd543.demo.jdo.Catalogue">
+            <sql name="c_id" cascading="all" />
+        </field>
+    </class>
+
+</mapping>

@@ -3,7 +3,7 @@
         "http://castor.org/mapping.dtd">
 <mapping>
     <description>Description of the mapping</description>
-    <class name="com.ggd543.demo.OrderItem">
+    <class name="com.ggd543.demo.xml.OrderItem">
 
         <map-to xml="item"/>
 
