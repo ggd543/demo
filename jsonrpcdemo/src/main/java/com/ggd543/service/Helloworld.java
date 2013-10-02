@@ -11,4 +11,7 @@ package com.ggd543.service;
  */
 public interface HelloWorld {
     public String sayHelloWorld(String name);
+    public User getUser(int id);
+
+    public void sayHi(User user);
 }
