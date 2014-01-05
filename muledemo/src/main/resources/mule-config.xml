@@ -4,9 +4,11 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xmlns:http="http://www.mulesoft.org/schema/mule/http"
       xmlns:vm="http://www.mulesoft.org/schema/mule/vm"
+      xmlns:pattern="http://www.mulesoft.org/schema/mule/pattern"
       xsi:schemaLocation="
         http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
         http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+        http://www.mulesoft.org/schema/mule/pattern http://www.mulesoft.org/schema/mule/pattern/current/mule-pattern.xsd
         http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd">
 
     <description>
@@ -95,4 +97,17 @@
         <component class="org.mule.example.hello.ChitChatter" doc:name="ChitChatter component"/>
         <transformer ref="ChatStringToString" doc:name="Transform ChatString to String"/>
     </sub-flow>
+
+    <flow name="before-proxy-flow">
+        <http:inbound-endpoint host="0.0.0.0" port="9696" exchange-pattern="request-response"/>
+        <echo-component></echo-component>
+        <!--<vm:outbound-endpoint address="vm://baidu"/>-->
+        <http:outbound-endpoint address="http://localhost:9004"/>
+    </flow>
+
+
+    <pattern:http-proxy  name="baidu-proxy" inboundAddress="vm://baidu" outboundAddress="http://www.baidu.com">
+    </pattern:http-proxy>
+    <pattern:http-proxy  name="baidu-proxy-2" inboundAddress="http://localhost:9004" outboundAddress="http://www.baidu.com" >
+    </pattern:http-proxy>
 </mule>
