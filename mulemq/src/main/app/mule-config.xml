@@ -1,23 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mule   xmlns:spring="http://www.springframework.org/schema/beans" xmlns="http://www.mulesoft.org/schema/mule/core"
+<mule xmlns:spring="http://www.springframework.org/schema/beans" xmlns="http://www.mulesoft.org/schema/mule/core"
       xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xmlns:http="http://www.mulesoft.org/schema/mule/http"
       xmlns:vm="http://www.mulesoft.org/schema/mule/vm"
       xmlns:jms="http://www.mulesoft.org/schema/mule/jms"
+
       xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd
 http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/3.1/mule-jms.xsd
-http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd" version="EE-3.4.1">
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd"
+      version="3.4.1">
 
+    <spring:beans>
+        <spring:bean name="LoggerComponent1" class="com.ggd543.demo.LoggerComponent">
+            <spring:property name="name" value="one"/>
+        </spring:bean>
+        <spring:bean name="LoggerComponent2" class="com.ggd543.demo.LoggerComponent">
+            <spring:property name="name" value="two"/>
+        </spring:bean>
+    </spring:beans>
+
+
+    <jms:activemq-connector name="jmsConnector0"
+                            brokerURL="tcp://localhost:61616" doc:name="Active MQ" clientId="0"/>
     <jms:activemq-connector name="jmsConnector1"
                             brokerURL="tcp://localhost:61616" doc:name="Active MQ" clientId="1"/>
     <jms:activemq-connector name="jmsConnector2"
                             brokerURL="tcp://localhost:61616" doc:name="Active MQ" clientId="2"/>
+    <jms:activemq-connector name="jmsConnector3"
+                            brokerURL="tcp://localhost:61616" doc:name="Active MQ" clientId="3"/>
     <jms:activemq-xa-connector name="jmsXAConnector"
                                brokerURL="tcp://localhost:61616" doc:name="Active MQ"/>
-    
+
     <flow name="activemq-flow" doc:name="activemq-flow">
         <http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="8797" doc:name="http"/>
         <message-filter doc:name="Filter favicon">
@@ -25,12 +41,34 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
                 <wildcard-filter pattern="/favicon.ico" caseSensitive="true"/>
             </not-filter>
         </message-filter>
-        <jms:outbound-endpoint queue="newQueue" doc:name="JMS" connector-ref="jmsConnector1" />
+        <jms:outbound-endpoint queue="newQueue" doc:name="JMS" connector-ref="jmsConnector1"/>
     </flow>
 
-    <flow name="activemq-receive" >
-         <jms:inbound-endpoint queue="newQueue" connector-ref="jmsConnector2">
-      </jms:inbound-endpoint>
+    <flow name="activemq-receive">
+        <jms:inbound-endpoint queue="newQueue" connector-ref="jmsConnector2">
+        </jms:inbound-endpoint>
         <echo-component></echo-component>
+    </flow>
+
+    <flow name="activemq-receive-2-flow">
+        <jms:inbound-endpoint queue="newQueue" connector-ref="jmsConnector3">
+        </jms:inbound-endpoint>
+        <echo-component></echo-component>
+    </flow>
+
+    <flow name="topic-1-flow">
+        <jms:inbound-endpoint topic="muleTopic" connector-ref="jmsConnector0">
+        </jms:inbound-endpoint>
+        <component>
+            <spring-object bean="LoggerComponent1"/>
+        </component>
+    </flow>
+
+    <flow name="topic-2-flow">
+        <jms:inbound-endpoint topic="muleTopic" connector-ref="jmsConnector0">
+        </jms:inbound-endpoint>
+        <component>
+            <spring-object bean="LoggerComponent1"/>
+        </component>
     </flow>
 </mule>
