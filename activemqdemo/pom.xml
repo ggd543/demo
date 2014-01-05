@@ -3,45 +3,19 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>com.travelsky</groupId>
-        <artifactId>travelsky-parent</artifactId>
-        <version>3.0.1</version>
-    </parent>
+
 
     <groupId>activemqdemo</groupId>
     <artifactId>activemqdemo</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>helloworld</name>
-
-    <pluginRepositories>
-
-        <pluginRepository>
-            <id>nexus-central-plugin</id>
-            <url>http://oss.sonatype.org/content/groups/public/</url>
-        </pluginRepository>
-    </pluginRepositories>
-
     <repositories>
         <repository>
-            <id>nexus-public</id>
-            <url>http://oss.sonatype.org/content/groups/public/</url>
+            <id>oschina-repo</id>
+            <url>http://maven.oschina.net/content/groups/public/</url>
         </repository>
-
     </repositories>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>travelsky-snapshots</id>
-            <url>http://10.123.78.58/nexus/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>travelsky-releases</id>
-            <url>http://10.123.78.58/nexus/content/repositories/releases</url>
-        </repository>
-    </distributionManagement>
 
     <dependencies>
         <dependency>

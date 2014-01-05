@@ -44,7 +44,6 @@ public class Receiver {
             connection.start();
             // 创建会话
             session = connection.createSession(Boolean.FALSE, Session.AUTO_ACKNOWLEDGE);
-            // 获取session注意参数值xingbo.xu-queue是一个服务器的queue，须在在ActiveMq的console配置
             destination = session.createQueue("FirstQueue");
             consumer = session.createConsumer(destination);
             while (true) {
