@@ -24,7 +24,7 @@ public class HelloTestCase extends FunctionalTestCase
     @Override
     protected String getConfigResources()
     {
-        return "mule-config.xml";
+        return "app/mule-config.xml";
     }
 
     @Test
