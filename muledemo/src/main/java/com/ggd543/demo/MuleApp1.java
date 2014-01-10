@@ -17,7 +17,7 @@ import java.net.URL;
 public class MuleApp1 {
     public static void main(String[] args) throws Exception {
         MuleContextFactory muleContextFactory = new DefaultMuleContextFactory();
-        URL url = MuleApp1.class.getResource("/app/mule-config.xml");
+        URL url = MuleApp1.class.getResource("/src/main/app/mule-config.xml");
         SpringXmlConfigurationBuilder configBuilder = new SpringXmlConfigurationBuilder(new ConfigResource[]{new ConfigResource(url)});
         MuleContext muleContext = muleContextFactory.createMuleContext(configBuilder);
         muleContext.start();

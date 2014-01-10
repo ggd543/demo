@@ -16,24 +16,7 @@
 		<l10n.plugin.version>1.0-alpha-2-travelsky</l10n.plugin.version>
 		<project-info-reports.plugin.version>2.6-travelsky</project-info-reports.plugin.version>
     </properties>
-
-    <developers>
-        <developer>
-            <name>刘永健</name>
-            <id>liuyongjian@travelsky.com</id>
-            <email>liuyongjian@travelsky.com</email>
-            <organization>广州民航信息技术有限公司</organization>
-            <timezone>0</timezone>
-        </developer>
-    </developers>
-
-    <contributors>
-        <contributor>
-            <name>刘永健</name>
-            <email>ggd543@gmail.com</email>
-        </contributor>
-    </contributors>
-
+ 
     <dependencies>
         <dependency>
             <groupId>net.java.dev.jna</groupId>

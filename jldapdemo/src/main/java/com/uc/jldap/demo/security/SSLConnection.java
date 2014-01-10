@@ -32,14 +32,14 @@ import java.io.UnsupportedEncodingException;
 
 public class SSLConnection {
     public static void main(String[] args) {
-
-
+        System.setProperty("ldap.debug", "TraceAll");
         int ldapPort = LDAPConnection.DEFAULT_SSL_PORT;
         int ldapVersion = LDAPConnection.LDAP_V3;
         String ldapHost = "192.168.121.130";
         String loginDN = "cn=admin,dc=ggd543,dc=com";
         String password = "123456";
-        String path =  "E:\\play-1.2.5\\workspace\\git\\demo\\jldapdemo\\openldap.jks";
+        String path =  SSLConnection.class.getResource("/openldap.jks").getPath();
+        System.out.println("jks_path: "+path);
         LDAPSocketFactory ssf;
 
         try {
@@ -53,18 +53,19 @@ public class SSLConnection {
             ssf = new LDAPJSSESecureSocketFactory();
 
             // Set the socket factory as the default for all future connections
-            LDAPConnection.setSocketFactory(ssf);
+//            LDAPConnection.setSocketFactory(ssf);
 
             // Note: the socket factory can also be passed in as a parameter
             // to the constructor to set it for this connection only.
-            LDAPConnection lc = new LDAPConnection();
+            LDAPConnection lc = new LDAPConnection(ssf);
 
             // connect to the server
             lc.connect(ldapHost, ldapPort);
 
             // authenticate to the server
-            lc.bind(ldapVersion, loginDN, password.getBytes("UTF8"));
+            lc.bind(ldapVersion, loginDN, password.getBytes("UTF-8"));
 
+            System.out.println("isTLS: "+lc.isTLS());
             // at this point you are connected with a secure connection
             System.out.println("Successful SSL bind with server.");
 
