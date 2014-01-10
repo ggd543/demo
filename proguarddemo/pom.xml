@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>proguarddemo</groupId>
+    <artifactId>proguarddemo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>com.pyx4me</groupId>
+                <artifactId>proguard-maven-plugin</artifactId>
+                <version>2.0.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>proguard</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <obfuscate>true</obfuscate>
+                    <injar>${project.build.finalName}.jar</injar>
+                    <outjar>obfuscated-${project.build.finalName}.jar</outjar>
+                    <outputDirectory>${project.build.directory}</outputDirectory>
+                    <proguardInclude>${basedir}/proguard.pro</proguardInclude>
+                    <libs>
+                        <lib>${java.home}/lib/rt.jar</lib>
+                    </libs>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+    
+</project>

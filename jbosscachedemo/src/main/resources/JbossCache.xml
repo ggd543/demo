@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jbosscache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:jboss:jbosscache-core:config:3.0"
+            xsi:schemaLocation="urn:jboss:jbosscache-core:config:3.0 ">
+
+
+    <!--
+       isolation levels supported: READ_COMMITTED and REPEATABLE_READ
+       nodeLockingSchemes: mvcc, pessimistic (deprecated), optimistic (deprecated)
+    -->
+    <locking
+            isolationLevel="REPEATABLE_READ"
+            lockParentForChildInsertRemove="false"
+            lockAcquisitionTimeout="20000"
+            nodeLockingScheme="mvcc"
+            writeSkewCheck="false"
+            concurrencyLevel="500"/>
+
+    <!--
+       Used to register a transaction manager and participate in ongoing transactions.
+       -->
+    <!--  <transaction
+          transactionManagerLookupClass="org.jboss.cache.transaction.GenericTransactionManagerLookup"
+          syncRollbackPhase="false"
+          syncCommitPhase="false"/>
+     -->
+    <!--
+       Used to register JMX statistics in any available MBean server
+       -->
+    <jmxStatistics
+            enabled="false"/>
+
+    <!--
+       If region based marshalling is used, defines whether new regions are inactive on startup.
+    -->
+    <startup
+            regionsInactiveOnStartup="true"/>
+
+    <!--
+       Used to register JVM shutdown hooks.
+       hookBehavior: DEFAULT, REGISTER, DONT_REGISTER
+    -->
+    <shutdown
+            hookBehavior="DEFAULT"/>
+
+    <!--
+       Used to define async listener notification thread pool size
+    -->
+    <listeners
+            asyncPoolSize="1"
+            asyncQueueSize="1000000"/>
+
+    <!--
+       Used to enable invocation batching and allow the use of Cache.startBatch()/endBatch() methods.
+    -->
+    <invocationBatching
+            enabled="true"/>
+
+</jbosscache>
