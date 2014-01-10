@@ -5,18 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
-import javax.jms.BytesMessage;
-import javax.jms.TextMessage;
-import javax.jms.JMSException;
-import javax.jms.Message;
-import javax.jms.MessageListener;
-import javax.jms.Session;
-import javax.jms.Topic;
-import javax.jms.TopicConnection;
-import javax.jms.TopicConnectionFactory;
-import javax.jms.TopicPublisher;
-import javax.jms.TopicSession;
-import javax.jms.TopicSubscriber;
+import javax.jms.*;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
@@ -28,14 +17,10 @@ public class Chat implements MessageListener {
     private TopicSession pubSession;
     private TopicPublisher pub;
     private TopicConnection conn;
-    private String username;
     private String msgType;
 
-    public Chat(String topicFactory, String topicName, String username, String msgType)
+    public Chat(String clientId, String topicName, String msgType)
             throws NamingException, JMSException {
-
-//        // create a JNDI context
-//        InitialContext ctx = new InitialContext();
 
         // lookup a topic connection factory
 //        TopicConnectionFactory factory = (TopicConnectionFactory) ctx.lookup(topicFactory);
@@ -50,33 +35,38 @@ public class Chat implements MessageListener {
             TopicSession subSession = (TopicSession) connection.createSession(
                     false, Session.AUTO_ACKNOWLEDGE);
 
-            // lookup a topic
-//            Topic topic = (Topic) ctx.lookup(topicName);
             Topic topic = new ActiveMQTopic(topicName);
 
             // create publisher and subscriber
             TopicPublisher pub = pubSession.createPublisher(topic);
             TopicSubscriber sub = subSession.createSubscriber(topic, null, true);
 
+            if (clientId != null) {
+                pub.setDeliveryMode(DeliveryMode.PERSISTENT);
+                pub.setTimeToLive(20000);
+                connection.setClientID(clientId);
+                sub = subSession.createDurableSubscriber(topic, clientId+"_");
+            }
+
+            System.out.println("topic: " + topic);
+            System.out.println("pub: " + pub);
+            System.out.println("sub: " + sub);
             // set a jms listener
             sub.setMessageListener(this);
 
             this.conn = connection;
             this.pub = pub;
             this.pubSession = pubSession;
-            this.username = username;
             this.msgType = msgType;
 
             // this is necessary
             connection.start();
         } catch (Exception e) {
-            System.out.println("exception....");
+            e.printStackTrace();
         }
     }
 
     protected void writeMessage(String txt) {
-        //writeByteMessage(txt);
-//		String xml = "<message type=\"chat\" from=\"java\">" + txt + "</message>";
         if (this.msgType.equalsIgnoreCase("txt")) {
             writeTextMessage(txt);
         }
@@ -94,7 +84,7 @@ public class Chat implements MessageListener {
             TextMessage message = pubSession.createTextMessage();
             message.setStringProperty("language", "java");
             message.setText(iso);
-            System.out.println("sending text message "+message);
+            System.out.println("sending text message " + message);
             pub.publish(message);
         } catch (JMSException e) {
             e.printStackTrace();
@@ -111,7 +101,7 @@ public class Chat implements MessageListener {
             byte[] data = msg.getBytes();
             System.out.println("sent data len:" + data.length);
             System.out.println("send bytes:");
-			console(data);
+            console(data);
             message.setStringProperty("language", "java");
             message.writeBytes(data);
             pub.publish(message);
@@ -185,18 +175,18 @@ public class Chat implements MessageListener {
 
     public static void main(String[] args) throws NamingException,
             JMSException, IOException {
-        if (args.length != 4) {
-            System.out.println("Factory, Topic, or username missing");
-        }
+//        if (args.length != 4) {
+//            System.out.println("Factory, Topic, or username missing");
+//        }
         // topicFactory, topicName, clientId,  msgType
-        Chat chat = new Chat(args[0], args[1], args[2], args[3]);
+        Chat chat = new Chat(args[0], "test", "txt");
 
         BufferedReader cmd = new BufferedReader(new InputStreamReader(System.in));
 
-        while (true) {
-            String s = cmd.readLine();
+            while (true) {
+                String s = cmd.readLine();
 
-            if (s.equalsIgnoreCase("exit")) {
+                if (s.equalsIgnoreCase("exit")) {
                 chat.close();
                 System.exit(0);
             } else {

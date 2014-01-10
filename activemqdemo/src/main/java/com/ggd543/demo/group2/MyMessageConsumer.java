@@ -32,8 +32,7 @@ public class MyMessageConsumer {
         ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(null, null, url);
         Connection connection = connectionFactory.createConnection();
         connection.start();
-        Session session = connection.createSession(true,
-                Session.AUTO_ACKNOWLEDGE);
+        Session session = connection.createSession(true, Session.AUTO_ACKNOWLEDGE);
 
         Destination destination = session.createQueue(queue);
         MessageConsumer consumer = session.createConsumer(destination);
