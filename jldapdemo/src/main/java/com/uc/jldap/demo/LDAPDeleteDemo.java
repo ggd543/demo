@@ -25,6 +25,7 @@ public class LDAPDeleteDemo {
         String loginDN = "cn=admin,dc=ggd543,dc=com";
         String password = "123456";
         String deleteDN = "cn=test3,dc=ggd543,dc=com";
+//        String deleteDN = "ou=Tester,dc=ggd543,dc=com";
 
 //        int ldapPort = LDAPConnection.DEFAULT_PORT;
         int ldapPort = LDAPConnection.DEFAULT_SSL_PORT;

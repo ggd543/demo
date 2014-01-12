@@ -15,9 +15,9 @@ import java.io.UnsupportedEncodingException;
 public class JLDAPAddDemo {
     public static void main(String[] args) {
         String ldapHost = "192.168.121.130";
-        String loginDN =  "cn=admin,dc=ggd543,dc=com";
+        String loginDN =  "cn=admin,dc=ucweb,dc=com";
         String password = "123456";
-        String containerName = "dc=ggd543,dc=com";
+        String containerName = "dc=ucweb,dc=com";
 
         int ldapPort = LDAPConnection.DEFAULT_SSL_PORT;
         int ldapVersion = LDAPConnection.LDAP_V3;
@@ -28,11 +28,11 @@ public class JLDAPAddDemo {
         LDAPAttributeSet attributeSet = new LDAPAttributeSet();
 
         attributeSet.add(new LDAPAttribute("objectclass", new String[]{new String("top"), new String("person")}));
-        attributeSet.add(new LDAPAttribute("cn", "test3"));
-        attributeSet.add(new LDAPAttribute("sn", "test3"));
-//        attributeSet.add(new LDAPAttribute("mail", "test3@ucweb.com"));
-        attributeSet.add(new LDAPAttribute("userPassword", "111111"));
-        String dn = "cn=test3,"+containerName;
+        attributeSet.add(new LDAPAttribute("cn", "17"));
+        attributeSet.add(new LDAPAttribute("sn", "17"));
+        attributeSet.add(new LDAPAttribute("description", " "));
+//        attributeSet.add(new LDAPAttribute("userPassword", "111111"));
+        String dn = "cn=17,"+containerName;
         LDAPEntry newEntry = new LDAPEntry(dn, attributeSet);
 
         try {

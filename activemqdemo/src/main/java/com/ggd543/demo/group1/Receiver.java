@@ -33,10 +33,7 @@ public class Receiver {
         // 消费者，消息接收者
         MessageConsumer consumer;
 
-        connectionFactory = new ActiveMQConnectionFactory(
-                ActiveMQConnection.DEFAULT_USER,
-                ActiveMQConnection.DEFAULT_PASSWORD,
-                "tcp://localhost:61616");
+        connectionFactory = new ActiveMQConnectionFactory(ActiveMQConnection.DEFAULT_BROKER_URL);
         try {
             // 构造从工厂得到连接对象
             connection = connectionFactory.createConnection();
@@ -44,11 +41,13 @@ public class Receiver {
             connection.start();
             // 创建会话
             session = connection.createSession(Boolean.FALSE, Session.AUTO_ACKNOWLEDGE);
-            destination = session.createQueue("FirstQueue");
+            destination = session.createQueue(Constants.QUEUE_NAME);
+            System.out.println(destination);
             consumer = session.createConsumer(destination);
             while (true) {
                 //设置接收者接收消息的时间，为了便于测试，这里谁定为100s
-                TextMessage message = (TextMessage) consumer.receive(100000);
+                TextMessage message = (TextMessage) consumer.receive(1000);
+
                 if (null != message) {
                     System.out.println("收到消息" + message.getText());
                 } else {
@@ -59,8 +58,9 @@ public class Receiver {
             e.printStackTrace();
         } finally {
             try {
-                if (null != connection)
+                if (null != connection) {
                     connection.close();
+                }
             } catch (Throwable ignore) {
             }
         }

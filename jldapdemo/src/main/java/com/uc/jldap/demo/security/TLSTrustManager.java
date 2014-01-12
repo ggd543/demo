@@ -69,7 +69,7 @@ public class TLSTrustManager {
 
             System.setProperty("ldap.debug", "TraceAll");
 
-            int ldapPort = 6361;
+            int ldapPort = 636;
             String ldapHost = "192.168.121.130";
             String loginDN = "cn=admin,dc=ggd543,dc=com";
             String password = "123456";

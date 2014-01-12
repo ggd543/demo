@@ -23,7 +23,7 @@ import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 public class Sender {
-    private static final int SEND_NUMBER = 5;
+    private static final int SEND_NUMBER = 50;
 
     public static void main(String[] args) {
         // ConnectionFactory ：连接工厂，JMS 用它创建连接
@@ -38,10 +38,7 @@ public class Sender {
         MessageProducer producer;
         // TextMessage message;
         // 构造ConnectionFactory实例对象，此处采用ActiveMq的实现jar
-        connectionFactory = new ActiveMQConnectionFactory(
-                ActiveMQConnection.DEFAULT_USER,
-                ActiveMQConnection.DEFAULT_PASSWORD,
-                "tcp://localhost:61616");
+        connectionFactory = new ActiveMQConnectionFactory(ActiveMQConnection.DEFAULT_BROKER_URL);
         try {
             // 构造从工厂得到连接对象
             connection = connectionFactory.createConnection();
@@ -50,7 +47,8 @@ public class Sender {
             // 获取操作连接
             session = connection.createSession(Boolean.TRUE, Session.AUTO_ACKNOWLEDGE);
             // 获取session注意参数值xingbo.xu-queue是一个服务器的queue，须在在ActiveMq的console配置
-            destination = session.createQueue("FirstQueue");
+            destination = session.createQueue(Constants.QUEUE_NAME);
+            System.out.println(destination);
             // 得到消息生成者【发送者】
             producer = session.createProducer(destination);
             // 设置不持久化，此处学习，实际根据项目决定

@@ -105,7 +105,6 @@
         <http:outbound-endpoint address="http://localhost:9004"/>
     </flow>
 
-
     <pattern:http-proxy  name="baidu-proxy" inboundAddress="vm://baidu" outboundAddress="http://www.baidu.com">
     </pattern:http-proxy>
     <pattern:http-proxy  name="baidu-proxy-2" inboundAddress="http://localhost:9004" outboundAddress="http://www.baidu.com" >

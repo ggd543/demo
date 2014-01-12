@@ -39,9 +39,9 @@ public class CastorJDODemo {
             database.begin();
             oql1 = database.getOQLQuery("SELECT p FROM com.ggd543.demo.jdo.Product p");
             QueryResults qr1 = oql1.execute();
-            while(qr1.hasMore()){
-                Product p= (Product) qr1.next();
-                System.out.println("get product: "+p);
+            while (qr1.hasMore()) {
+                Product p = (Product) qr1.next();
+                System.out.println("get product: " + p);
             }
             database.commit();
         } catch (PersistenceException e) {

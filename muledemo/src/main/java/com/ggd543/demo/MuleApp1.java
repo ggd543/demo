@@ -2,20 +2,14 @@ package com.ggd543.demo;
 
 import org.mule.DefaultMuleMessage;
 import org.mule.api.MuleContext;
-import org.mule.api.MuleException;
 import org.mule.api.MuleMessage;
-import org.mule.api.MuleSession;
 import org.mule.api.client.MuleClient;
 import org.mule.api.context.MuleContextFactory;
-import org.mule.client.DefaultLocalMuleClient;
 import org.mule.config.ConfigResource;
 import org.mule.config.spring.SpringXmlConfigurationBuilder;
 import org.mule.context.DefaultMuleContextFactory;
-import org.mule.transport.NullPayload;
 
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by ggd543 on 14-1-4.
@@ -23,7 +17,7 @@ import java.util.Map;
 public class MuleApp1 {
     public static void main(String[] args) throws Exception {
         MuleContextFactory muleContextFactory = new DefaultMuleContextFactory();
-        URL url = MuleApp1.class.getResource("/mule-config.xml");
+        URL url = MuleApp1.class.getResource("/src/main/app/mule-config.xml");
         SpringXmlConfigurationBuilder configBuilder = new SpringXmlConfigurationBuilder(new ConfigResource[]{new ConfigResource(url)});
         MuleContext muleContext = muleContextFactory.createMuleContext(configBuilder);
         muleContext.start();
