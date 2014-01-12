@@ -1,0 +1,1 @@
+ldapsearch -xH ldap://ldap.example.com:10389 -b '' -s base '(&)' + '*'
