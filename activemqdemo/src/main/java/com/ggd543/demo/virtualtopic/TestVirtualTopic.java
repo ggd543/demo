@@ -26,12 +26,14 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.apache.activemq.command.ActiveMQTopic;
 
+
+
 public class TestVirtualTopic {
+    public static String URL ="tcp://127.0.0.1:61616";
 
     public static void main(String[] args) {
         try {
-
-            ActiveMQConnectionFactory factoryA = new ActiveMQConnectionFactory("tcp://127.0.0.1:61616");
+            ActiveMQConnectionFactory factoryA = new ActiveMQConnectionFactory();
             Queue queue = new ActiveMQQueue(getVirtualTopicConsumerNameA());
             ActiveMQConnection conn = (ActiveMQConnection) factoryA.createConnection();
             conn.start();
@@ -67,7 +69,7 @@ public class TestVirtualTopic {
                 }
             };
 
-//            consumer3.setMessageListener(listenerB);
+            consumer3.setMessageListener(listenerB);
 
             MessageProducer producer = session.createProducer(new ActiveMQTopic(getVirtualTopicName()));
             int index = 0;
@@ -81,15 +83,21 @@ public class TestVirtualTopic {
         }
     }
 
-    protected static String getVirtualTopicName() {
+
+    public static String getTopicName() {
+        return "Topic.TEST";
+
+    }
+
+    public static String getVirtualTopicName() {
         return "VirtualTopic.TEST";
     }
 
-    protected static String getVirtualTopicConsumerNameA() {
+    public static String getVirtualTopicConsumerNameA() {
         return "Consumer.A.VirtualTopic.TEST";
     }
 
-    protected static String getVirtualTopicConsumerNameB() {
+    public static String getVirtualTopicConsumerNameB() {
         return "Consumer.B.VirtualTopic.TEST";
     }
 

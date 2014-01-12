@@ -26,7 +26,9 @@ public class ChatSubscriber implements PubSub, MessageListener {
         this.name = name;
         TopicConnectionFactory factory = new ActiveMQConnectionFactory("tcp://127.0.0.1:61616");
         conn = factory.createTopicConnection();
+//         clientId= System.currentTimeMillis()+"_"+Math.random();
         conn.setClientID(clientId);
+        System.out.println("clientId: " + clientId);
         session = conn.createTopicSession(false, Session.AUTO_ACKNOWLEDGE);
         Topic topic = new ActiveMQTopic(topicName);
 

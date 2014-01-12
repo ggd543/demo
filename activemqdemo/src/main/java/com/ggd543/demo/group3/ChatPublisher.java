@@ -36,7 +36,7 @@ public class ChatPublisher  implements  PubSub , MessageListener{
         if (isDurable) {
             pub.setDeliveryMode(DeliveryMode.PERSISTENT);
 //            pub.setTimeToLive(20000);
-            System.out.println("persistence");
+            System.out.println(" === persistence == ");
         }
     }
 
@@ -68,6 +68,7 @@ public class ChatPublisher  implements  PubSub , MessageListener{
 
     public static void main(String[] args) {
         try {
+            System.out.println(args[0]+" "+args[2]);
             ChatPublisher publisher = new ChatPublisher(args[0], args[1], Boolean.valueOf(args[2]));
             publisher.start();
             BufferedReader cmd = new BufferedReader(new InputStreamReader(System.in));

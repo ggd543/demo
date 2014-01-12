@@ -25,14 +25,15 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 
     <jms:activemq-connector name="jmsConnector0"
                             brokerURL="tcp://localhost:61616" doc:name="Active MQ" clientId="0"/>
-    <jms:activemq-connector name="jmsConnector1"
+    <jms:activemq-connector name="jmsConnector1" persistentDelivery="true"  durable="true"
                             brokerURL="tcp://localhost:61616" doc:name="Active MQ" clientId="1"/>
-    <jms:activemq-connector name="jmsConnector2"
+    <jms:activemq-connector name="jmsConnector2" persistentDelivery="true" durable="true"
                             brokerURL="tcp://localhost:61616" doc:name="Active MQ" clientId="2"/>
     <jms:activemq-connector name="jmsConnector3"
                             brokerURL="tcp://localhost:61616" doc:name="Active MQ" clientId="3"/>
-    <jms:activemq-xa-connector name="jmsXAConnector"
+    <jms:activemq-xa-connector name="jmsXAConnector" persistentDelivery="true" durable="true"
                                brokerURL="tcp://localhost:61616" doc:name="Active MQ"/>
+
 
     <flow name="activemq-send-1-flow" doc:name="activemq-flow">
         <http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="8797" doc:name="http"
@@ -53,25 +54,25 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 
     <flow name="topic-1-flow">
         <http:inbound-endpoint exchange-pattern="request-response" address="http://localhost:8797/topic/muleTopic/send"/>
-        <jms:outbound-endpoint topic="muleTopic" connector-ref="jmsConnector1">
+        <jms:outbound-endpoint topic="VirtualTopic.muleTopic" connector-ref="jmsConnector1" >
         </jms:outbound-endpoint>
     </flow>
 
-    <!--<flow name="topic-2-flow">-->
-        <!--<jms:inbound-endpoint topic="muleTopic" connector-ref="jmsConnector0">-->
-        <!--</jms:inbound-endpoint>-->
-        <!--<component>-->
-            <!--<spring-object bean="LoggerComponent1"/>-->
-        <!--</component>-->
-    <!--</flow>-->
+    <flow name="topic-2-flow">
+        <jms:inbound-endpoint topic="VirtualTopic.muleTopic" connector-ref="jmsConnector0">
+        </jms:inbound-endpoint>
+        <component>
+            <spring-object bean="LoggerComponent1"/>
+        </component>
+    </flow>
 
-    <!--<flow name="topic-3-flow">-->
-        <!--<jms:inbound-endpoint topic="muleTopic" connector-ref="jmsConnector0">-->
-        <!--</jms:inbound-endpoint>-->
-        <!--<component>-->
-            <!--<spring-object bean="LoggerComponent2"/>-->
-        <!--</component>-->
-    <!--</flow>-->
+    <flow name="topic-3-flow">
+        <jms:inbound-endpoint topic="VirtualTopic.muleTopic" connector-ref="jmsConnector0">
+        </jms:inbound-endpoint>
+        <component>
+            <spring-object bean="LoggerComponent2"/>
+        </component>
+    </flow>
 
     <!--<flow name="topic-4-flow">-->
         <!--<jms:inbound-endpoint topic="muleTopic" connector-ref="jmsConnector0">-->
@@ -86,18 +87,28 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
         <scripting:component>
             <scripting:script engine="groovy">
                 System.out.println("receive topi cmessage");
-                Object res = muleContext.client.request("jms://topic:muleTopic?connector=jmsConnector2", 1000);
+                Object res = muleContext.client.request("jms://topic:VirtualTopic.muleTopic?connector=jmsConnector2", 1000);
                 System.out.println(res)
-                if ( res == null){
+                if ( res == null) {
                 System.out.println("no resonse");
-                return "no response";
+                    return "no response";
                 }else{
-                return res
+                    return res
                 }
             </scripting:script>
         </scripting:component>
     </flow>
 
+    <flow name="topic-6-flow">
+        <http:inbound-endpoint address="http://localhost:8797/virtualtopic/muleTopic/receive"/>
+        <scripting:component>
+            <scripting:script engine="groovy" file="1.groovy">
+                <property key="hostName" value="queue:Consumer.B.VirtualTopic.muleTopic"/>
+                <property key="connectorRef" value="jmsConnector2"/>
+            </scripting:script>
+        </scripting:component>
+        <echo-component></echo-component>
+    </flow>
 
     <flow name="mq-send-2-flow">
         <http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="8797" path="hi/send"/>
