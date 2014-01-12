@@ -5,6 +5,9 @@
  */
 package com.ggd543.service;
 
+import java.util.Collection;
+import java.util.List;
+
 /**
  * @author liuyongjian
  * @version 1.0
@@ -14,4 +17,8 @@ public interface HelloWorld {
     public User getUser(int id);
 
     public void sayHi(User user);
+
+    public List query(int i);
+
+    public UserType getUserType(int i);
 }

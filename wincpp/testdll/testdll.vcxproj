@@ -83,16 +83,6 @@
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="ff.c" />
-    <ClCompile Include="FuxkTest.c" />
-    <ClCompile Include="test.c" />
-    <ClCompile Include="TestPerson.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\dll\so_test.h" />
-    <ClInclude Include="cpp.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

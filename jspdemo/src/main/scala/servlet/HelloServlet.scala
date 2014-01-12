@@ -9,6 +9,8 @@ class HelloServlet extends HttpServlet {
   //  private val logger = LoggerFactory.getLogger(classOf[HelloServlet])
 
   override def doGet(req: HttpServletRequest, resp: HttpServletResponse) {
+    println("request's classloader: "+req.getClass.getClassLoader);
+    println("HelloServlet's classloader: "+this.getClass.getClassLoader+" , hashCode: "+this.getClass.getClassLoader.hashCode())
     println("request_session_id: " + req.getRequestedSessionId
       + " requestSessionIdFromCookie: " + req.isRequestedSessionIdFromCookie
     +"  requestSessionIdFromURL: "+req.isRequestedSessionIdFromURL

@@ -7,61 +7,48 @@ package com.ggd543.demo;
  * Time: 下午5:18
  * To change this template use File | Settings | File Templates.
  */
+
 import java.util.*;
 import java.util.concurrent.*;
 
-  class Race
-{
+class Race {
     private Random rand = new Random();
-
     private int distance = rand.nextInt(250);
+
     private CountDownLatch start;
     private CountDownLatch finish;
 
     private List<String> horses = new ArrayList<String>();
 
-    public Race(String... names)
-    {
+    public Race(String... names) {
         this.horses.addAll(Arrays.asList(names));
     }
 
-    public void run()
-            throws InterruptedException
-    {
+    public void run() throws InterruptedException {
         System.out.println("And the horses are stepping up to the gate...");
         final CountDownLatch start = new CountDownLatch(1);
         final CountDownLatch finish = new CountDownLatch(horses.size());
-        final List<String> places =
-                Collections.synchronizedList(new ArrayList<String>());
+        final List<String> places = Collections.synchronizedList(new ArrayList<String>());
 
-        for (final String h : horses)
-        {
+        for (final String h : horses) {
             new Thread(new Runnable() {
                 public void run() {
-                    try
-                    {
-                        System.out.println(h +
-                                " stepping up to the gate...");
+                    try {
+                        System.out.println(h + " stepping up to the gate...");
                         start.await();
 
                         int traveled = 0;
-                        while (traveled < distance)
-                        {
+                        while (traveled < distance) {
                             // In a 0-2 second period of time....
                             Thread.sleep(rand.nextInt(3) * 1000);
-
                             // ... a horse travels 0-14 lengths
                             traveled += rand.nextInt(15);
-                            System.out.println(h +
-                                    " advanced to " + traveled + "!");
+                            System.out.println(h + " advanced to " + traveled + "!");
                         }
                         finish.countDown();
-                        System.out.println(h +
-                                " crossed the finish!");
+                        System.out.println(h + " crossed the finish!");
                         places.add(h);
-                    }
-                    catch (InterruptedException intEx)
-                    {
+                    } catch (InterruptedException intEx) {
                         System.out.println("ABORTING RACE!!!");
                         intEx.printStackTrace();
                     }
@@ -78,13 +65,14 @@ import java.util.concurrent.*;
         System.out.println(places.get(1) + " got the silver...");
         System.out.println("and " + places.get(2) + " took home the bronze.");
     }
+
+    public int getDistance() {
+        return distance;
+    }
 }
 
-public class CDLApp
-{
-    public static void main(String[] args)
-            throws InterruptedException, java.io.IOException
-    {
+public class CDLApp {
+    public static void main(String[] args) throws InterruptedException, java.io.IOException {
         System.out.println("Prepping...");
 
         Race r = new Race(
@@ -98,10 +86,8 @@ public class CDLApp
         );
 
         System.out.println("It's a race of " + r.getDistance() + " lengths");
-
         System.out.println("Press Enter to run the race....");
         System.in.read();
-
         r.run();
     }
 }

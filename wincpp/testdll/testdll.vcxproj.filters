@@ -17,26 +17,4 @@
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="test.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="TestPerson.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="FuxkTest.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ff.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="cpp.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="..\dll\so_test.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-  </ItemGroup>
 </Project>

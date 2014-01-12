@@ -10,30 +10,51 @@
 <script type="text/javascript" src="<%= request.getContextPath()%>/resources/jsonrpc.js"></script>
 <script type="text/javascript">
     $(function () {
+        var jsonrpc = new JSONRpcClient("jsonrpc");
         $('#rpc_call').click(function () {
-            var jsonRpcClient = new JSONRpcClient("jsonrpc");
-            for (var key in jsonRpcClient.helloworld) {
-                console.log(key + " : " + jsonRpcClient.helloworld[key])
+
+            for (var key in jsonrpc.helloworld) {
+                console.log(key + " : " + jsonrpc.helloworld[key])
             }
-            var msg = jsonRpcClient.helloworld.sayHelloWorld('liu yongjian');
+            var msg = jsonrpc.helloworld.sayHelloWorld('liu yongjian');
 
             $('#rpc_result').append('<p>' + msg + '</p>')
         });
 
-        $('#getUser').click(function(){
-            var jsonrpc= new JSONRpcClient("jsonrpc");
+        $('#getUser').click(function () {
             var user = jsonrpc.helloworld.getUser(12);
-            var msg = user+' - user id: '+user.id+" user.name: "+user.name;
+            var msg = user + ' - user id: ' + user.id + " user.name: " + user.name;
             console.log(msg);
             $('#result_getUser').append('<p>' + msg + '</p>')
         });
 
-        $('#sayHiToUser').click(function(){
-            var jsonrpc = new JSONRpcClient("jsonrpc");
+        $('#sayHiToUser').click(function () {
             var user = {'id': 12, 'name': 'jack'};
             var resp = jsonrpc.helloworld.sayHi(user);
             console.log(resp);
             $('#result_sayHitoUser').append('<p>' + resp + '</p>')
+        });
+
+        $('#query_user').click(function () {
+            console.log(typeof jsonrpc.helloworld.query);
+            try {
+                var resp = jsonrpc.helloworld.query(0);
+                console.log(resp);
+                var book0 = resp[0];
+                console.log("book.cn: " + book0.cn + " book.name: " + book0.name);
+            } catch (e) {
+                console.log(e);
+            }
+        });
+
+        $('#get_usertype').click(function(){
+            try{
+            var resp = jsonrpc.helloworld.getUserType(0);
+                console.log(resp);
+            }catch(e){
+                console.log(e);
+            }
+
         });
     });
 </script>
@@ -53,6 +74,20 @@
 <div>
     <button id="sayHiToUser">sayHiToUser</button>
     <div id="result_sayHitoUser">
+
+    </div>
+</div>
+
+<div>
+    <button id="query_user">query_user</button>
+    <div id="result_query_user">
+
+    </div>
+</div>
+
+<div>
+    <button id="get_usertype">get_usertype</button>
+    <div id="result_get_usertype">
 
     </div>
 </div>
