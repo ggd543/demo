@@ -76,7 +76,8 @@ if __name__ == "__main__":
     # add new stooge: Harry Potter
     person_name = 'Harry Potter'
     person_ou = 'Tester'
-    person_info = {'cn': ['Harry Potter'], 'sn': ['Harry'], 'cn': ['Harry'],
+    person_info = {
+                    'cn': ['Harry Potter'], 'sn': ['Harry'], 'cn': ['Harry'],
                    'objectClass': ['inetOrgPerson'], 'uid': ['harry'],
                    'title': ['QA Engineer'], 'facsimileTelephoneNumber': ['800-555-3318'],
                    'userPassword' : ['harrysecret'], 'postalCode': ['75206'], 'mail': ['HPotter@unisonis.com'],

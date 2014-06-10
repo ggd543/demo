@@ -23,15 +23,15 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
         </spring:bean>
     </spring:beans>
 
-    <jms:activemq-connector name="jmsConnector0"
+    <jms:activemq-connector name="jmsConnector0" persistentDelivery="true"  durable="true"
                             brokerURL="tcp://localhost:61616" doc:name="Active MQ" clientId="0"/>
     <jms:activemq-connector name="jmsConnector1" persistentDelivery="true"  durable="true"
                             brokerURL="tcp://localhost:61616" doc:name="Active MQ" clientId="1"/>
     <jms:activemq-connector name="jmsConnector2" persistentDelivery="true" durable="true"
                             brokerURL="tcp://localhost:61616" doc:name="Active MQ" clientId="2"/>
-    <jms:activemq-connector name="jmsConnector3"
+    <jms:activemq-connector name="jmsConnector3" persistentDelivery="true"  durable="true"
                             brokerURL="tcp://localhost:61616" doc:name="Active MQ" clientId="3"/>
-    <jms:activemq-xa-connector name="jmsXAConnector" persistentDelivery="true" durable="true"
+    <jms:activemq-xa-connector name="jmsXAConnector"
                                brokerURL="tcp://localhost:61616" doc:name="Active MQ"/>
 
 
@@ -67,7 +67,7 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
     </flow>
 
     <flow name="topic-3-flow">
-        <jms:inbound-endpoint topic="VirtualTopic.muleTopic" connector-ref="jmsConnector0">
+        <jms:inbound-endpoint topic="VirtualTopic.muleTopic" connector-ref="jmsConnector1">
         </jms:inbound-endpoint>
         <component>
             <spring-object bean="LoggerComponent2"/>
@@ -86,7 +86,7 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
         <http:inbound-endpoint address="http://localhost:8797/topic/muleTopic/receive"/>
         <scripting:component>
             <scripting:script engine="groovy">
-                System.out.println("receive topi cmessage");
+                System.out.println("receive topic cmessage");
                 Object res = muleContext.client.request("jms://topic:VirtualTopic.muleTopic?connector=jmsConnector2", 1000);
                 System.out.println(res)
                 if ( res == null) {
@@ -100,7 +100,7 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
     </flow>
 
     <flow name="topic-6-flow">
-        <http:inbound-endpoint address="http://localhost:8797/virtualtopic/muleTopic/receive"/>
+        <http:inbound-endpoint exchange-pattern="request-response" address="http://localhost:8797/virtualtopic/muleTopic/receive"/>
         <scripting:component>
             <scripting:script engine="groovy" file="1.groovy">
                 <property key="hostName" value="queue:Consumer.B.VirtualTopic.muleTopic"/>

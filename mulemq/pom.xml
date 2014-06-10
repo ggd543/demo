@@ -170,16 +170,16 @@
                 <extensions>true</extensions>
                 <configuration>
                     <copyToAppsDirectory>true</copyToAppsDirectory>
-                    <inclusions>
-                        <inclusion>
-                            <groupId>org.mule.transports</groupId>
-                            <artifactId>mule-transport-http</artifactId>
-                        </inclusion>
-                        <inclusion>
-                            <groupId>org.mule.transports</groupId>
-                            <artifactId>mule-transport-jms</artifactId>
-                        </inclusion>
-                    </inclusions>
+                    <!--<inclusions>-->
+                        <!--<inclusion>-->
+                            <!--<groupId>org.mule.transports</groupId>-->
+                            <!--<artifactId>mule-transport-http</artifactId>-->
+                        <!--</inclusion>-->
+                        <!--<inclusion>-->
+                            <!--<groupId>org.mule.transports</groupId>-->
+                            <!--<artifactId>mule-transport-jms</artifactId>-->
+                        <!--</inclusion>-->
+                    <!--</inclusions>-->
                 </configuration>
             </plugin>
         </plugins>

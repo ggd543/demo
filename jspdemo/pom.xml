@@ -86,26 +86,26 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>7.0.0.pre5</version>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>native2ascii-maven-plugin</artifactId>
-                <version>1.0-alpha-1</version>
-                <executions>
-                    <execution>
-                        <id>native2ascii-utf8-resources</id>
-                        <goals>
-                            <goal>native2ascii</goal>
-                        </goals>
-                        <phase>process-sources</phase>
-                        <configuration>
-                            <dest>target/classes</dest>
-                            <src>src/main/resources</src>
-                            <encoding>GBK</encoding>
-                            <includes>**/*.properties</includes>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.codehaus.mojo</groupId>-->
+                <!--<artifactId>native2ascii-maven-plugin</artifactId>-->
+                <!--<version>1.0-alpha-1</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>native2ascii-utf8-resources</id>-->
+                        <!--<goals>-->
+                            <!--<goal>native2ascii</goal>-->
+                        <!--</goals>-->
+                        <!--<phase>process-sources</phase>-->
+                        <!--<configuration>-->
+                            <!--<dest>target/classes</dest>-->
+                            <!--<src>src/main/resources</src>-->
+                            <!--<encoding>GBK</encoding>-->
+                            <!--<includes>**/*.properties</includes>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
 
         </plugins>
     </build>
